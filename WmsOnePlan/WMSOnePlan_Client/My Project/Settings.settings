@@ -11,9 +11,6 @@
     <Setting Name="PhaseInterval" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1000</Value>
     </Setting>
-    <Setting Name="UpdateServer1" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:1337</Value>
-    </Setting>
     <Setting Name="ServiceInterval1" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">30</Value>
     </Setting>
@@ -75,22 +72,25 @@
       <Value Profile="(Default)">PropiedadDeDatosGenerales_LEAD_TIME</Value>
     </Setting>
     <Setting Name="PaseDeSalidaAlt" Type="System.Boolean" Scope="Application">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="WSHOST" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://10.101.233.4:8099//</Value>
+      <Value Profile="(Default)">http://10.240.29.99:90</Value>
     </Setting>
     <Setting Name="WMSOnePlan_Client_OnePlanServices_Security_WMS_Security" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://10.101.233.4:8099//</Value>
+      <Value Profile="(Default)">http://10.240.29.99:90</Value>
     </Setting>
     <Setting Name="Schema" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">wms</Value>
+      <Value Profile="(Default)">ferco</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Server=10.101.233.3;Database=OP_WMS_ALZA_QA;User=sa;Pwd=Alza999123.</Value>
+      <Value Profile="(Default)">Server=10.240.29.99;Database=OP_WMS_FERCO_GTP;User=sa;Pwd=F3rc0</Value>
     </Setting>
     <Setting Name="SERVER_IP" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">10.101.233.3</Value>
+      <Value Profile="(Default)">10.240.29.99</Value>
+    </Setting>
+    <Setting Name="UpdateServer1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://10.240.29.99:1337</Value>
     </Setting>
   </Settings>
 </SettingsFile>
