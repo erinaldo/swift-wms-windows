@@ -160,6 +160,27 @@ namespace MobilityScm.Modelo.Servicios
             return BaseDeDatosServicio.ExecuteQuery<Operacion>($"{BaseDeDatosServicio.Esquema}.OP_WMS_SP_UNLOCK_TRANSACTION", CommandType.StoredProcedure, parameters)[0];
         }
 
+        public Operacion CrearTareaRectificacionMP(TareaArgumento tareaArgumento)
+        {
+            DbParameter[] parameters =
+            {
+                new OAParameter
+                {
+                    ParameterName = "@TASK_ID",
+                    Value =  tareaArgumento.taskId
+                },new OAParameter
+                {
+                    ParameterName = "@WAVE_PICKING_ID",
+                    Value =  tareaArgumento.WAVE_PICKING_ID
+                },new OAParameter
+                {
+                    ParameterName = "@LOGIN",
+                    Value =  tareaArgumento.Login
+                }
+            };
+            return BaseDeDatosServicio.ExecuteQuery<Operacion>($"{BaseDeDatosServicio.Esquema}.OP_WMS_SP_CREATE_MP_RECTIFICATION_TASK", CommandType.StoredProcedure, parameters)[0];
+        }
+
         public Operacion AutorizarControlDeCalidad(TareaArgumento tareaArgumento)
         {
             DbParameter[] parameters =

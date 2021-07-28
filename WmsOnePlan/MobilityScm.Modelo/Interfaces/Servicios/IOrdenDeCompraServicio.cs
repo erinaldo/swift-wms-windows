@@ -21,6 +21,8 @@ namespace MobilityScm.Modelo.Interfaces.Servicios
 
         Operacion DesbloquearTransaccionOperacionManual(TareaArgumento tareaArgumento);
 
+        Operacion CrearTareaRectificacionMP(TareaArgumento tareaArgumento);
+
         Operacion AutorizarControlDeCalidad(TareaArgumento tareaArgumento);
 
     }

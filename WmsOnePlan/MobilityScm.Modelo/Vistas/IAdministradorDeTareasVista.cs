@@ -41,6 +41,7 @@ namespace MobilityScm.Modelo.Vistas
         event EventHandler<TareaArgumento> UsuarioDeseaObtenerDetalleOlaPicking;
         event EventHandler<TareaArgumento> UsuarioDeseaCambiarLicenciaEnLineaDeTareaDePicking;
         event EventHandler<TareaArgumento> UsuarioDeseaReabrirTareaRecepcion;
+        event EventHandler<TareaArgumento> UsuarioDeseaCrearTareaDeRectificacionMP;
 
         IList<TareaDetalle> DetalleConfirmacionRecepcion { get; set; }
         IList<OrdenDeCompraDetalle> DetalleOrdenCompra { get; set; }
@@ -71,6 +72,7 @@ namespace MobilityScm.Modelo.Vistas
         bool EsDetalleRecepcion { get; }
         bool DebeMostrarBotonParaLiberarInventario { get; set; }
         bool DebeMostrarBotonParaLiberarTransaccion { get; set; }
+        bool DebeMostrarBotonCrearTareaDeRectificacion { get; set; }
         bool DebeMostrarBotonParaAutorizarQA { get; set; }
         bool PermisoPuedeLiberarInventario { get; set; }
         void RecargarVistas();

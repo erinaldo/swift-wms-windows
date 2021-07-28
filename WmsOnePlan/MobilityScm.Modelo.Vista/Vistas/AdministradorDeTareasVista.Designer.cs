@@ -379,6 +379,7 @@
             this.bar16 = new DevExpress.XtraBars.Bar();
             this.UIBtnNext = new DevExpress.XtraBars.BarButtonItem();
             this.UIBotonLiberarTransaccion = new DevExpress.XtraBars.BarButtonItem();
+            this.UIBotonCrearTareaRectificacion = new DevExpress.XtraBars.BarButtonItem();
             this.bar17 = new DevExpress.XtraBars.Bar();
             this.barDockControl13 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
@@ -3760,9 +3761,10 @@
             this.barManager1.Form = this.UITabOlaPicking;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.UIBtnNext,
-            this.UIBotonLiberarTransaccion});
+            this.UIBotonLiberarTransaccion,
+            this.UIBotonCrearTareaRectificacion});
             this.barManager1.MainMenu = this.bar16;
-            this.barManager1.MaxItemId = 2;
+            this.barManager1.MaxItemId = 3;
             this.barManager1.StatusBar = this.bar17;
             // 
             // bar16
@@ -3773,7 +3775,8 @@
             this.bar16.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar16.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.UIBtnNext),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UIBotonLiberarTransaccion)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.UIBotonLiberarTransaccion),
+            new DevExpress.XtraBars.LinkPersistInfo(this.UIBotonCrearTareaRectificacion)});
             this.bar16.OptionsBar.MultiLine = true;
             this.bar16.OptionsBar.UseWholeRow = true;
             this.bar16.Text = "Main menu";
@@ -3798,6 +3801,17 @@
             this.UIBotonLiberarTransaccion.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.UIBotonLiberarTransaccion.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.UIBotonLiberarTransaccion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UIBotonLiberarTransaccion_ItemClick);
+            // 
+            // UIBotonCrearTareaRectificacion
+            // 
+            this.UIBotonCrearTareaRectificacion.Caption = "Rectificar Master Pack";
+            this.UIBotonCrearTareaRectificacion.Id = 2;
+            this.UIBotonCrearTareaRectificacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UIBotonCrearTareaRectificacion.ImageOptions.Image")));
+            this.UIBotonCrearTareaRectificacion.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UIBotonCrearTareaRectificacion.ImageOptions.LargeImage")));
+            this.UIBotonCrearTareaRectificacion.Name = "UIBotonCrearTareaRectificacion";
+            this.UIBotonCrearTareaRectificacion.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.UIBotonCrearTareaRectificacion.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.UIBotonCrearTareaRectificacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UIBotonCrearTareaRectificacion_ItemClick);
             // 
             // bar17
             // 
@@ -4310,5 +4324,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn UiDifference;
         private DevExpress.XtraBars.BarButtonItem UIBotonLiberarTransaccion;
         private DevExpress.XtraGrid.Columns.GridColumn UiColAttempedWhitError;
+        private DevExpress.XtraBars.BarButtonItem UIBotonCrearTareaRectificacion;
     }
 }

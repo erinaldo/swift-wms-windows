@@ -43,5 +43,6 @@ namespace MobilityScm.Modelo.Entidades
         public int LICENSE_ID { get; set; }
         public string BATCH { get; set; }
         public DateTime? DATE_EXPIRATION { get; set; }
+        public int FROM_MASTERPACK { get; set; }
     }
 }
