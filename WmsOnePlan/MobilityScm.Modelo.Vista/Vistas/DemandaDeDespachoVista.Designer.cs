@@ -484,6 +484,8 @@
             this.UiControlSplitOrdenes = new DevExpress.XtraEditors.SplitContainerControl();
             this.UiContenerdoVistaOrdenEncabezado = new DevExpress.XtraGrid.GridControl();
             this.UiVistaOrdenEncabezado = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCodigo_Asesor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName_asesor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEnEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiBotonEliminarEncabezado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.UiColDarPrioridad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -826,8 +828,6 @@
             this.repositoryItemCheckEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.colName_asesor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Codigo_Asesor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaComponentesMasterPackFaltante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiGridControlSkusSinInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSkusSinInventario)).BeginInit();
@@ -4474,7 +4474,7 @@
             // UiVistaOrdenEncabezado
             // 
             this.UiVistaOrdenEncabezado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Codigo_Asesor,
+            this.colCodigo_Asesor,
             this.colName_asesor,
             this.colEnEliminar,
             this.UiColDarPrioridad,
@@ -4542,6 +4542,22 @@
             this.UiVistaOrdenEncabezado.BeforeLeaveRow += new DevExpress.XtraGrid.Views.Base.RowAllowEventHandler(this.UiVistaOrdenEncabezado_BeforeLeaveRow);
             this.UiVistaOrdenEncabezado.ColumnFilterChanged += new System.EventHandler(this.UiVistaOrdenEncabezado_ColumnFilterChanged);
             this.UiVistaOrdenEncabezado.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UiVistaOrdenEncabezado_MouseUp);
+            // 
+            // colCodigo_Asesor
+            // 
+            this.colCodigo_Asesor.Caption = "CodigoAsesor";
+            this.colCodigo_Asesor.FieldName = "CODIGO_ASESOR";
+            this.colCodigo_Asesor.Name = "colCodigo_Asesor";
+            this.colCodigo_Asesor.Visible = true;
+            this.colCodigo_Asesor.VisibleIndex = 1;
+            // 
+            // colName_asesor
+            // 
+            this.colName_asesor.Caption = "Asesor";
+            this.colName_asesor.FieldName = "ASESOR";
+            this.colName_asesor.Name = "colName_asesor";
+            this.colName_asesor.Visible = true;
+            this.colName_asesor.VisibleIndex = 2;
             // 
             // colEnEliminar
             // 
@@ -8251,22 +8267,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(409, 30);
             this.layoutControlGroup1.Tag = "LayoutRootGroupForRestore";
             // 
-            // colName_asesor
-            // 
-            this.colName_asesor.Caption = "Asesor";
-            this.colName_asesor.FieldName = "ASESOR";
-            this.colName_asesor.Name = "colName_asesor";
-            this.colName_asesor.Visible = true;
-            this.colName_asesor.VisibleIndex = 2;
-            // 
-            // Codigo_Asesor
-            // 
-            this.Codigo_Asesor.Caption = "CodigoAsesor";
-            this.Codigo_Asesor.FieldName = "CODIGO_ASESOR";
-            this.Codigo_Asesor.Name = "Codigo_Asesor";
-            this.Codigo_Asesor.Visible = true;
-            this.Codigo_Asesor.VisibleIndex = 1;
-            // 
             // DemandaDeDespachoVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9174,7 +9174,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn UiColPesoConsolidado;
         private DevExpress.XtraGrid.Columns.GridColumn UiColPesoTotalConsolidado;
         private DevExpress.XtraBars.BarButtonItem UiBtnImportarExcel;
-        private DevExpress.XtraGrid.Columns.GridColumn Codigo_Asesor;
+        private DevExpress.XtraGrid.Columns.GridColumn colCodigo_Asesor;
         private DevExpress.XtraGrid.Columns.GridColumn colName_asesor;
     }
 }

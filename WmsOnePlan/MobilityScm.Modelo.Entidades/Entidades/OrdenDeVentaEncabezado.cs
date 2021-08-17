@@ -190,5 +190,9 @@ namespace MobilityScm.Modelo.Entidades
         public int TASK_PRIORITY { get; set; }
 
         public string PROJECT { get; set; }
+
+        public string ASESOR { get; set; }
+
+        public int CODIGO_ASESOR { get; set; }
     }
 }
