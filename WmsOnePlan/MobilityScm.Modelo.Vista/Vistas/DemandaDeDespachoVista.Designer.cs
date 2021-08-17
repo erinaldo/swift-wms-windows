@@ -1953,7 +1953,6 @@
             this.UiBtnImportarExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UiBtnImportarExcel.ImageOptions.LargeImage")));
             this.UiBtnImportarExcel.Name = "UiBtnImportarExcel";
             this.UiBtnImportarExcel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.UiBtnImportarExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.UiBtnImportarExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UiBtnImportarExcel_ItemClick);
             // 
             // barDockControlTop
