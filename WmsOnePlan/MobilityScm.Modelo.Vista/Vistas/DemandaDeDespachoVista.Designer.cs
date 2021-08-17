@@ -828,6 +828,7 @@
             this.repositoryItemCheckEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.colORDER_WEIGHT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaComponentesMasterPackFaltante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiGridControlSkusSinInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSkusSinInventario)).BeginInit();
@@ -4474,6 +4475,7 @@
             // UiVistaOrdenEncabezado
             // 
             this.UiVistaOrdenEncabezado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colORDER_WEIGHT,
             this.colCodigo_Asesor,
             this.colName_asesor,
             this.colEnEliminar,
@@ -4549,7 +4551,7 @@
             this.colCodigo_Asesor.FieldName = "CODIGO_ASESOR";
             this.colCodigo_Asesor.Name = "colCodigo_Asesor";
             this.colCodigo_Asesor.Visible = true;
-            this.colCodigo_Asesor.VisibleIndex = 1;
+            this.colCodigo_Asesor.VisibleIndex = 2;
             // 
             // colName_asesor
             // 
@@ -4557,7 +4559,7 @@
             this.colName_asesor.FieldName = "ASESOR";
             this.colName_asesor.Name = "colName_asesor";
             this.colName_asesor.Visible = true;
-            this.colName_asesor.VisibleIndex = 2;
+            this.colName_asesor.VisibleIndex = 3;
             // 
             // colEnEliminar
             // 
@@ -4581,7 +4583,7 @@
             this.UiColDarPrioridad.ColumnEdit = this.UiBotonDarPrioridadEncabezado;
             this.UiColDarPrioridad.Name = "UiColDarPrioridad";
             this.UiColDarPrioridad.Visible = true;
-            this.UiColDarPrioridad.VisibleIndex = 3;
+            this.UiColDarPrioridad.VisibleIndex = 4;
             // 
             // UiBotonDarPrioridadEncabezado
             // 
@@ -4600,7 +4602,7 @@
             this.UiColPrioridad.Name = "UiColPrioridad";
             this.UiColPrioridad.OptionsColumn.AllowEdit = false;
             this.UiColPrioridad.Visible = true;
-            this.UiColPrioridad.VisibleIndex = 4;
+            this.UiColPrioridad.VisibleIndex = 5;
             // 
             // colEnSALES_ORDER_ID
             // 
@@ -4611,7 +4613,7 @@
             this.colEnSALES_ORDER_ID.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "SALES_ORDER_ID", "{0}")});
             this.colEnSALES_ORDER_ID.Visible = true;
-            this.colEnSALES_ORDER_ID.VisibleIndex = 5;
+            this.colEnSALES_ORDER_ID.VisibleIndex = 6;
             // 
             // colEnDOC_SERIE
             // 
@@ -4620,7 +4622,7 @@
             this.colEnDOC_SERIE.Name = "colEnDOC_SERIE";
             this.colEnDOC_SERIE.OptionsColumn.AllowEdit = false;
             this.colEnDOC_SERIE.Visible = true;
-            this.colEnDOC_SERIE.VisibleIndex = 6;
+            this.colEnDOC_SERIE.VisibleIndex = 7;
             // 
             // colEnDOC_NUM
             // 
@@ -4637,7 +4639,7 @@
             this.colEnPOSTED_DATETIME.Name = "colEnPOSTED_DATETIME";
             this.colEnPOSTED_DATETIME.OptionsColumn.AllowEdit = false;
             this.colEnPOSTED_DATETIME.Visible = true;
-            this.colEnPOSTED_DATETIME.VisibleIndex = 7;
+            this.colEnPOSTED_DATETIME.VisibleIndex = 8;
             // 
             // colEnCLIENT_ID
             // 
@@ -4646,7 +4648,7 @@
             this.colEnCLIENT_ID.Name = "colEnCLIENT_ID";
             this.colEnCLIENT_ID.OptionsColumn.AllowEdit = false;
             this.colEnCLIENT_ID.Visible = true;
-            this.colEnCLIENT_ID.VisibleIndex = 8;
+            this.colEnCLIENT_ID.VisibleIndex = 9;
             // 
             // colName_customer
             // 
@@ -4656,17 +4658,17 @@
             this.colName_customer.OptionsColumn.AllowFocus = false;
             this.colName_customer.OptionsColumn.ReadOnly = true;
             this.colName_customer.Visible = true;
-            this.colName_customer.VisibleIndex = 9;
+            this.colName_customer.VisibleIndex = 10;
             // 
             // colEnTOTAL_AMOUNT
             // 
-            this.colEnTOTAL_AMOUNT.Caption = "Total";
+            this.colEnTOTAL_AMOUNT.Caption = "Monto Total";
             this.colEnTOTAL_AMOUNT.FieldName = "TOTAL_AMOUNT";
             this.colEnTOTAL_AMOUNT.Name = "colEnTOTAL_AMOUNT";
             this.colEnTOTAL_AMOUNT.OptionsColumn.AllowEdit = false;
             this.colEnTOTAL_AMOUNT.OptionsColumn.ReadOnly = true;
             this.colEnTOTAL_AMOUNT.Visible = true;
-            this.colEnTOTAL_AMOUNT.VisibleIndex = 10;
+            this.colEnTOTAL_AMOUNT.VisibleIndex = 11;
             // 
             // colEnCODE_ROUTE
             // 
@@ -4675,7 +4677,7 @@
             this.colEnCODE_ROUTE.Name = "colEnCODE_ROUTE";
             this.colEnCODE_ROUTE.OptionsColumn.AllowEdit = false;
             this.colEnCODE_ROUTE.Visible = true;
-            this.colEnCODE_ROUTE.VisibleIndex = 11;
+            this.colEnCODE_ROUTE.VisibleIndex = 12;
             // 
             // colEnLOGIN
             // 
@@ -4684,7 +4686,7 @@
             this.colEnLOGIN.Name = "colEnLOGIN";
             this.colEnLOGIN.OptionsColumn.AllowEdit = false;
             this.colEnLOGIN.Visible = true;
-            this.colEnLOGIN.VisibleIndex = 12;
+            this.colEnLOGIN.VisibleIndex = 13;
             // 
             // colEnCOMMENT
             // 
@@ -4693,7 +4695,7 @@
             this.colEnCOMMENT.Name = "colEnCOMMENT";
             this.colEnCOMMENT.OptionsColumn.AllowEdit = false;
             this.colEnCOMMENT.Visible = true;
-            this.colEnCOMMENT.VisibleIndex = 13;
+            this.colEnCOMMENT.VisibleIndex = 14;
             // 
             // colEnEXTERNAL_SOURCE_ID
             // 
@@ -4718,7 +4720,7 @@
             this.UiColFechaEntrega.Name = "UiColFechaEntrega";
             this.UiColFechaEntrega.OptionsColumn.AllowEdit = false;
             this.UiColFechaEntrega.Visible = true;
-            this.UiColFechaEntrega.VisibleIndex = 14;
+            this.UiColFechaEntrega.VisibleIndex = 15;
             // 
             // colSTATE_CODE
             // 
@@ -4727,7 +4729,7 @@
             this.colSTATE_CODE.Name = "colSTATE_CODE";
             this.colSTATE_CODE.OptionsColumn.AllowEdit = false;
             this.colSTATE_CODE.Visible = true;
-            this.colSTATE_CODE.VisibleIndex = 15;
+            this.colSTATE_CODE.VisibleIndex = 16;
             // 
             // colADDRESS_CUSTOMER
             // 
@@ -4743,7 +4745,7 @@
             this.UiColCodigoTipoDespacho.Name = "UiColCodigoTipoDespacho";
             this.UiColCodigoTipoDespacho.OptionsColumn.AllowEdit = false;
             this.UiColCodigoTipoDespacho.Visible = true;
-            this.UiColCodigoTipoDespacho.VisibleIndex = 16;
+            this.UiColCodigoTipoDespacho.VisibleIndex = 17;
             // 
             // UiColNombreTipoDespacho
             // 
@@ -4752,7 +4754,7 @@
             this.UiColNombreTipoDespacho.Name = "UiColNombreTipoDespacho";
             this.UiColNombreTipoDespacho.OptionsColumn.AllowEdit = false;
             this.UiColNombreTipoDespacho.Visible = true;
-            this.UiColNombreTipoDespacho.VisibleIndex = 17;
+            this.UiColNombreTipoDespacho.VisibleIndex = 18;
             // 
             // UiColDiasMinFecExpiracion
             // 
@@ -4761,7 +4763,7 @@
             this.UiColDiasMinFecExpiracion.Name = "UiColDiasMinFecExpiracion";
             this.UiColDiasMinFecExpiracion.OptionsColumn.AllowEdit = false;
             this.UiColDiasMinFecExpiracion.Visible = true;
-            this.UiColDiasMinFecExpiracion.VisibleIndex = 18;
+            this.UiColDiasMinFecExpiracion.VisibleIndex = 19;
             // 
             // UiColBaseEntry
             // 
@@ -4769,7 +4771,7 @@
             this.UiColBaseEntry.FieldName = "BASE_ENTRY";
             this.UiColBaseEntry.Name = "UiColBaseEntry";
             this.UiColBaseEntry.Visible = true;
-            this.UiColBaseEntry.VisibleIndex = 19;
+            this.UiColBaseEntry.VisibleIndex = 20;
             // 
             // UiColBaseRef
             // 
@@ -4777,7 +4779,7 @@
             this.UiColBaseRef.FieldName = "BASE_REF";
             this.UiColBaseRef.Name = "UiColBaseRef";
             this.UiColBaseRef.Visible = true;
-            this.UiColBaseRef.VisibleIndex = 20;
+            this.UiColBaseRef.VisibleIndex = 21;
             // 
             // UiCheckEditUsaLineaPickingConsolidado
             // 
@@ -8267,6 +8269,14 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(409, 30);
             this.layoutControlGroup1.Tag = "LayoutRootGroupForRestore";
             // 
+            // colORDER_WEIGHT
+            // 
+            this.colORDER_WEIGHT.Caption = "Peso Total";
+            this.colORDER_WEIGHT.FieldName = "ORDER_WEIGHT";
+            this.colORDER_WEIGHT.Name = "colORDER_WEIGHT";
+            this.colORDER_WEIGHT.Visible = true;
+            this.colORDER_WEIGHT.VisibleIndex = 1;
+            // 
             // DemandaDeDespachoVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9176,5 +9186,6 @@
         private DevExpress.XtraBars.BarButtonItem UiBtnImportarExcel;
         private DevExpress.XtraGrid.Columns.GridColumn colCodigo_Asesor;
         private DevExpress.XtraGrid.Columns.GridColumn colName_asesor;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_WEIGHT;
     }
 }
