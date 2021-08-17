@@ -2212,5 +2212,10 @@ namespace MobilityScm.Modelo.Vistas
                 InteraccionConUsuarioServicio.MensajeErrorDialogo(ex.Message);
             }
         }
+
+        private void UiBtnImportarExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UiVistaOrdenEncabezado.ShowPrintPreview();
+        }
     }
 }
