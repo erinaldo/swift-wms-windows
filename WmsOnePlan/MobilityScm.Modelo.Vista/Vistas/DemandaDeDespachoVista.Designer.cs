@@ -484,6 +484,7 @@
             this.UiControlSplitOrdenes = new DevExpress.XtraEditors.SplitContainerControl();
             this.UiContenerdoVistaOrdenEncabezado = new DevExpress.XtraGrid.GridControl();
             this.UiVistaOrdenEncabezado = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCENTRO_COSTO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colORDER_WEIGHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodigo_Asesor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName_asesor = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -829,7 +830,6 @@
             this.repositoryItemCheckEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.colCENTRO_COSTO = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaComponentesMasterPackFaltante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiGridControlSkusSinInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSkusSinInventario)).BeginInit();
@@ -4546,6 +4546,14 @@
             this.UiVistaOrdenEncabezado.BeforeLeaveRow += new DevExpress.XtraGrid.Views.Base.RowAllowEventHandler(this.UiVistaOrdenEncabezado_BeforeLeaveRow);
             this.UiVistaOrdenEncabezado.ColumnFilterChanged += new System.EventHandler(this.UiVistaOrdenEncabezado_ColumnFilterChanged);
             this.UiVistaOrdenEncabezado.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UiVistaOrdenEncabezado_MouseUp);
+            // 
+            // colCENTRO_COSTO
+            // 
+            this.colCENTRO_COSTO.Caption = "Centro Costo";
+            this.colCENTRO_COSTO.FieldName = "CENTRO_COSTO";
+            this.colCENTRO_COSTO.Name = "colCENTRO_COSTO";
+            this.colCENTRO_COSTO.Visible = true;
+            this.colCENTRO_COSTO.VisibleIndex = 1;
             // 
             // colORDER_WEIGHT
             // 
@@ -8278,14 +8286,6 @@
             this.layoutControlGroup1.Name = "LayoutRootGroupForRestore";
             this.layoutControlGroup1.Size = new System.Drawing.Size(409, 30);
             this.layoutControlGroup1.Tag = "LayoutRootGroupForRestore";
-            // 
-            // colCENTRO_COSTO
-            // 
-            this.colCENTRO_COSTO.Caption = "Centro Costo";
-            this.colCENTRO_COSTO.FieldName = "CENTRO_COSTO";
-            this.colCENTRO_COSTO.Name = "colCENTRO_COSTO";
-            this.colCENTRO_COSTO.Visible = true;
-            this.colCENTRO_COSTO.VisibleIndex = 1;
             // 
             // DemandaDeDespachoVista
             // 
