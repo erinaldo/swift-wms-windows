@@ -194,5 +194,7 @@ namespace MobilityScm.Modelo.Entidades
         public string ASESOR { get; set; }
 
         public int CODIGO_ASESOR { get; set; }
+
+        public string CENTRO_COSTO { get; set; }
     }
 }
