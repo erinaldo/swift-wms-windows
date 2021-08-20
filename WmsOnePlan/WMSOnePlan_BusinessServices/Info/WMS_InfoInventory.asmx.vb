@@ -1122,7 +1122,7 @@ Public Class WMS_InfoInventory
 
         Try
             Dim command = New SqlCommand
-            command.Parameters.Add(New SqlParameter("@WAREHOUSE_ID", SqlDbType.VarChar, 25)).Value = pDistributionCenterId
+            command.Parameters.Add(New SqlParameter("@DISTRIBUTION_CENTER_ID", SqlDbType.VarChar, 25)).Value = pDistributionCenterId
             command.CommandText = DefaultSchema + "[OP_WMS_SP_GET_LOCATION_FOR_DISPATCH]"
             command.CommandType = CommandType.StoredProcedure
             command.Connection = sqldb_conexion

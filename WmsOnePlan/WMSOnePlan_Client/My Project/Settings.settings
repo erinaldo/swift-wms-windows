@@ -77,14 +77,14 @@
     <Setting Name="PaseDeSalidaAlt" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="Schema" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ferco</Value>
+    </Setting>
     <Setting Name="WSHOST" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://10.240.29.104:8090</Value>
     </Setting>
     <Setting Name="WMSOnePlan_Client_OnePlanServices_Security_WMS_Security" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://10.240.29.104:8090</Value>
-    </Setting>
-    <Setting Name="Schema" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">ferco</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Server=10.240.29.104;Database=OP_WMS_FERCO_GTP;User=sa;Pwd=F3rc0</Value>

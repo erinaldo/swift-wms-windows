@@ -81,6 +81,7 @@ namespace MobilityScm.Modelo.Controladores
             _vista.UsuarioDeseaObtenerDetalleOlaPicking += _vista_UsuarioDeseaObtenerDetalleOlaPicking;
             _vista.UsuarioDeseaCambiarLicenciaEnLineaDeTareaDePicking += _vista_UsuarioDeseaCambiarLicenciaEnLineaDeTareaDePicking;
             _vista.UsuarioDeseaReabrirTareaRecepcion += _vista_UsuarioDeseaReabrirTareaRecepcion;
+            _vista.UsuarioDeseaCrearTareaDeRectificacionMP += _vista_UsuarioDeseaCreartareaDerectificacionMPConfirmado;
         }
 
         private void _vista_UsuarioDeseaReabrirTareaRecepcion(object sender, TareaArgumento e)
@@ -222,6 +223,27 @@ namespace MobilityScm.Modelo.Controladores
                 {
                     _vista.DebeMostrarBotonParaLiberarTransaccion = false;
                     InteraccionConUsuarioServicio.MensajeExito("Operación de liberación de transaccion exitosa", true);
+                }
+                else
+                {
+                    InteraccionConUsuarioServicio.Mensaje(resultado.Mensaje);
+                }
+            }
+            catch (Exception ex)
+            {
+                InteraccionConUsuarioServicio.Mensaje(ex.Message);
+            }
+        }
+
+        private void _vista_UsuarioDeseaCreartareaDerectificacionMPConfirmado(object sender, TareaArgumento e)
+        {
+            try
+            {
+                Operacion resultado = OrdenDeCompraServicio.CrearTareaRectificacionMP(e);
+                if (resultado.Resultado == ResultadoOperacionTipo.Exito)
+                {
+                    _vista.DebeMostrarBotonCrearTareaDeRectificacion = false;
+                    InteraccionConUsuarioServicio.MensajeExito("Tareas creadas exitosamente", true);
                 }
                 else
                 {

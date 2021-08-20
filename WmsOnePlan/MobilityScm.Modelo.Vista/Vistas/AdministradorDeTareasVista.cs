@@ -71,6 +71,7 @@ namespace MobilityScm.Modelo.Vistas
         public event EventHandler<TareaArgumento> UsuarioDeseaObtenerDetalleOlaPicking;
         public event EventHandler<TareaArgumento> UsuarioDeseaCambiarLicenciaEnLineaDeTareaDePicking;
         public event EventHandler<TareaArgumento> UsuarioDeseaReabrirTareaRecepcion;
+        public event EventHandler<TareaArgumento> UsuarioDeseaCrearTareaDeRectificacionMP;
 
         #endregion
 
@@ -96,7 +97,7 @@ namespace MobilityScm.Modelo.Vistas
 
         public bool DebeMostrarBotonParaLiberarTransaccion
         {
-            get { return UIBotonLiberarInventario.Visibility == DevExpress.XtraBars.BarItemVisibility.Always; }
+            get { return UIBotonLiberarTransaccion.Visibility == DevExpress.XtraBars.BarItemVisibility.Always; }
             set
             {
                 if (value)
@@ -106,6 +107,22 @@ namespace MobilityScm.Modelo.Vistas
                 else
                 {
                     UIBotonLiberarTransaccion.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+            }
+        }
+
+        public bool DebeMostrarBotonCrearTareaDeRectificacion
+        {
+            get { return UIBotonCrearTareaRectificacion.Visibility == DevExpress.XtraBars.BarItemVisibility.Always; }
+            set
+            {
+                if (value)
+                {
+                    UIBotonCrearTareaRectificacion.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else
+                {
+                    UIBotonCrearTareaRectificacion.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 }
             }
         }
@@ -263,6 +280,8 @@ namespace MobilityScm.Modelo.Vistas
         public bool UsuarioSeleccionoVistaTareaDetalleCompletaDeRecepcion { get; set; }
 
         public bool UsuarioSeleccionoVistaEncabezadoDetalladoCompleta { get; set; }
+
+        public bool TieneKitsIncompletos { get; set; }
 
         private Series selectedSeries { get; set; }
 
@@ -1374,6 +1393,13 @@ namespace MobilityScm.Modelo.Vistas
                 UsuarioDeseaObtenerDetalleDeTarea?.Invoke(null, new TareaArgumento { Tarea = tarea, Login = InteraccionConUsuarioServicio.ObtenerUsuario() });
                 UiColCantidadDocumento.Visible = mostrarColumnasComparacion;
                 UiColCantidadDocumento.OptionsColumn.ShowInCustomizationForm = mostrarColumnasComparacion;
+                if ((TareaDetalle.Count(x => x.FROM_MASTERPACK == 1 && x.QTY != 0)) > 0 && tarea.SOURCE_TYPE == "SALES_ORDER" && tarea.IS_AUTHORIZED_DESCRIPTION != "ENVIADA")
+                {
+                    TieneKitsIncompletos = true;
+                }else
+                {
+                    TieneKitsIncompletos = false;
+                }
 
             }
             catch (Exception exception)
@@ -1605,6 +1631,7 @@ namespace MobilityScm.Modelo.Vistas
                     && (t.TASK_SUBTYPE.ToUpper().Equals("TAREA_CONTEO_FISICO") || t.IS_FROM_SONDA.ToUpper().Equals("SI") || t.TASK_SUBTYPE == "RECEPCION_TRASLADO" || t.IS_FROM_ERP.ToUpper().Equals("SI"))
                     && (t.IS_COMPLETED.ToUpper().Equals("COMPLETA") || (t.TASK_SUBTYPE.ToUpper().Equals("TAREA_CONTEO_FISICO") && t.STATUS.ToUpper().Equals("COMPLETA")))
                     && t.DetalleErp.Exists(td => td.IS_POSTED_ERP != 1 || td.ATTEMPTED_WITH_ERROR == td.MAX_ATTEMPTS)
+                    //&& !TieneKitsIncompletos
                     )) return;
                 UsuarioDeseaAutorizarDocumentoErp?.Invoke(null, null);
             }
@@ -2008,6 +2035,15 @@ namespace MobilityScm.Modelo.Vistas
                     {
                         DebeMostrarBotonParaLiberarTransaccion = false;
                     }
+
+                    if (TieneKitsIncompletos)
+                    {
+                        DebeMostrarBotonCrearTareaDeRectificacion = true;
+                    }
+                    else
+                    {
+                        DebeMostrarBotonCrearTareaDeRectificacion = false;
+                    }
                     UsuarioDeseaObtenerDetalleOlaPicking?.Invoke(sender, new TareaArgumento { Tarea = registroConfirmacionRecepcion });
                     UiContenedorTab.SelectedTabPageIndex = 4;
                     UIBtnReAbrirTask.Enabled = false;
@@ -2362,6 +2398,43 @@ namespace MobilityScm.Modelo.Vistas
                 }
 
                 UsuarioDeseaLiberarTransaccionConfirmado?.Invoke(sender, new TareaArgumento { taskId = (int)registroConfirmacionRecepcion.SERIAL_NUMBER, Login = InteraccionConUsuarioServicio.ObtenerUsuario(), reference = referencia.EditValue?.ToString(), reason = configuracion.PARAM_NAME });
+            }
+            catch (Exception ex)
+            {
+                InteraccionConUsuarioServicio.Mensaje(ex.Message);
+            }
+        }
+
+        private void UIBotonCrearTareaRectificacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                 var respuesta = MessageBox.Show(@"Se creará una tarea de recepción para devolver el material y se restaran las licencias de despacho", @"Operación exitosa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (result == DialogResult.Yes)
+                //{
+                //    Process.Start(path);
+                //}
+
+                if (respuesta != DialogResult.Yes) return;
+                //var layout = (LayoutControl)popup.Controls["Layout"];
+                //if (layout == null) return;
+                //var nuevaPrioridad = (TextEdit)layout.Controls["Listado"];
+                //var prioridad = nuevaPrioridad.EditValue;
+                //if (prioridad == null)
+                //{
+                //    InteraccionConUsuarioServicio.Alerta("Debe seleccionar una razón");
+                //    return;
+                //}
+                //var referencia = (TextEdit)layout.Controls["txtReference"];
+
+                //var configuracion = RazonesDetalleLiberarInventarioConfirmado.FirstOrDefault(p => Equals(p.PARAM_NAME, prioridad));
+                //if (configuracion == null)
+                //{
+                //    InteraccionConUsuarioServicio.Alerta("Debe seleccionar una razón");
+                //    return;
+                //}
+
+                UsuarioDeseaCrearTareaDeRectificacionMP?.Invoke(sender, new TareaArgumento { taskId = (int)registroConfirmacionRecepcion.SERIAL_NUMBER, WAVE_PICKING_ID = (int)registroConfirmacionRecepcion.WAVE_PICKING_ID, Login = InteraccionConUsuarioServicio.ObtenerUsuario()});
             }
             catch (Exception ex)
             {
