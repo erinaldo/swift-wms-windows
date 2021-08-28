@@ -1119,7 +1119,7 @@
             this.UiGridControlSkusSinInventario.Name = "UiGridControlSkusSinInventario";
             this.UiGridControlSkusSinInventario.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryEsMasterPackCheck});
-            this.UiGridControlSkusSinInventario.Size = new System.Drawing.Size(140, 569);
+            this.UiGridControlSkusSinInventario.Size = new System.Drawing.Size(403, 318);
             this.UiGridControlSkusSinInventario.TabIndex = 1;
             this.UiGridControlSkusSinInventario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaSkusSinInventario,
@@ -1561,7 +1561,7 @@
             this.UiRatingVehiculo,
             this.UiCheckFlotillaPropia});
             this.UiContenedorVehiculos.ShowOnlyPredefinedDetails = true;
-            this.UiContenedorVehiculos.Size = new System.Drawing.Size(508, 615);
+            this.UiContenedorVehiculos.Size = new System.Drawing.Size(403, 318);
             this.UiContenedorVehiculos.TabIndex = 0;
             this.UiContenedorVehiculos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaVehiculos,
@@ -2332,7 +2332,7 @@
             this.repositoryItemRatingControl1,
             this.repositoryItemCheckEdit6});
             this.gridControl7.ShowOnlyPredefinedDetails = true;
-            this.gridControl7.Size = new System.Drawing.Size(419, 606);
+            this.gridControl7.Size = new System.Drawing.Size(398, 588);
             this.gridControl7.TabIndex = 0;
             this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView21,
@@ -2815,7 +2815,7 @@
             this.UiGridControlOlas.MainView = this.UiVistaOlas;
             this.UiGridControlOlas.MenuManager = this.UiMenuDemandaDeDespacho;
             this.UiGridControlOlas.Name = "UiGridControlOlas";
-            this.UiGridControlOlas.Size = new System.Drawing.Size(424, 545);
+            this.UiGridControlOlas.Size = new System.Drawing.Size(403, 294);
             this.UiGridControlOlas.TabIndex = 15;
             this.UiGridControlOlas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaOlas,
@@ -4028,7 +4028,7 @@
             this.UiPaginaInventario.Controls.Add(this.UiGridControlSkusSinInventario);
             this.UiPaginaInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaInventario.ImageOptions.Image")));
             this.UiPaginaInventario.Name = "UiPaginaInventario";
-            this.UiPaginaInventario.Size = new System.Drawing.Size(140, 569);
+            this.UiPaginaInventario.Size = new System.Drawing.Size(403, 318);
             // 
             // UiPaginaTonoCalibre
             // 
@@ -4037,7 +4037,7 @@
             this.UiPaginaTonoCalibre.Controls.Add(this.UiLblTonosYCalibres);
             this.UiPaginaTonoCalibre.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaTonoCalibre.ImageOptions.Image")));
             this.UiPaginaTonoCalibre.Name = "UiPaginaTonoCalibre";
-            this.UiPaginaTonoCalibre.Size = new System.Drawing.Size(424, 536);
+            this.UiPaginaTonoCalibre.Size = new System.Drawing.Size(403, 318);
             // 
             // UiGridControlTonosYCalibres
             // 
@@ -4048,7 +4048,7 @@
             this.UiGridControlTonosYCalibres.Name = "UiGridControlTonosYCalibres";
             this.UiGridControlTonosYCalibres.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.UiGridControlTonosYCalibres.Size = new System.Drawing.Size(424, 536);
+            this.UiGridControlTonosYCalibres.Size = new System.Drawing.Size(403, 318);
             this.UiGridControlTonosYCalibres.TabIndex = 4;
             this.UiGridControlTonosYCalibres.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaTonosYCalibres,
@@ -4229,7 +4229,7 @@
             this.UiPaginaVehiculos.Controls.Add(this.UiContenedorVehiculos);
             this.UiPaginaVehiculos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaVehiculos.ImageOptions.Image")));
             this.UiPaginaVehiculos.Name = "UiPaginaVehiculos";
-            this.UiPaginaVehiculos.Size = new System.Drawing.Size(508, 615);
+            this.UiPaginaVehiculos.Size = new System.Drawing.Size(403, 318);
             // 
             // UiPaginaInventarioDisponible
             // 
@@ -4237,7 +4237,7 @@
             this.UiPaginaInventarioDisponible.Controls.Add(this.UiGridControlInvnetarioDisponible);
             this.UiPaginaInventarioDisponible.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaInventarioDisponible.ImageOptions.Image")));
             this.UiPaginaInventarioDisponible.Name = "UiPaginaInventarioDisponible";
-            this.UiPaginaInventarioDisponible.Size = new System.Drawing.Size(336, 569);
+            this.UiPaginaInventarioDisponible.Size = new System.Drawing.Size(403, 318);
             // 
             // UiGridControlInvnetarioDisponible
             // 
@@ -4246,7 +4246,7 @@
             this.UiGridControlInvnetarioDisponible.MainView = this.UIGridViewInventarioDisponible;
             this.UiGridControlInvnetarioDisponible.MenuManager = this.UiMenuDemandaDeDespacho;
             this.UiGridControlInvnetarioDisponible.Name = "UiGridControlInvnetarioDisponible";
-            this.UiGridControlInvnetarioDisponible.Size = new System.Drawing.Size(336, 569);
+            this.UiGridControlInvnetarioDisponible.Size = new System.Drawing.Size(403, 318);
             this.UiGridControlInvnetarioDisponible.TabIndex = 0;
             this.UiGridControlInvnetarioDisponible.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UIGridViewInventarioDisponible});
@@ -4329,7 +4329,7 @@
             this.UiPaginaOlasDePiking.Controls.Add(this.barDockControl5);
             this.UiPaginaOlasDePiking.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaOlasDePiking.ImageOptions.Image")));
             this.UiPaginaOlasDePiking.Name = "UiPaginaOlasDePiking";
-            this.UiPaginaOlasDePiking.Size = new System.Drawing.Size(424, 569);
+            this.UiPaginaOlasDePiking.Size = new System.Drawing.Size(403, 318);
             // 
             // barDockControl7
             // 
@@ -4337,7 +4337,7 @@
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl7.Location = new System.Drawing.Point(0, 24);
             this.barDockControl7.Manager = this.barManager2;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 545);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 294);
             // 
             // barManager2
             // 
@@ -4413,23 +4413,23 @@
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl5.Location = new System.Drawing.Point(0, 0);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Size = new System.Drawing.Size(424, 24);
+            this.barDockControl5.Size = new System.Drawing.Size(403, 24);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 569);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 318);
             this.barDockControl6.Manager = this.barManager2;
-            this.barDockControl6.Size = new System.Drawing.Size(424, 0);
+            this.barDockControl6.Size = new System.Drawing.Size(403, 0);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(424, 24);
+            this.barDockControl8.Location = new System.Drawing.Point(403, 24);
             this.barDockControl8.Manager = this.barManager2;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 545);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 294);
             // 
             // UiControlSplitOrdenes
             // 
@@ -5007,11 +5007,11 @@
             // UiColPesoTotalConsolidado
             // 
             this.UiColPesoTotalConsolidado.Caption = "Peso total";
-            this.UiColPesoTotalConsolidado.FieldName = "TOTAL_WEIGHT";
+            this.UiColPesoTotalConsolidado.FieldName = "LINE_WEIGHT";
             this.UiColPesoTotalConsolidado.Name = "UiColPesoTotalConsolidado";
             this.UiColPesoTotalConsolidado.OptionsColumn.AllowEdit = false;
             this.UiColPesoTotalConsolidado.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_WEIGHT", "{0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LINE_WEIGHT", "{0:0.##}")});
             this.UiColPesoTotalConsolidado.Visible = true;
             this.UiColPesoTotalConsolidado.VisibleIndex = 14;
             // 
@@ -5385,10 +5385,10 @@
             // UiColTotalWeight
             // 
             this.UiColTotalWeight.Caption = "Peso Total";
-            this.UiColTotalWeight.FieldName = "TOTAL_WEIGHT";
+            this.UiColTotalWeight.FieldName = "LINE_WEIGHT";
             this.UiColTotalWeight.Name = "UiColTotalWeight";
             this.UiColTotalWeight.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_WEIGHT", "{0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LINE_WEIGHT", "{0:0.##}")});
             this.UiColTotalWeight.Visible = true;
             this.UiColTotalWeight.VisibleIndex = 12;
             this.UiColTotalWeight.Width = 37;
@@ -7576,7 +7576,7 @@
             this.navigationPage7.Controls.Add(this.gridControl7);
             this.navigationPage7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage7.ImageOptions.Image")));
             this.navigationPage7.Name = "navigationPage7";
-            this.navigationPage7.Size = new System.Drawing.Size(419, 606);
+            this.navigationPage7.Size = new System.Drawing.Size(398, 588);
             // 
             // splitContainerControl4
             // 
