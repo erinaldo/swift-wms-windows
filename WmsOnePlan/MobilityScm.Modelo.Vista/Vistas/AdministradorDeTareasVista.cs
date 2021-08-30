@@ -2027,14 +2027,14 @@ namespace MobilityScm.Modelo.Vistas
                 }
                 else if (registroConfirmacionRecepcion.TASK_TYPE == "TAREA_PICKING")
                 {
-                    if (registroConfirmacionRecepcion.SOURCE_TYPE == "TRANSFER_REQUEST" && registroConfirmacionRecepcion.IS_COMPLETED == "COMPLETA" && registroConfirmacionRecepcion.IS_FROM_ERP == "Si" && (registroConfirmacionRecepcion.STATUS_POSTED_ERP == "Autorizada" || registroConfirmacionRecepcion.STATUS_POSTED_ERP == "Fallido"))
-                    {
-                        DebeMostrarBotonParaLiberarTransaccion = true;
-                    }
-                    else
-                    {
-                        DebeMostrarBotonParaLiberarTransaccion = false;
-                    }
+                    //if (registroConfirmacionRecepcion.SOURCE_TYPE == "SO - ERP" && registroConfirmacionRecepcion.IS_COMPLETED == "COMPLETA" && registroConfirmacionRecepcion.IS_FROM_ERP == "Si" && (registroConfirmacionRecepcion.STATUS_POSTED_ERP == "Autorizada" || registroConfirmacionRecepcion.STATUS_POSTED_ERP == "Fallido"))
+                    //{
+                    //    DebeMostrarBotonParaLiberarTransaccion = true;
+                    //}
+                    //else
+                    //{
+                    //    DebeMostrarBotonParaLiberarTransaccion = false;
+                    //}
 
                     if (TieneKitsIncompletos)
                     {

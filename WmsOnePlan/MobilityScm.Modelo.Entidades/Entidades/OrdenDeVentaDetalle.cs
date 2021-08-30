@@ -25,6 +25,20 @@ namespace MobilityScm.Modelo.Entidades
         public decimal QTY_PENDING { get; set; }
         public decimal PRICE { get; set; }
         public decimal TOTAL_WEIGHT { get; set; }
+        public decimal LINE_WEIGHT
+        {
+            get
+            {
+                if (MATERIAL_WEIGHT == 0) return 0;
+                return MATERIAL_WEIGHT * QTY; ;
+            }
+            set
+            {
+                if (value < 0) throw new ArgumentOutOfRangeException(nameof(value));
+                LINE_WEIGHT = value;
+            }
+        }
+
         public decimal DISCOUNT { get; set; }
 
         public decimal TOTAL_LINE { get; set; }

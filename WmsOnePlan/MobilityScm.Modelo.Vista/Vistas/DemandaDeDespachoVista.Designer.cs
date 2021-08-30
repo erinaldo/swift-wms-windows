@@ -484,6 +484,10 @@
             this.UiControlSplitOrdenes = new DevExpress.XtraEditors.SplitContainerControl();
             this.UiContenerdoVistaOrdenEncabezado = new DevExpress.XtraGrid.GridControl();
             this.UiVistaOrdenEncabezado = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCENTRO_COSTO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colORDER_WEIGHT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCodigo_Asesor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName_asesor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEnEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiBotonEliminarEncabezado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.UiColDarPrioridad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1115,7 +1119,7 @@
             this.UiGridControlSkusSinInventario.Name = "UiGridControlSkusSinInventario";
             this.UiGridControlSkusSinInventario.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryEsMasterPackCheck});
-            this.UiGridControlSkusSinInventario.Size = new System.Drawing.Size(140, 569);
+            this.UiGridControlSkusSinInventario.Size = new System.Drawing.Size(403, 318);
             this.UiGridControlSkusSinInventario.TabIndex = 1;
             this.UiGridControlSkusSinInventario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaSkusSinInventario,
@@ -1557,7 +1561,7 @@
             this.UiRatingVehiculo,
             this.UiCheckFlotillaPropia});
             this.UiContenedorVehiculos.ShowOnlyPredefinedDetails = true;
-            this.UiContenedorVehiculos.Size = new System.Drawing.Size(508, 615);
+            this.UiContenedorVehiculos.Size = new System.Drawing.Size(403, 318);
             this.UiContenedorVehiculos.TabIndex = 0;
             this.UiContenedorVehiculos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaVehiculos,
@@ -1953,7 +1957,6 @@
             this.UiBtnImportarExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UiBtnImportarExcel.ImageOptions.LargeImage")));
             this.UiBtnImportarExcel.Name = "UiBtnImportarExcel";
             this.UiBtnImportarExcel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.UiBtnImportarExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.UiBtnImportarExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UiBtnImportarExcel_ItemClick);
             // 
             // barDockControlTop
@@ -2329,7 +2332,7 @@
             this.repositoryItemRatingControl1,
             this.repositoryItemCheckEdit6});
             this.gridControl7.ShowOnlyPredefinedDetails = true;
-            this.gridControl7.Size = new System.Drawing.Size(419, 606);
+            this.gridControl7.Size = new System.Drawing.Size(398, 588);
             this.gridControl7.TabIndex = 0;
             this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView21,
@@ -2812,7 +2815,7 @@
             this.UiGridControlOlas.MainView = this.UiVistaOlas;
             this.UiGridControlOlas.MenuManager = this.UiMenuDemandaDeDespacho;
             this.UiGridControlOlas.Name = "UiGridControlOlas";
-            this.UiGridControlOlas.Size = new System.Drawing.Size(424, 545);
+            this.UiGridControlOlas.Size = new System.Drawing.Size(403, 294);
             this.UiGridControlOlas.TabIndex = 15;
             this.UiGridControlOlas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaOlas,
@@ -4025,7 +4028,7 @@
             this.UiPaginaInventario.Controls.Add(this.UiGridControlSkusSinInventario);
             this.UiPaginaInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaInventario.ImageOptions.Image")));
             this.UiPaginaInventario.Name = "UiPaginaInventario";
-            this.UiPaginaInventario.Size = new System.Drawing.Size(140, 569);
+            this.UiPaginaInventario.Size = new System.Drawing.Size(403, 318);
             // 
             // UiPaginaTonoCalibre
             // 
@@ -4034,7 +4037,7 @@
             this.UiPaginaTonoCalibre.Controls.Add(this.UiLblTonosYCalibres);
             this.UiPaginaTonoCalibre.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaTonoCalibre.ImageOptions.Image")));
             this.UiPaginaTonoCalibre.Name = "UiPaginaTonoCalibre";
-            this.UiPaginaTonoCalibre.Size = new System.Drawing.Size(424, 536);
+            this.UiPaginaTonoCalibre.Size = new System.Drawing.Size(403, 318);
             // 
             // UiGridControlTonosYCalibres
             // 
@@ -4045,7 +4048,7 @@
             this.UiGridControlTonosYCalibres.Name = "UiGridControlTonosYCalibres";
             this.UiGridControlTonosYCalibres.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.UiGridControlTonosYCalibres.Size = new System.Drawing.Size(424, 536);
+            this.UiGridControlTonosYCalibres.Size = new System.Drawing.Size(403, 318);
             this.UiGridControlTonosYCalibres.TabIndex = 4;
             this.UiGridControlTonosYCalibres.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaTonosYCalibres,
@@ -4226,7 +4229,7 @@
             this.UiPaginaVehiculos.Controls.Add(this.UiContenedorVehiculos);
             this.UiPaginaVehiculos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaVehiculos.ImageOptions.Image")));
             this.UiPaginaVehiculos.Name = "UiPaginaVehiculos";
-            this.UiPaginaVehiculos.Size = new System.Drawing.Size(508, 615);
+            this.UiPaginaVehiculos.Size = new System.Drawing.Size(403, 318);
             // 
             // UiPaginaInventarioDisponible
             // 
@@ -4234,7 +4237,7 @@
             this.UiPaginaInventarioDisponible.Controls.Add(this.UiGridControlInvnetarioDisponible);
             this.UiPaginaInventarioDisponible.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaInventarioDisponible.ImageOptions.Image")));
             this.UiPaginaInventarioDisponible.Name = "UiPaginaInventarioDisponible";
-            this.UiPaginaInventarioDisponible.Size = new System.Drawing.Size(336, 569);
+            this.UiPaginaInventarioDisponible.Size = new System.Drawing.Size(403, 318);
             // 
             // UiGridControlInvnetarioDisponible
             // 
@@ -4243,7 +4246,7 @@
             this.UiGridControlInvnetarioDisponible.MainView = this.UIGridViewInventarioDisponible;
             this.UiGridControlInvnetarioDisponible.MenuManager = this.UiMenuDemandaDeDespacho;
             this.UiGridControlInvnetarioDisponible.Name = "UiGridControlInvnetarioDisponible";
-            this.UiGridControlInvnetarioDisponible.Size = new System.Drawing.Size(336, 569);
+            this.UiGridControlInvnetarioDisponible.Size = new System.Drawing.Size(403, 318);
             this.UiGridControlInvnetarioDisponible.TabIndex = 0;
             this.UiGridControlInvnetarioDisponible.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UIGridViewInventarioDisponible});
@@ -4326,7 +4329,7 @@
             this.UiPaginaOlasDePiking.Controls.Add(this.barDockControl5);
             this.UiPaginaOlasDePiking.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiPaginaOlasDePiking.ImageOptions.Image")));
             this.UiPaginaOlasDePiking.Name = "UiPaginaOlasDePiking";
-            this.UiPaginaOlasDePiking.Size = new System.Drawing.Size(424, 569);
+            this.UiPaginaOlasDePiking.Size = new System.Drawing.Size(403, 318);
             // 
             // barDockControl7
             // 
@@ -4334,7 +4337,7 @@
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl7.Location = new System.Drawing.Point(0, 24);
             this.barDockControl7.Manager = this.barManager2;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 545);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 294);
             // 
             // barManager2
             // 
@@ -4410,23 +4413,23 @@
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl5.Location = new System.Drawing.Point(0, 0);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Size = new System.Drawing.Size(424, 24);
+            this.barDockControl5.Size = new System.Drawing.Size(403, 24);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 569);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 318);
             this.barDockControl6.Manager = this.barManager2;
-            this.barDockControl6.Size = new System.Drawing.Size(424, 0);
+            this.barDockControl6.Size = new System.Drawing.Size(403, 0);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(424, 24);
+            this.barDockControl8.Location = new System.Drawing.Point(403, 24);
             this.barDockControl8.Manager = this.barManager2;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 545);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 294);
             // 
             // UiControlSplitOrdenes
             // 
@@ -4473,6 +4476,10 @@
             // UiVistaOrdenEncabezado
             // 
             this.UiVistaOrdenEncabezado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCENTRO_COSTO,
+            this.colORDER_WEIGHT,
+            this.colCodigo_Asesor,
+            this.colName_asesor,
             this.colEnEliminar,
             this.UiColDarPrioridad,
             this.UiColPrioridad,
@@ -4540,6 +4547,38 @@
             this.UiVistaOrdenEncabezado.ColumnFilterChanged += new System.EventHandler(this.UiVistaOrdenEncabezado_ColumnFilterChanged);
             this.UiVistaOrdenEncabezado.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UiVistaOrdenEncabezado_MouseUp);
             // 
+            // colCENTRO_COSTO
+            // 
+            this.colCENTRO_COSTO.Caption = "Centro Costo";
+            this.colCENTRO_COSTO.FieldName = "CENTRO_COSTO";
+            this.colCENTRO_COSTO.Name = "colCENTRO_COSTO";
+            this.colCENTRO_COSTO.Visible = true;
+            this.colCENTRO_COSTO.VisibleIndex = 1;
+            // 
+            // colORDER_WEIGHT
+            // 
+            this.colORDER_WEIGHT.Caption = "Peso Total";
+            this.colORDER_WEIGHT.FieldName = "ORDER_WEIGHT";
+            this.colORDER_WEIGHT.Name = "colORDER_WEIGHT";
+            this.colORDER_WEIGHT.Visible = true;
+            this.colORDER_WEIGHT.VisibleIndex = 2;
+            // 
+            // colCodigo_Asesor
+            // 
+            this.colCodigo_Asesor.Caption = "CodigoAsesor";
+            this.colCodigo_Asesor.FieldName = "CODIGO_ASESOR";
+            this.colCodigo_Asesor.Name = "colCodigo_Asesor";
+            this.colCodigo_Asesor.Visible = true;
+            this.colCodigo_Asesor.VisibleIndex = 3;
+            // 
+            // colName_asesor
+            // 
+            this.colName_asesor.Caption = "Asesor";
+            this.colName_asesor.FieldName = "ASESOR";
+            this.colName_asesor.Name = "colName_asesor";
+            this.colName_asesor.Visible = true;
+            this.colName_asesor.VisibleIndex = 4;
+            // 
             // colEnEliminar
             // 
             this.colEnEliminar.Caption = "Eliminar";
@@ -4562,7 +4601,7 @@
             this.UiColDarPrioridad.ColumnEdit = this.UiBotonDarPrioridadEncabezado;
             this.UiColDarPrioridad.Name = "UiColDarPrioridad";
             this.UiColDarPrioridad.Visible = true;
-            this.UiColDarPrioridad.VisibleIndex = 1;
+            this.UiColDarPrioridad.VisibleIndex = 5;
             // 
             // UiBotonDarPrioridadEncabezado
             // 
@@ -4581,7 +4620,7 @@
             this.UiColPrioridad.Name = "UiColPrioridad";
             this.UiColPrioridad.OptionsColumn.AllowEdit = false;
             this.UiColPrioridad.Visible = true;
-            this.UiColPrioridad.VisibleIndex = 2;
+            this.UiColPrioridad.VisibleIndex = 6;
             // 
             // colEnSALES_ORDER_ID
             // 
@@ -4592,7 +4631,7 @@
             this.colEnSALES_ORDER_ID.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "SALES_ORDER_ID", "{0}")});
             this.colEnSALES_ORDER_ID.Visible = true;
-            this.colEnSALES_ORDER_ID.VisibleIndex = 3;
+            this.colEnSALES_ORDER_ID.VisibleIndex = 7;
             // 
             // colEnDOC_SERIE
             // 
@@ -4601,7 +4640,7 @@
             this.colEnDOC_SERIE.Name = "colEnDOC_SERIE";
             this.colEnDOC_SERIE.OptionsColumn.AllowEdit = false;
             this.colEnDOC_SERIE.Visible = true;
-            this.colEnDOC_SERIE.VisibleIndex = 4;
+            this.colEnDOC_SERIE.VisibleIndex = 8;
             // 
             // colEnDOC_NUM
             // 
@@ -4618,7 +4657,7 @@
             this.colEnPOSTED_DATETIME.Name = "colEnPOSTED_DATETIME";
             this.colEnPOSTED_DATETIME.OptionsColumn.AllowEdit = false;
             this.colEnPOSTED_DATETIME.Visible = true;
-            this.colEnPOSTED_DATETIME.VisibleIndex = 5;
+            this.colEnPOSTED_DATETIME.VisibleIndex = 9;
             // 
             // colEnCLIENT_ID
             // 
@@ -4627,7 +4666,7 @@
             this.colEnCLIENT_ID.Name = "colEnCLIENT_ID";
             this.colEnCLIENT_ID.OptionsColumn.AllowEdit = false;
             this.colEnCLIENT_ID.Visible = true;
-            this.colEnCLIENT_ID.VisibleIndex = 6;
+            this.colEnCLIENT_ID.VisibleIndex = 10;
             // 
             // colName_customer
             // 
@@ -4637,17 +4676,17 @@
             this.colName_customer.OptionsColumn.AllowFocus = false;
             this.colName_customer.OptionsColumn.ReadOnly = true;
             this.colName_customer.Visible = true;
-            this.colName_customer.VisibleIndex = 7;
+            this.colName_customer.VisibleIndex = 11;
             // 
             // colEnTOTAL_AMOUNT
             // 
-            this.colEnTOTAL_AMOUNT.Caption = "Total";
+            this.colEnTOTAL_AMOUNT.Caption = "Monto Total";
             this.colEnTOTAL_AMOUNT.FieldName = "TOTAL_AMOUNT";
             this.colEnTOTAL_AMOUNT.Name = "colEnTOTAL_AMOUNT";
             this.colEnTOTAL_AMOUNT.OptionsColumn.AllowEdit = false;
             this.colEnTOTAL_AMOUNT.OptionsColumn.ReadOnly = true;
             this.colEnTOTAL_AMOUNT.Visible = true;
-            this.colEnTOTAL_AMOUNT.VisibleIndex = 8;
+            this.colEnTOTAL_AMOUNT.VisibleIndex = 12;
             // 
             // colEnCODE_ROUTE
             // 
@@ -4656,7 +4695,7 @@
             this.colEnCODE_ROUTE.Name = "colEnCODE_ROUTE";
             this.colEnCODE_ROUTE.OptionsColumn.AllowEdit = false;
             this.colEnCODE_ROUTE.Visible = true;
-            this.colEnCODE_ROUTE.VisibleIndex = 9;
+            this.colEnCODE_ROUTE.VisibleIndex = 13;
             // 
             // colEnLOGIN
             // 
@@ -4665,7 +4704,7 @@
             this.colEnLOGIN.Name = "colEnLOGIN";
             this.colEnLOGIN.OptionsColumn.AllowEdit = false;
             this.colEnLOGIN.Visible = true;
-            this.colEnLOGIN.VisibleIndex = 10;
+            this.colEnLOGIN.VisibleIndex = 14;
             // 
             // colEnCOMMENT
             // 
@@ -4674,7 +4713,7 @@
             this.colEnCOMMENT.Name = "colEnCOMMENT";
             this.colEnCOMMENT.OptionsColumn.AllowEdit = false;
             this.colEnCOMMENT.Visible = true;
-            this.colEnCOMMENT.VisibleIndex = 11;
+            this.colEnCOMMENT.VisibleIndex = 15;
             // 
             // colEnEXTERNAL_SOURCE_ID
             // 
@@ -4699,7 +4738,7 @@
             this.UiColFechaEntrega.Name = "UiColFechaEntrega";
             this.UiColFechaEntrega.OptionsColumn.AllowEdit = false;
             this.UiColFechaEntrega.Visible = true;
-            this.UiColFechaEntrega.VisibleIndex = 12;
+            this.UiColFechaEntrega.VisibleIndex = 16;
             // 
             // colSTATE_CODE
             // 
@@ -4708,7 +4747,7 @@
             this.colSTATE_CODE.Name = "colSTATE_CODE";
             this.colSTATE_CODE.OptionsColumn.AllowEdit = false;
             this.colSTATE_CODE.Visible = true;
-            this.colSTATE_CODE.VisibleIndex = 13;
+            this.colSTATE_CODE.VisibleIndex = 17;
             // 
             // colADDRESS_CUSTOMER
             // 
@@ -4724,7 +4763,7 @@
             this.UiColCodigoTipoDespacho.Name = "UiColCodigoTipoDespacho";
             this.UiColCodigoTipoDespacho.OptionsColumn.AllowEdit = false;
             this.UiColCodigoTipoDespacho.Visible = true;
-            this.UiColCodigoTipoDespacho.VisibleIndex = 14;
+            this.UiColCodigoTipoDespacho.VisibleIndex = 18;
             // 
             // UiColNombreTipoDespacho
             // 
@@ -4733,7 +4772,7 @@
             this.UiColNombreTipoDespacho.Name = "UiColNombreTipoDespacho";
             this.UiColNombreTipoDespacho.OptionsColumn.AllowEdit = false;
             this.UiColNombreTipoDespacho.Visible = true;
-            this.UiColNombreTipoDespacho.VisibleIndex = 15;
+            this.UiColNombreTipoDespacho.VisibleIndex = 19;
             // 
             // UiColDiasMinFecExpiracion
             // 
@@ -4742,7 +4781,7 @@
             this.UiColDiasMinFecExpiracion.Name = "UiColDiasMinFecExpiracion";
             this.UiColDiasMinFecExpiracion.OptionsColumn.AllowEdit = false;
             this.UiColDiasMinFecExpiracion.Visible = true;
-            this.UiColDiasMinFecExpiracion.VisibleIndex = 16;
+            this.UiColDiasMinFecExpiracion.VisibleIndex = 20;
             // 
             // UiColBaseEntry
             // 
@@ -4750,7 +4789,7 @@
             this.UiColBaseEntry.FieldName = "BASE_ENTRY";
             this.UiColBaseEntry.Name = "UiColBaseEntry";
             this.UiColBaseEntry.Visible = true;
-            this.UiColBaseEntry.VisibleIndex = 17;
+            this.UiColBaseEntry.VisibleIndex = 21;
             // 
             // UiColBaseRef
             // 
@@ -4758,7 +4797,7 @@
             this.UiColBaseRef.FieldName = "BASE_REF";
             this.UiColBaseRef.Name = "UiColBaseRef";
             this.UiColBaseRef.Visible = true;
-            this.UiColBaseRef.VisibleIndex = 18;
+            this.UiColBaseRef.VisibleIndex = 22;
             // 
             // UiCheckEditUsaLineaPickingConsolidado
             // 
@@ -4968,11 +5007,11 @@
             // UiColPesoTotalConsolidado
             // 
             this.UiColPesoTotalConsolidado.Caption = "Peso total";
-            this.UiColPesoTotalConsolidado.FieldName = "TOTAL_WEIGHT";
+            this.UiColPesoTotalConsolidado.FieldName = "LINE_WEIGHT";
             this.UiColPesoTotalConsolidado.Name = "UiColPesoTotalConsolidado";
             this.UiColPesoTotalConsolidado.OptionsColumn.AllowEdit = false;
             this.UiColPesoTotalConsolidado.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_WEIGHT", "{0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LINE_WEIGHT", "{0:0.##}")});
             this.UiColPesoTotalConsolidado.Visible = true;
             this.UiColPesoTotalConsolidado.VisibleIndex = 14;
             // 
@@ -5346,10 +5385,10 @@
             // UiColTotalWeight
             // 
             this.UiColTotalWeight.Caption = "Peso Total";
-            this.UiColTotalWeight.FieldName = "TOTAL_WEIGHT";
+            this.UiColTotalWeight.FieldName = "LINE_WEIGHT";
             this.UiColTotalWeight.Name = "UiColTotalWeight";
             this.UiColTotalWeight.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_WEIGHT", "{0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LINE_WEIGHT", "{0:0.##}")});
             this.UiColTotalWeight.Visible = true;
             this.UiColTotalWeight.VisibleIndex = 12;
             this.UiColTotalWeight.Width = 37;
@@ -7537,7 +7576,7 @@
             this.navigationPage7.Controls.Add(this.gridControl7);
             this.navigationPage7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage7.ImageOptions.Image")));
             this.navigationPage7.Name = "navigationPage7";
-            this.navigationPage7.Size = new System.Drawing.Size(419, 606);
+            this.navigationPage7.Size = new System.Drawing.Size(398, 588);
             // 
             // splitContainerControl4
             // 
@@ -9155,5 +9194,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn UiColPesoConsolidado;
         private DevExpress.XtraGrid.Columns.GridColumn UiColPesoTotalConsolidado;
         private DevExpress.XtraBars.BarButtonItem UiBtnImportarExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn colCodigo_Asesor;
+        private DevExpress.XtraGrid.Columns.GridColumn colName_asesor;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_WEIGHT;
+        private DevExpress.XtraGrid.Columns.GridColumn colCENTRO_COSTO;
     }
 }
