@@ -51,6 +51,7 @@ Partial Class frmShelfSpots
         Me.GridColumn_Location = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn_Module = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn_Allow_Fast_Picking = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn_Is_Waste = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -59,7 +60,6 @@ Partial Class frmShelfSpots
         Me.PrintToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.PropertyGrid1 = New System.Windows.Forms.PropertyGrid()
-        Me.GridColumn_Is_Waste = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
@@ -187,6 +187,7 @@ Partial Class frmShelfSpots
         Me.ToolStripButton3.Name = "ToolStripButton3"
         Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton3.Text = "C&ut"
+        Me.ToolStripButton3.ToolTipText = "Cancel"
         '
         'ToolStripSeparator2
         '
@@ -214,7 +215,7 @@ Partial Class frmShelfSpots
         Me.PropertyGrid2.Location = New System.Drawing.Point(0, 0)
         Me.PropertyGrid2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PropertyGrid2.Name = "PropertyGrid2"
-        Me.PropertyGrid2.Size = New System.Drawing.Size(344, 287)
+        Me.PropertyGrid2.Size = New System.Drawing.Size(344, 282)
         Me.PropertyGrid2.TabIndex = 6
         '
         'SplitContainerControl2
@@ -228,7 +229,7 @@ Partial Class frmShelfSpots
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.ToolStrip1)
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.PropertyGrid1)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(758, 503)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(753, 503)
         Me.SplitContainerControl2.SplitterPosition = 449
         Me.SplitContainerControl2.TabIndex = 0
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -347,6 +348,14 @@ Partial Class frmShelfSpots
         Me.GridColumn_Allow_Fast_Picking.OptionsColumn.AllowEdit = False
         Me.GridColumn_Allow_Fast_Picking.OptionsColumn.ReadOnly = True
         '
+        'GridColumn_Is_Waste
+        '
+        Me.GridColumn_Is_Waste.Caption = "Ubicación Desperdicio"
+        Me.GridColumn_Is_Waste.FieldName = "IS_COLUMN_WASTE"
+        Me.GridColumn_Is_Waste.Name = "GridColumn_Is_Waste"
+        Me.GridColumn_Is_Waste.OptionsColumn.AllowEdit = False
+        Me.GridColumn_Is_Waste.OptionsColumn.ReadOnly = True
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
@@ -384,6 +393,7 @@ Partial Class frmShelfSpots
         Me.CutToolStripButton.Name = "CutToolStripButton"
         Me.CutToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.CutToolStripButton.Text = "C&ut"
+        Me.CutToolStripButton.ToolTipText = "Cancel"
         '
         'toolStripSeparator
         '
@@ -411,16 +421,8 @@ Partial Class frmShelfSpots
         Me.PropertyGrid1.Location = New System.Drawing.Point(0, 0)
         Me.PropertyGrid1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PropertyGrid1.Name = "PropertyGrid1"
-        Me.PropertyGrid1.Size = New System.Drawing.Size(300, 499)
+        Me.PropertyGrid1.Size = New System.Drawing.Size(290, 499)
         Me.PropertyGrid1.TabIndex = 4
-        '
-        'GridColumn_Is_Waste
-        '
-        Me.GridColumn_Is_Waste.Caption = "Ubicación Desperdicio"
-        Me.GridColumn_Is_Waste.FieldName = "IS_COLUMN_WASTE"
-        Me.GridColumn_Is_Waste.Name = "GridColumn_Is_Waste"
-        Me.GridColumn_Is_Waste.OptionsColumn.AllowEdit = False
-        Me.GridColumn_Is_Waste.OptionsColumn.ReadOnly = True
         '
         'frmShelfSpots
         '
