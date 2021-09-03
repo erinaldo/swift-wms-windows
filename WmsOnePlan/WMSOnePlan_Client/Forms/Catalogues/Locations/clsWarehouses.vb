@@ -403,6 +403,9 @@ Public Class clsWarehouse
                         If (pLocalResult = "Procedure or function 'OP_WMS_SP_UPDATE_WAREHOUSE' expects parameter '@DISTRIBUTION_CENTER_ID', which was not supplied.") Then
                             pResult = "El campo centro de distribucion esta vacio, no puede ingresar datos nulos"
                             Return False
+                        ElseIf (pLocalResult = "Procedure or function 'OP_WMS_SP_UPDATE_WAREHOUSE' expects parameter '@PICKING_TYPE', which was not supplied.") Then
+                            pResult = "El campo tipo de picking esta vacio, no puede ingresar datos nulos"
+                            Return False
                         Else
                             pResult = pLocalResult
                             Return False
