@@ -930,8 +930,10 @@ namespace MobilityScm.Modelo.Vistas
             if (!string.IsNullOrEmpty(ultimoRegistro.IS_FROM_SONDA) && !string.IsNullOrEmpty(ultimoRegistro.IS_FROM_ERP))
             {
                 mostrarColumnasComparacion = (ultimoRegistro.IS_FROM_SONDA.ToUpper().Equals("SI") ||
-                                              ultimoRegistro.IS_FROM_ERP.ToUpper().Equals("SI"));
+                                              ultimoRegistro.IS_FROM_ERP.ToUpper().Equals("SI") ||
+                                              ultimoRegistro.TASK_SUBTYPE == "RECEPCION_RT");
             }
+            
             switch (ultimoRegistro.TASK_TYPE.ToUpper())
             {
                 case "TAREA_RECEPCION":

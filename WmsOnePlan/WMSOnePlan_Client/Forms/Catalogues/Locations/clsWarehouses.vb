@@ -400,8 +400,15 @@ Public Class clsWarehouse
                     If xserv.UpdateWarehouse(CodigoBodega, NombreBodega, Comentarios, CodigoBodegaSAP, DescripcionCorta, Clima, IIf(Estatus = "Inactiva", 0, 1), IIf(EsBodegaHabilitada = "NO", 0, 1), DireccionFisicaDeBodega, PuntoGps, CentroDeDistribucion, TipoDePicking, pLocalResult, PublicLoginInfo.Environment) Then
                         Return True
                     Else
-                        pResult = pLocalResult
-                        Return False
+                        If (pLocalResult = "Procedure or function 'OP_WMS_SP_UPDATE_WAREHOUSE' expects parameter '@DISTRIBUTION_CENTER_ID', which was not supplied.") Then
+                            pResult = "El campo centro de distribucion esta vacio, no puede ingresar datos nulos"
+                            Return False
+                        Else
+                            pResult = pLocalResult
+                            Return False
+                        End If
+
+
                     End If
                 End If
 
