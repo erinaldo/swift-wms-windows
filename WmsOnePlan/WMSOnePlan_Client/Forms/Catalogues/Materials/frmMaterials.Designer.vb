@@ -23,6 +23,7 @@ Partial Class frmMaterials
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMaterials))
         Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
@@ -30,7 +31,6 @@ Partial Class frmMaterials
         Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim GridFormatRule1 As DevExpress.XtraGrid.GridFormatRule = New DevExpress.XtraGrid.GridFormatRule()
         Dim FormatConditionRuleExpression1 As DevExpress.XtraEditors.FormatConditionRuleExpression = New DevExpress.XtraEditors.FormatConditionRuleExpression()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMaterials))
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn_Grp = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -94,7 +94,7 @@ Partial Class frmMaterials
         Me.PropiedadDeDatosGenerales_ActualizadoEl = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
         Me.PropiedadDeDatosGenerales_ActualizadoPor = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
         Me.DatosGenerales = New DevExpress.XtraVerticalGrid.Rows.CategoryRow()
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
         Me.PropiedadDeDatosGenerales_Clase = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
         Me.PropiedadDeDatosGenerales_SubClase = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
         Me.PropiedadDeDatosGenerales_Cliente = New DevExpress.XtraVerticalGrid.Rows.PGridEditorRow()
@@ -314,12 +314,10 @@ Partial Class frmMaterials
         '
         Me.GridControl1.Cursor = System.Windows.Forms.Cursors.Default
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GridControl1.Location = New System.Drawing.Point(0, 0)
         Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1032, 959)
+        Me.GridControl1.Size = New System.Drawing.Size(389, 341)
         Me.GridControl1.TabIndex = 15
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -327,8 +325,8 @@ Partial Class frmMaterials
         '
         Me.GridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn_Grp, Me.GridColumn_SubTipo, Me.GridColumn_ID, Me.GridColumn_Desc, Me.GridColumn_Client, Me.GridColum_ClientName, Me.GridColumn_Barcodeid, Me.CantidadDeUnidadesDeMedida, Me.EsCarro, Me.ManejaLote, Me.ManejaSerie, Me.ManejaMasterPack, Me.ManejaExplosionEnRecepcion, Me.UnidadPeso, Me.Peso, Me.ControlDeCalidad, Me.UiColManejaSerieCorrelativa, Me.UiColPrefixCorrelativeSerial, Me.UiColLeadTime, Me.UiColExpirationTolerance, Me.UiColSupplier, Me.UiColNameSupplier})
-        Me.GridView1.CustomizationFormBounds = New System.Drawing.Rectangle(436, 602, 420, 331)
-        Me.GridView1.DetailHeight = 673
+        Me.GridView1.CustomizationFormBounds = New System.Drawing.Rectangle(436, 271, 210, 172)
+        Me.GridView1.FixedLineWidth = 1
         Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "MATERIAL_ID", Nothing, "")})
@@ -345,44 +343,40 @@ Partial Class frmMaterials
         '
         Me.GridColumn_Grp.Caption = "Tipo"
         Me.GridColumn_Grp.FieldName = "CLASS_NAME"
-        Me.GridColumn_Grp.MinWidth = 40
         Me.GridColumn_Grp.Name = "GridColumn_Grp"
         Me.GridColumn_Grp.OptionsColumn.AllowEdit = False
         Me.GridColumn_Grp.OptionsColumn.ReadOnly = True
         Me.GridColumn_Grp.Visible = True
         Me.GridColumn_Grp.VisibleIndex = 0
-        Me.GridColumn_Grp.Width = 74
+        Me.GridColumn_Grp.Width = 37
         '
         'GridColumn_SubTipo
         '
         Me.GridColumn_SubTipo.Caption = "Sub Tipo"
         Me.GridColumn_SubTipo.FieldName = "SUB_CLASS_NAME"
-        Me.GridColumn_SubTipo.MinWidth = 40
         Me.GridColumn_SubTipo.Name = "GridColumn_SubTipo"
         Me.GridColumn_SubTipo.OptionsColumn.AllowEdit = False
         Me.GridColumn_SubTipo.OptionsColumn.ReadOnly = True
         Me.GridColumn_SubTipo.Visible = True
         Me.GridColumn_SubTipo.VisibleIndex = 1
-        Me.GridColumn_SubTipo.Width = 74
+        Me.GridColumn_SubTipo.Width = 37
         '
         'GridColumn_ID
         '
         Me.GridColumn_ID.Caption = "ID"
         Me.GridColumn_ID.FieldName = "MATERIAL_ID"
-        Me.GridColumn_ID.MinWidth = 40
         Me.GridColumn_ID.Name = "GridColumn_ID"
         Me.GridColumn_ID.OptionsColumn.AllowEdit = False
         Me.GridColumn_ID.OptionsColumn.FixedWidth = True
         Me.GridColumn_ID.OptionsColumn.ReadOnly = True
         Me.GridColumn_ID.Visible = True
         Me.GridColumn_ID.VisibleIndex = 2
-        Me.GridColumn_ID.Width = 188
+        Me.GridColumn_ID.Width = 94
         '
         'GridColumn_Desc
         '
         Me.GridColumn_Desc.Caption = "Descripcion"
         Me.GridColumn_Desc.FieldName = "MATERIAL_NAME"
-        Me.GridColumn_Desc.MinWidth = 40
         Me.GridColumn_Desc.Name = "GridColumn_Desc"
         Me.GridColumn_Desc.OptionsColumn.AllowEdit = False
         Me.GridColumn_Desc.OptionsColumn.AllowFocus = False
@@ -390,198 +384,173 @@ Partial Class frmMaterials
         Me.GridColumn_Desc.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.[False]
         Me.GridColumn_Desc.Visible = True
         Me.GridColumn_Desc.VisibleIndex = 3
-        Me.GridColumn_Desc.Width = 184
+        Me.GridColumn_Desc.Width = 92
         '
         'GridColumn_Client
         '
         Me.GridColumn_Client.Caption = "Cliente"
         Me.GridColumn_Client.FieldName = "CLIENT_OWNER"
-        Me.GridColumn_Client.MinWidth = 40
         Me.GridColumn_Client.Name = "GridColumn_Client"
         Me.GridColumn_Client.OptionsColumn.AllowEdit = False
         Me.GridColumn_Client.Visible = True
         Me.GridColumn_Client.VisibleIndex = 4
-        Me.GridColumn_Client.Width = 142
+        Me.GridColumn_Client.Width = 71
         '
         'GridColum_ClientName
         '
         Me.GridColum_ClientName.Caption = "Nombre Cliente"
         Me.GridColum_ClientName.FieldName = "CLIENT_NAME"
-        Me.GridColum_ClientName.MinWidth = 40
         Me.GridColum_ClientName.Name = "GridColum_ClientName"
         Me.GridColum_ClientName.OptionsColumn.AllowEdit = False
         Me.GridColum_ClientName.Visible = True
         Me.GridColum_ClientName.VisibleIndex = 12
-        Me.GridColum_ClientName.Width = 150
         '
         'GridColumn_Barcodeid
         '
         Me.GridColumn_Barcodeid.Caption = "Código Barras"
         Me.GridColumn_Barcodeid.FieldName = "BARCODE_ID"
-        Me.GridColumn_Barcodeid.MinWidth = 40
         Me.GridColumn_Barcodeid.Name = "GridColumn_Barcodeid"
         Me.GridColumn_Barcodeid.OptionsColumn.AllowEdit = False
         Me.GridColumn_Barcodeid.Visible = True
         Me.GridColumn_Barcodeid.VisibleIndex = 5
-        Me.GridColumn_Barcodeid.Width = 62
+        Me.GridColumn_Barcodeid.Width = 31
         '
         'CantidadDeUnidadesDeMedida
         '
         Me.CantidadDeUnidadesDeMedida.Caption = "Cantidad de Unidades de Medida"
         Me.CantidadDeUnidadesDeMedida.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.CantidadDeUnidadesDeMedida.FieldName = "QTY_MEASURE"
-        Me.CantidadDeUnidadesDeMedida.MinWidth = 40
         Me.CantidadDeUnidadesDeMedida.Name = "CantidadDeUnidadesDeMedida"
         Me.CantidadDeUnidadesDeMedida.OptionsColumn.AllowEdit = False
         Me.CantidadDeUnidadesDeMedida.Visible = True
         Me.CantidadDeUnidadesDeMedida.VisibleIndex = 6
-        Me.CantidadDeUnidadesDeMedida.Width = 62
+        Me.CantidadDeUnidadesDeMedida.Width = 31
         '
         'EsCarro
         '
         Me.EsCarro.Caption = "Es Carro"
         Me.EsCarro.FieldName = "IS_CAR_DESCRIPTION"
-        Me.EsCarro.MinWidth = 40
         Me.EsCarro.Name = "EsCarro"
         Me.EsCarro.OptionsColumn.AllowEdit = False
-        Me.EsCarro.Width = 150
         '
         'ManejaLote
         '
         Me.ManejaLote.Caption = "Maneja Lote"
         Me.ManejaLote.FieldName = "BATCH_REQUESTED_DESCRIPTION"
-        Me.ManejaLote.MinWidth = 40
         Me.ManejaLote.Name = "ManejaLote"
         Me.ManejaLote.OptionsColumn.AllowEdit = False
-        Me.ManejaLote.Width = 150
         '
         'ManejaSerie
         '
         Me.ManejaSerie.Caption = "Maneja Serie"
         Me.ManejaSerie.FieldName = "SERIAL_NUMBER_REQUESTS_DESCRIPTION"
-        Me.ManejaSerie.MinWidth = 40
         Me.ManejaSerie.Name = "ManejaSerie"
         Me.ManejaSerie.OptionsColumn.AllowEdit = False
-        Me.ManejaSerie.Width = 150
         '
         'ManejaMasterPack
         '
         Me.ManejaMasterPack.Caption = "Maneja Master Pack"
         Me.ManejaMasterPack.FieldName = "IS_MASTER_PACK_DESCRIPTION"
-        Me.ManejaMasterPack.MinWidth = 40
         Me.ManejaMasterPack.Name = "ManejaMasterPack"
         Me.ManejaMasterPack.OptionsColumn.AllowEdit = False
-        Me.ManejaMasterPack.Width = 150
         '
         'ManejaExplosionEnRecepcion
         '
         Me.ManejaExplosionEnRecepcion.Caption = "Maneja Explosion en Recepción"
         Me.ManejaExplosionEnRecepcion.FieldName = "EXPLODE_IN_RECEPTION_DESCRIPTION"
-        Me.ManejaExplosionEnRecepcion.MinWidth = 40
         Me.ManejaExplosionEnRecepcion.Name = "ManejaExplosionEnRecepcion"
         Me.ManejaExplosionEnRecepcion.OptionsColumn.AllowEdit = False
-        Me.ManejaExplosionEnRecepcion.Width = 150
         '
         'UnidadPeso
         '
         Me.UnidadPeso.Caption = "Unidad Peso"
         Me.UnidadPeso.FieldName = "WEIGHT_MEASUREMENT"
-        Me.UnidadPeso.MinWidth = 40
         Me.UnidadPeso.Name = "UnidadPeso"
         Me.UnidadPeso.OptionsColumn.AllowEdit = False
-        Me.UnidadPeso.Width = 150
         '
         'Peso
         '
         Me.Peso.Caption = "Peso"
         Me.Peso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.Peso.FieldName = "WEIGTH"
-        Me.Peso.MinWidth = 40
         Me.Peso.Name = "Peso"
         Me.Peso.OptionsColumn.AllowEdit = False
-        Me.Peso.Width = 150
         '
         'ControlDeCalidad
         '
         Me.ControlDeCalidad.Caption = "Área de Calidad"
         Me.ControlDeCalidad.FieldName = "QUALITY_CONTROL"
-        Me.ControlDeCalidad.MinWidth = 40
         Me.ControlDeCalidad.Name = "ControlDeCalidad"
         Me.ControlDeCalidad.Visible = True
         Me.ControlDeCalidad.VisibleIndex = 7
-        Me.ControlDeCalidad.Width = 62
+        Me.ControlDeCalidad.Width = 31
         '
         'UiColManejaSerieCorrelativa
         '
         Me.UiColManejaSerieCorrelativa.Caption = "Maneja Serie Correlativa"
         Me.UiColManejaSerieCorrelativa.FieldName = "HANDLE_CORRELATIVE_SERIALS"
-        Me.UiColManejaSerieCorrelativa.MinWidth = 40
         Me.UiColManejaSerieCorrelativa.Name = "UiColManejaSerieCorrelativa"
-        Me.UiColManejaSerieCorrelativa.Width = 150
         '
         'UiColPrefixCorrelativeSerial
         '
         Me.UiColPrefixCorrelativeSerial.Caption = "Prefijo Serie Correlativa"
         Me.UiColPrefixCorrelativeSerial.FieldName = "PREFIX_CORRELATIVE_SERIALS"
-        Me.UiColPrefixCorrelativeSerial.MinWidth = 40
         Me.UiColPrefixCorrelativeSerial.Name = "UiColPrefixCorrelativeSerial"
         Me.UiColPrefixCorrelativeSerial.OptionsColumn.AllowEdit = False
         Me.UiColPrefixCorrelativeSerial.OptionsColumn.ReadOnly = True
-        Me.UiColPrefixCorrelativeSerial.Width = 150
         '
         'UiColLeadTime
         '
         Me.UiColLeadTime.Caption = "Tiempo de espera(Días)"
         Me.UiColLeadTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.UiColLeadTime.FieldName = "LEAD_TIME"
-        Me.UiColLeadTime.MinWidth = 38
+        Me.UiColLeadTime.MinWidth = 19
         Me.UiColLeadTime.Name = "UiColLeadTime"
         Me.UiColLeadTime.OptionsColumn.AllowEdit = False
         Me.UiColLeadTime.OptionsColumn.ReadOnly = True
         Me.UiColLeadTime.Visible = True
         Me.UiColLeadTime.VisibleIndex = 8
-        Me.UiColLeadTime.Width = 78
+        Me.UiColLeadTime.Width = 39
         '
         'UiColExpirationTolerance
         '
         Me.UiColExpirationTolerance.Caption = "Tolerancia días de expiración en recepción"
         Me.UiColExpirationTolerance.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.UiColExpirationTolerance.FieldName = "EXPIRATION_TOLERANCE"
-        Me.UiColExpirationTolerance.MinWidth = 38
+        Me.UiColExpirationTolerance.MinWidth = 19
         Me.UiColExpirationTolerance.Name = "UiColExpirationTolerance"
         Me.UiColExpirationTolerance.OptionsColumn.AllowEdit = False
         Me.UiColExpirationTolerance.OptionsColumn.ReadOnly = True
         Me.UiColExpirationTolerance.Visible = True
         Me.UiColExpirationTolerance.VisibleIndex = 9
-        Me.UiColExpirationTolerance.Width = 78
+        Me.UiColExpirationTolerance.Width = 39
         '
         'UiColSupplier
         '
         Me.UiColSupplier.Caption = "Proveedor"
         Me.UiColSupplier.FieldName = "SUPPLIER"
-        Me.UiColSupplier.MinWidth = 38
+        Me.UiColSupplier.MinWidth = 19
         Me.UiColSupplier.Name = "UiColSupplier"
         Me.UiColSupplier.OptionsColumn.AllowEdit = False
         Me.UiColSupplier.OptionsColumn.ReadOnly = True
         Me.UiColSupplier.Visible = True
         Me.UiColSupplier.VisibleIndex = 10
-        Me.UiColSupplier.Width = 60
+        Me.UiColSupplier.Width = 30
         '
         'UiColNameSupplier
         '
         Me.UiColNameSupplier.Caption = "Nombre Proveedor"
         Me.UiColNameSupplier.FieldName = "NAME_SUPPLIER"
-        Me.UiColNameSupplier.MinWidth = 40
         Me.UiColNameSupplier.Name = "UiColNameSupplier"
         Me.UiColNameSupplier.Visible = True
         Me.UiColNameSupplier.VisibleIndex = 11
-        Me.UiColNameSupplier.Width = 222
+        Me.UiColNameSupplier.Width = 111
         '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -592,49 +561,43 @@ Partial Class frmMaterials
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.XtraTabControl1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1924, 1052)
-        Me.SplitContainer1.SplitterDistance = 1036
-        Me.SplitContainer1.SplitterWidth = 8
+        Me.SplitContainer1.Size = New System.Drawing.Size(728, 389)
+        Me.SplitContainer1.SplitterDistance = 391
         Me.SplitContainer1.TabIndex = 9
         '
         'UiTabMateriales
         '
         Me.UiTabMateriales.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UiTabMateriales.Location = New System.Drawing.Point(0, 44)
-        Me.UiTabMateriales.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UiTabMateriales.Location = New System.Drawing.Point(0, 23)
         Me.UiTabMateriales.Name = "UiTabMateriales"
         Me.UiTabMateriales.SelectedTabPage = Me.XtraTabPage1
-        Me.UiTabMateriales.Size = New System.Drawing.Size(1036, 1008)
+        Me.UiTabMateriales.Size = New System.Drawing.Size(391, 366)
         Me.UiTabMateriales.TabIndex = 10
         Me.UiTabMateriales.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2, Me.UiTabUnidadMedida})
         '
         'XtraTabPage1
         '
         Me.XtraTabPage1.Controls.Add(Me.GridControl1)
-        Me.XtraTabPage1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(1032, 959)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(389, 341)
         Me.XtraTabPage1.Text = "Lista de Materiales"
         '
         'XtraTabPage2
         '
         Me.XtraTabPage2.Controls.Add(Me.GridControlVF)
-        Me.XtraTabPage2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.XtraTabPage2.Name = "XtraTabPage2"
         Me.XtraTabPage2.PageVisible = False
-        Me.XtraTabPage2.Size = New System.Drawing.Size(1032, 959)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(389, 341)
         Me.XtraTabPage2.Text = "Actualizar Volumen"
         '
         'GridControlVF
         '
         Me.GridControlVF.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControlVF.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GridControlVF.Location = New System.Drawing.Point(0, 0)
         Me.GridControlVF.MainView = Me.GridViewFV
-        Me.GridControlVF.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GridControlVF.Name = "GridControlVF"
         Me.GridControlVF.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2, Me.RepositoryItemSpinEdit3})
-        Me.GridControlVF.Size = New System.Drawing.Size(1032, 959)
+        Me.GridControlVF.Size = New System.Drawing.Size(389, 341)
         Me.GridControlVF.TabIndex = 1
         Me.GridControlVF.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewFV})
         '
@@ -643,8 +606,6 @@ Partial Class frmMaterials
         Me.GridViewFV.Appearance.FixedLine.BackColor = System.Drawing.Color.Black
         Me.GridViewFV.Appearance.FixedLine.Options.UseBackColor = True
         Me.GridViewFV.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnCodigo, Me.GridColumnDesc, Me.GridColumn3, Me.GridColumn2, Me.GridColumn1, Me.GridColumnFactor})
-        Me.GridViewFV.DetailHeight = 673
-        Me.GridViewFV.FixedLineWidth = 4
         Me.GridViewFV.GridControl = Me.GridControlVF
         Me.GridViewFV.LevelIndent = 0
         Me.GridViewFV.Name = "GridViewFV"
@@ -660,36 +621,32 @@ Partial Class frmMaterials
         '
         Me.GridColumnCodigo.Caption = "Código"
         Me.GridColumnCodigo.FieldName = "MATERIAL_ID"
-        Me.GridColumnCodigo.MinWidth = 40
         Me.GridColumnCodigo.Name = "GridColumnCodigo"
         Me.GridColumnCodigo.OptionsColumn.AllowEdit = False
         Me.GridColumnCodigo.OptionsColumn.AllowFocus = False
         Me.GridColumnCodigo.Visible = True
         Me.GridColumnCodigo.VisibleIndex = 0
-        Me.GridColumnCodigo.Width = 198
+        Me.GridColumnCodigo.Width = 99
         '
         'GridColumnDesc
         '
         Me.GridColumnDesc.Caption = "Descripcion"
         Me.GridColumnDesc.FieldName = "MATERIAL_NAME"
-        Me.GridColumnDesc.MinWidth = 40
         Me.GridColumnDesc.Name = "GridColumnDesc"
         Me.GridColumnDesc.OptionsColumn.AllowEdit = False
         Me.GridColumnDesc.OptionsColumn.AllowFocus = False
         Me.GridColumnDesc.Visible = True
         Me.GridColumnDesc.VisibleIndex = 1
-        Me.GridColumnDesc.Width = 600
+        Me.GridColumnDesc.Width = 300
         '
         'GridColumn3
         '
         Me.GridColumn3.Caption = "Alto"
         Me.GridColumn3.ColumnEdit = Me.RepositoryItemSpinEdit1
         Me.GridColumn3.FieldName = "ALTO"
-        Me.GridColumn3.MinWidth = 40
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
-        Me.GridColumn3.Width = 150
         '
         'RepositoryItemSpinEdit1
         '
@@ -702,11 +659,9 @@ Partial Class frmMaterials
         Me.GridColumn2.Caption = "Largo"
         Me.GridColumn2.ColumnEdit = Me.RepositoryItemSpinEdit2
         Me.GridColumn2.FieldName = "LARGO"
-        Me.GridColumn2.MinWidth = 40
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 3
-        Me.GridColumn2.Width = 150
         '
         'RepositoryItemSpinEdit2
         '
@@ -719,11 +674,9 @@ Partial Class frmMaterials
         Me.GridColumn1.Caption = "Ancho"
         Me.GridColumn1.ColumnEdit = Me.RepositoryItemSpinEdit3
         Me.GridColumn1.FieldName = "ANCHO"
-        Me.GridColumn1.MinWidth = 40
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 4
-        Me.GridColumn1.Width = 150
         '
         'RepositoryItemSpinEdit3
         '
@@ -739,40 +692,33 @@ Partial Class frmMaterials
         Me.GridColumnFactor.AppearanceCell.Options.UseBorderColor = True
         Me.GridColumnFactor.Caption = "Factor"
         Me.GridColumnFactor.FieldName = "VOLUME_FACTOR"
-        Me.GridColumnFactor.MinWidth = 40
         Me.GridColumnFactor.Name = "GridColumnFactor"
         Me.GridColumnFactor.OptionsColumn.AllowEdit = False
         Me.GridColumnFactor.OptionsColumn.AllowFocus = False
         Me.GridColumnFactor.Visible = True
         Me.GridColumnFactor.VisibleIndex = 5
-        Me.GridColumnFactor.Width = 150
         '
         'UiTabUnidadMedida
         '
         Me.UiTabUnidadMedida.Controls.Add(Me.UiContenedorVistasUnidadMedida)
-        Me.UiTabUnidadMedida.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiTabUnidadMedida.Name = "UiTabUnidadMedida"
-        Me.UiTabUnidadMedida.Size = New System.Drawing.Size(1032, 959)
+        Me.UiTabUnidadMedida.Size = New System.Drawing.Size(389, 341)
         Me.UiTabUnidadMedida.Text = "Listado de Unidad de Medida"
         Me.UiTabUnidadMedida.Tooltip = "Listado de Empaques"
         '
         'UiContenedorVistasUnidadMedida
         '
         Me.UiContenedorVistasUnidadMedida.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UiContenedorVistasUnidadMedida.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiContenedorVistasUnidadMedida.Location = New System.Drawing.Point(0, 0)
         Me.UiContenedorVistasUnidadMedida.MainView = Me.UIVistaUnidadMedida
-        Me.UiContenedorVistasUnidadMedida.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiContenedorVistasUnidadMedida.Name = "UiContenedorVistasUnidadMedida"
-        Me.UiContenedorVistasUnidadMedida.Size = New System.Drawing.Size(1032, 959)
+        Me.UiContenedorVistasUnidadMedida.Size = New System.Drawing.Size(389, 341)
         Me.UiContenedorVistasUnidadMedida.TabIndex = 0
         Me.UiContenedorVistasUnidadMedida.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.UIVistaUnidadMedida})
         '
         'UIVistaUnidadMedida
         '
         Me.UIVistaUnidadMedida.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colUnMEASUREMENT_UNIT_ID, Me.colUnCLIENT_ID, Me.colUnMATERIAL_ID, Me.colUnMEASUREMENT_UNIT, Me.colUnDESCRIPTION, Me.colUnQTY, Me.colUnBARCODE, Me.colUnALTERNATIVE_BARCODE})
-        Me.UIVistaUnidadMedida.DetailHeight = 673
-        Me.UIVistaUnidadMedida.FixedLineWidth = 4
         Me.UIVistaUnidadMedida.GridControl = Me.UiContenedorVistasUnidadMedida
         Me.UIVistaUnidadMedida.LevelIndent = 0
         Me.UIVistaUnidadMedida.Name = "UIVistaUnidadMedida"
@@ -784,89 +730,73 @@ Partial Class frmMaterials
         '
         Me.colUnMEASUREMENT_UNIT_ID.Caption = "Código"
         Me.colUnMEASUREMENT_UNIT_ID.FieldName = "MEASUREMENT_UNIT_ID"
-        Me.colUnMEASUREMENT_UNIT_ID.MinWidth = 40
         Me.colUnMEASUREMENT_UNIT_ID.Name = "colUnMEASUREMENT_UNIT_ID"
         Me.colUnMEASUREMENT_UNIT_ID.OptionsColumn.AllowEdit = False
         Me.colUnMEASUREMENT_UNIT_ID.Visible = True
         Me.colUnMEASUREMENT_UNIT_ID.VisibleIndex = 0
-        Me.colUnMEASUREMENT_UNIT_ID.Width = 150
         '
         'colUnCLIENT_ID
         '
         Me.colUnCLIENT_ID.Caption = "Código Cliente"
         Me.colUnCLIENT_ID.FieldName = "CLIENT_ID"
-        Me.colUnCLIENT_ID.MinWidth = 40
         Me.colUnCLIENT_ID.Name = "colUnCLIENT_ID"
         Me.colUnCLIENT_ID.OptionsColumn.AllowEdit = False
         Me.colUnCLIENT_ID.Visible = True
         Me.colUnCLIENT_ID.VisibleIndex = 1
-        Me.colUnCLIENT_ID.Width = 150
         '
         'colUnMATERIAL_ID
         '
         Me.colUnMATERIAL_ID.Caption = "Código Material"
         Me.colUnMATERIAL_ID.FieldName = "MATERIAL_ID"
-        Me.colUnMATERIAL_ID.MinWidth = 40
         Me.colUnMATERIAL_ID.Name = "colUnMATERIAL_ID"
         Me.colUnMATERIAL_ID.OptionsColumn.AllowEdit = False
         Me.colUnMATERIAL_ID.Visible = True
         Me.colUnMATERIAL_ID.VisibleIndex = 2
-        Me.colUnMATERIAL_ID.Width = 150
         '
         'colUnMEASUREMENT_UNIT
         '
         Me.colUnMEASUREMENT_UNIT.Caption = "Unidad de Medida"
         Me.colUnMEASUREMENT_UNIT.FieldName = "MEASUREMENT_UNIT"
-        Me.colUnMEASUREMENT_UNIT.MinWidth = 40
         Me.colUnMEASUREMENT_UNIT.Name = "colUnMEASUREMENT_UNIT"
         Me.colUnMEASUREMENT_UNIT.OptionsColumn.AllowEdit = False
         Me.colUnMEASUREMENT_UNIT.Visible = True
         Me.colUnMEASUREMENT_UNIT.VisibleIndex = 3
-        Me.colUnMEASUREMENT_UNIT.Width = 150
         '
         'colUnDESCRIPTION
         '
         Me.colUnDESCRIPTION.Caption = "Descripción"
         Me.colUnDESCRIPTION.FieldName = "DESCRIPTION"
-        Me.colUnDESCRIPTION.MinWidth = 40
         Me.colUnDESCRIPTION.Name = "colUnDESCRIPTION"
         Me.colUnDESCRIPTION.OptionsColumn.AllowEdit = False
         Me.colUnDESCRIPTION.Visible = True
         Me.colUnDESCRIPTION.VisibleIndex = 4
-        Me.colUnDESCRIPTION.Width = 150
         '
         'colUnQTY
         '
         Me.colUnQTY.Caption = "Cantidad"
         Me.colUnQTY.FieldName = "QTY"
-        Me.colUnQTY.MinWidth = 40
         Me.colUnQTY.Name = "colUnQTY"
         Me.colUnQTY.OptionsColumn.AllowEdit = False
         Me.colUnQTY.Visible = True
         Me.colUnQTY.VisibleIndex = 5
-        Me.colUnQTY.Width = 150
         '
         'colUnBARCODE
         '
         Me.colUnBARCODE.Caption = "Código de Barras"
         Me.colUnBARCODE.FieldName = "BARCODE"
-        Me.colUnBARCODE.MinWidth = 40
         Me.colUnBARCODE.Name = "colUnBARCODE"
         Me.colUnBARCODE.OptionsColumn.AllowEdit = False
         Me.colUnBARCODE.Visible = True
         Me.colUnBARCODE.VisibleIndex = 6
-        Me.colUnBARCODE.Width = 150
         '
         'colUnALTERNATIVE_BARCODE
         '
         Me.colUnALTERNATIVE_BARCODE.Caption = "Código de Barras Alterno"
         Me.colUnALTERNATIVE_BARCODE.FieldName = "ALTERNATIVE_BARCODE"
-        Me.colUnALTERNATIVE_BARCODE.MinWidth = 40
         Me.colUnALTERNATIVE_BARCODE.Name = "colUnALTERNATIVE_BARCODE"
         Me.colUnALTERNATIVE_BARCODE.OptionsColumn.AllowEdit = False
         Me.colUnALTERNATIVE_BARCODE.Visible = True
         Me.colUnALTERNATIVE_BARCODE.VisibleIndex = 7
-        Me.colUnALTERNATIVE_BARCODE.Width = 150
         '
         'Label1
         '
@@ -876,9 +806,8 @@ Partial Class frmMaterials
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1036, 44)
+        Me.Label1.Size = New System.Drawing.Size(391, 23)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Catalogo: Productos"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -887,10 +816,9 @@ Partial Class frmMaterials
         '
         Me.XtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.XtraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.XtraTabControl1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.UiTabDatosGenerales
-        Me.XtraTabControl1.Size = New System.Drawing.Size(880, 1052)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(333, 389)
         Me.XtraTabControl1.TabIndex = 5
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.UiTabDatosGenerales, Me.UiTabUbicacion, Me.UiTabEmpaque, Me.UiTabMasterPack, Me.UiTabExcepcionesPorBodega})
         '
@@ -901,24 +829,19 @@ Partial Class frmMaterials
         Me.UiTabDatosGenerales.Controls.Add(Me.BarDockControl12)
         Me.UiTabDatosGenerales.Controls.Add(Me.BarDockControl10)
         Me.UiTabDatosGenerales.Controls.Add(Me.BarDockControl9)
-        Me.UiTabDatosGenerales.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiTabDatosGenerales.Name = "UiTabDatosGenerales"
-        Me.UiTabDatosGenerales.Size = New System.Drawing.Size(876, 1003)
+        Me.UiTabDatosGenerales.Size = New System.Drawing.Size(331, 364)
         Me.UiTabDatosGenerales.Text = "Datos Generales"
         '
         'UiPropiedadDeDatosGenerales
         '
-        Me.UiPropiedadDeDatosGenerales.BandsInterval = 4
         Me.UiPropiedadDeDatosGenerales.Cursor = System.Windows.Forms.Cursors.SizeNS
         Me.UiPropiedadDeDatosGenerales.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UiPropiedadDeDatosGenerales.Location = New System.Drawing.Point(0, 142)
-        Me.UiPropiedadDeDatosGenerales.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UiPropiedadDeDatosGenerales.Location = New System.Drawing.Point(0, 43)
         Me.UiPropiedadDeDatosGenerales.Name = "UiPropiedadDeDatosGenerales"
-        Me.UiPropiedadDeDatosGenerales.OptionsView.FixedLineWidth = 4
-        Me.UiPropiedadDeDatosGenerales.OptionsView.MinRowAutoHeight = 19
         Me.UiPropiedadDeDatosGenerales.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.UiListaDeClientes, Me.UiListaClases, Me.UiListaSubClases, Me.UiCboPropiedadManejaCalibre, Me.UiCboPropiedadManejaTono})
         Me.UiPropiedadDeDatosGenerales.Rows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.DatosDeAuditoria, Me.DatosGenerales, Me.Dimensiones})
-        Me.UiPropiedadDeDatosGenerales.Size = New System.Drawing.Size(876, 861)
+        Me.UiPropiedadDeDatosGenerales.Size = New System.Drawing.Size(331, 321)
         Me.UiPropiedadDeDatosGenerales.TabIndex = 7
         '
         'UiListaDeClientes
@@ -970,7 +893,7 @@ Partial Class frmMaterials
         '
         Me.DatosDeAuditoria.ChildRows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.PropiedadDeDatosGenerales_ActualizadoEl, Me.PropiedadDeDatosGenerales_ActualizadoPor})
         Me.DatosDeAuditoria.Expanded = False
-        Me.DatosDeAuditoria.Height = 33
+        Me.DatosDeAuditoria.Height = 17
         Me.DatosDeAuditoria.Name = "DatosDeAuditoria"
         Me.DatosDeAuditoria.Properties.Caption = "Datos de Auditoria"
         '
@@ -987,7 +910,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_ActualizadoPor
         '
-        Me.PropiedadDeDatosGenerales_ActualizadoPor.Height = 29
+        Me.PropiedadDeDatosGenerales_ActualizadoPor.Height = 15
         Me.PropiedadDeDatosGenerales_ActualizadoPor.Name = "PropiedadDeDatosGenerales_ActualizadoPor"
         Me.PropiedadDeDatosGenerales_ActualizadoPor.Properties.Caption = "Actualizado por"
         Me.PropiedadDeDatosGenerales_ActualizadoPor.Properties.FieldName = "Actualizado_por"
@@ -996,23 +919,23 @@ Partial Class frmMaterials
         '
         'DatosGenerales
         '
-        Me.DatosGenerales.ChildRows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.PropiedadDeDatosGenerales_CantidadMaxPorBin, Me.PropiedadDeDatosGenerales_Clase, Me.PropiedadDeDatosGenerales_SubClase, Me.PropiedadDeDatosGenerales_Cliente, Me.PropiedadDeDatosGenerales_Codigo, Me.PropiedadDeDatosGenerales_CodigoBarras, Me.PropiedadDeDatosGenerales_CodigoBarrasAlterno, Me.PropiedadDeDatosGenerales_Descripcion, Me.PropiedadDeDatosGenerales_DescripcionCorta, Me.PropiedadDeDatosGenerales_EsCarro, Me.PropiedadDeDatosGenerales_ManejaLote, Me.PropiedadDeDatosGenerales_ManejaSerie, Me.PropiedadDeDatosGenerales_ManejaMasterPack, Me.PropiedadDeDatosGenerales_ManejaExplosionEnRecepcion, Me.PropiedadDeDatosGenerales_UnidadPeso, Me.PropiedadDeDatosGenerales_ManejaTono, Me.PropiedadDeDatosGenerales_ManejaCalibre, Me.PropiedadDeDatosGenerales_UsaLineaPicking, Me.PropiedadDeDatosGenerales_QUALITY_CONTROL, Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS, Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS, Me.PropiedadDeDatosGenerales_LEAD_TIME, Me.PropiedadDeDatosGenerales_EXPIRATION_TOLERANCE, Me.PropiedadDeDatosGenerales_Proveedor, Me.PropiedadDEDatosGenerales_NombreProveedor})
-        Me.DatosGenerales.Height = 33
+        Me.DatosGenerales.ChildRows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin, Me.PropiedadDeDatosGenerales_Clase, Me.PropiedadDeDatosGenerales_SubClase, Me.PropiedadDeDatosGenerales_Cliente, Me.PropiedadDeDatosGenerales_Codigo, Me.PropiedadDeDatosGenerales_CodigoBarras, Me.PropiedadDeDatosGenerales_CodigoBarrasAlterno, Me.PropiedadDeDatosGenerales_Descripcion, Me.PropiedadDeDatosGenerales_DescripcionCorta, Me.PropiedadDeDatosGenerales_EsCarro, Me.PropiedadDeDatosGenerales_ManejaLote, Me.PropiedadDeDatosGenerales_ManejaSerie, Me.PropiedadDeDatosGenerales_ManejaMasterPack, Me.PropiedadDeDatosGenerales_ManejaExplosionEnRecepcion, Me.PropiedadDeDatosGenerales_UnidadPeso, Me.PropiedadDeDatosGenerales_ManejaTono, Me.PropiedadDeDatosGenerales_ManejaCalibre, Me.PropiedadDeDatosGenerales_UsaLineaPicking, Me.PropiedadDeDatosGenerales_QUALITY_CONTROL, Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS, Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS, Me.PropiedadDeDatosGenerales_LEAD_TIME, Me.PropiedadDeDatosGenerales_EXPIRATION_TOLERANCE, Me.PropiedadDeDatosGenerales_Proveedor, Me.PropiedadDEDatosGenerales_NombreProveedor})
+        Me.DatosGenerales.Height = 17
         Me.DatosGenerales.Name = "DatosGenerales"
         Me.DatosGenerales.Properties.Caption = "Datos Generales"
         '
-        'PropiedadDeDatosGenerales_CantidadMaxPorBin
+        'PropiedadDeDatosGenerales_CantidadMaxPorBinbin
         '
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin.IsChildRowsLoaded = True
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin.Name = "PropiedadDeDatosGenerales_CantidadMaxPorBin"
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin.Properties.Caption = "Cantidad Max por Bin"
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin.Properties.FieldName = "CantidadMaxPorBin"
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PropiedadDeDatosGenerales_CantidadMaxPorBin.Properties.ToolTip = "Cantidad Máxima por BIN"
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin.IsChildRowsLoaded = True
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin.Name = "PropiedadDeDatosGenerales_CantidadMaxPorBinbin"
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin.Properties.Caption = "Cantidad Max por Bin"
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin.Properties.FieldName = "CantidadMaxPorBin"
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PropiedadDeDatosGenerales_CantidadMaxPorBinbin.Properties.ToolTip = "Cantidad Máxima por BIN"
         '
         'PropiedadDeDatosGenerales_Clase
         '
-        Me.PropiedadDeDatosGenerales_Clase.Height = 37
+        Me.PropiedadDeDatosGenerales_Clase.Height = 19
         Me.PropiedadDeDatosGenerales_Clase.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_Clase.Name = "PropiedadDeDatosGenerales_Clase"
         Me.PropiedadDeDatosGenerales_Clase.Properties.Caption = "Clase"
@@ -1022,7 +945,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_SubClase
         '
-        Me.PropiedadDeDatosGenerales_SubClase.Height = 37
+        Me.PropiedadDeDatosGenerales_SubClase.Height = 19
         Me.PropiedadDeDatosGenerales_SubClase.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_SubClase.Name = "PropiedadDeDatosGenerales_SubClase"
         Me.PropiedadDeDatosGenerales_SubClase.Properties.Caption = "Sub Clase"
@@ -1040,7 +963,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_Codigo
         '
-        Me.PropiedadDeDatosGenerales_Codigo.Height = 31
+        Me.PropiedadDeDatosGenerales_Codigo.Height = 16
         Me.PropiedadDeDatosGenerales_Codigo.Name = "PropiedadDeDatosGenerales_Codigo"
         Me.PropiedadDeDatosGenerales_Codigo.Properties.Caption = "Código"
         Me.PropiedadDeDatosGenerales_Codigo.Properties.FieldName = "Codigo"
@@ -1119,7 +1042,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_ManejaTono
         '
-        Me.PropiedadDeDatosGenerales_ManejaTono.Height = 42
+        Me.PropiedadDeDatosGenerales_ManejaTono.Height = 22
         Me.PropiedadDeDatosGenerales_ManejaTono.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_ManejaTono.Name = "PropiedadDeDatosGenerales_ManejaTono"
         Me.PropiedadDeDatosGenerales_ManejaTono.Properties.Caption = "Maneja Tono"
@@ -1128,7 +1051,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_ManejaCalibre
         '
-        Me.PropiedadDeDatosGenerales_ManejaCalibre.Height = 42
+        Me.PropiedadDeDatosGenerales_ManejaCalibre.Height = 22
         Me.PropiedadDeDatosGenerales_ManejaCalibre.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_ManejaCalibre.Name = "PropiedadDeDatosGenerales_ManejaCalibre"
         Me.PropiedadDeDatosGenerales_ManejaCalibre.Properties.Caption = "Maneja Calibre"
@@ -1137,7 +1060,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_UsaLineaPicking
         '
-        Me.PropiedadDeDatosGenerales_UsaLineaPicking.Height = 40
+        Me.PropiedadDeDatosGenerales_UsaLineaPicking.Height = 21
         Me.PropiedadDeDatosGenerales_UsaLineaPicking.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_UsaLineaPicking.Name = "PropiedadDeDatosGenerales_UsaLineaPicking"
         Me.PropiedadDeDatosGenerales_UsaLineaPicking.Properties.Caption = "Usa Linea de Picking"
@@ -1154,7 +1077,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS
         '
-        Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS.Height = 40
+        Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS.Height = 21
         Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS.Name = "PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS"
         Me.PropiedadDeDatosGenerales_PREFIX_CORRELATIVE_SERIALS.Properties.Caption = "Prefijo Series Correlativas"
@@ -1164,7 +1087,7 @@ Partial Class frmMaterials
         '
         'PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS
         '
-        Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS.Height = 40
+        Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS.Height = 21
         Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS.IsChildRowsLoaded = True
         Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS.Name = "PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS"
         Me.PropiedadDeDatosGenerales_HANDLE_CORRELATIVE_SERIALS.Properties.Caption = "Maneja Serie Correlativa? (SI / NO)"
@@ -1262,10 +1185,9 @@ Partial Class frmMaterials
         '
         Me.BarDockControl11.CausesValidation = False
         Me.BarDockControl11.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl11.Location = New System.Drawing.Point(0, 142)
+        Me.BarDockControl11.Location = New System.Drawing.Point(0, 43)
         Me.BarDockControl11.Manager = Me.BarManager2
-        Me.BarDockControl11.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl11.Size = New System.Drawing.Size(0, 861)
+        Me.BarDockControl11.Size = New System.Drawing.Size(0, 321)
         '
         'BarManager2
         '
@@ -1284,7 +1206,7 @@ Partial Class frmMaterials
         Me.UiBarDatosGenerales.DockCol = 0
         Me.UiBarDatosGenerales.DockRow = 0
         Me.UiBarDatosGenerales.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.UiBarDatosGenerales.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonNuevo), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonGuardar), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonEliminar), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonImprimir), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonExportarExcel), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonDescargarPlantillaEnDatosGenerales), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonCargarPlantillaEnDatosGenerales)})
+        Me.UiBarDatosGenerales.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonNuevo), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonGuardar), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonEliminar), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonImprimir), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.UiBotonExportarExcel, DevExpress.XtraBars.BarItemPaintStyle.Standard), New DevExpress.XtraBars.LinkPersistInfo(Me.UiBotonDescargarPlantillaEnDatosGenerales), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Caption, Me.UiBotonCargarPlantillaEnDatosGenerales, "Cargar Plantilla")})
         Me.UiBarDatosGenerales.OptionsBar.AllowQuickCustomization = False
         Me.UiBarDatosGenerales.OptionsBar.AllowRename = True
         Me.UiBarDatosGenerales.OptionsBar.DisableClose = True
@@ -1324,18 +1246,21 @@ Partial Class frmMaterials
         '
         Me.UiBotonExportarExcel.Caption = "Exportar a Excel"
         Me.UiBotonExportarExcel.Id = 5
+        Me.UiBotonExportarExcel.ImageOptions.Image = Global.WMSOnePlan_Client.My.Resources.Resources.icons8_export_excel_35
         Me.UiBotonExportarExcel.Name = "UiBotonExportarExcel"
         '
         'UiBotonDescargarPlantillaEnDatosGenerales
         '
         Me.UiBotonDescargarPlantillaEnDatosGenerales.Caption = "Descargar Plantilla"
         Me.UiBotonDescargarPlantillaEnDatosGenerales.Id = 6
+        Me.UiBotonDescargarPlantillaEnDatosGenerales.ImageOptions.SvgImage = Global.WMSOnePlan_Client.My.Resources.Resources.export
         Me.UiBotonDescargarPlantillaEnDatosGenerales.Name = "UiBotonDescargarPlantillaEnDatosGenerales"
         '
         'UiBotonCargarPlantillaEnDatosGenerales
         '
         Me.UiBotonCargarPlantillaEnDatosGenerales.Caption = "Cargar Plantilla"
         Me.UiBotonCargarPlantillaEnDatosGenerales.Id = 7
+        Me.UiBotonCargarPlantillaEnDatosGenerales.ImageOptions.SvgImage = CType(resources.GetObject("UiBotonCargarPlantillaEnDatosGenerales.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.UiBotonCargarPlantillaEnDatosGenerales.Name = "UiBotonCargarPlantillaEnDatosGenerales"
         '
         'BarDockControl9
@@ -1344,26 +1269,23 @@ Partial Class frmMaterials
         Me.BarDockControl9.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl9.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl9.Manager = Me.BarManager2
-        Me.BarDockControl9.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl9.Size = New System.Drawing.Size(876, 142)
+        Me.BarDockControl9.Size = New System.Drawing.Size(331, 43)
         '
         'BarDockControl10
         '
         Me.BarDockControl10.CausesValidation = False
         Me.BarDockControl10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl10.Location = New System.Drawing.Point(0, 1003)
+        Me.BarDockControl10.Location = New System.Drawing.Point(0, 364)
         Me.BarDockControl10.Manager = Me.BarManager2
-        Me.BarDockControl10.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl10.Size = New System.Drawing.Size(876, 0)
+        Me.BarDockControl10.Size = New System.Drawing.Size(331, 0)
         '
         'BarDockControl12
         '
         Me.BarDockControl12.CausesValidation = False
         Me.BarDockControl12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl12.Location = New System.Drawing.Point(876, 142)
+        Me.BarDockControl12.Location = New System.Drawing.Point(331, 43)
         Me.BarDockControl12.Manager = Me.BarManager2
-        Me.BarDockControl12.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl12.Size = New System.Drawing.Size(0, 861)
+        Me.BarDockControl12.Size = New System.Drawing.Size(0, 321)
         '
         'BarStaticItem1
         '
@@ -1378,21 +1300,18 @@ Partial Class frmMaterials
         Me.UiTabUbicacion.Controls.Add(Me.BarDockControl16)
         Me.UiTabUbicacion.Controls.Add(Me.BarDockControl14)
         Me.UiTabUbicacion.Controls.Add(Me.BarDockControl13)
-        Me.UiTabUbicacion.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiTabUbicacion.Name = "UiTabUbicacion"
-        Me.UiTabUbicacion.Size = New System.Drawing.Size(876, 1003)
+        Me.UiTabUbicacion.Size = New System.Drawing.Size(331, 364)
         Me.UiTabUbicacion.Text = "Ubicación"
         '
         'GridControl2
         '
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl2.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.GridControl2.Location = New System.Drawing.Point(0, 38)
+        Me.GridControl2.Location = New System.Drawing.Point(0, 20)
         Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.txtMinQty, Me.txtMaxQty})
-        Me.GridControl2.Size = New System.Drawing.Size(876, 965)
+        Me.GridControl2.Size = New System.Drawing.Size(331, 344)
         Me.GridControl2.TabIndex = 21
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -1400,7 +1319,7 @@ Partial Class frmMaterials
         '
         Me.GridView2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
         Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn4, Me.GridColumn5, Me.GridColumn_Min, Me.GridColumn_Max})
-        Me.GridView2.DetailHeight = 673
+        Me.GridView2.FixedLineWidth = 1
         Me.GridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.GroupCount = 1
@@ -1421,17 +1340,15 @@ Partial Class frmMaterials
         '
         Me.GridColumn4.Caption = "Bodega"
         Me.GridColumn4.FieldName = "WAREHOUSE_PARENT"
-        Me.GridColumn4.MinWidth = 40
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.OptionsColumn.AllowEdit = False
         Me.GridColumn4.OptionsColumn.ReadOnly = True
-        Me.GridColumn4.Width = 100
+        Me.GridColumn4.Width = 50
         '
         'GridColumn5
         '
         Me.GridColumn5.Caption = "Ubicación"
         Me.GridColumn5.FieldName = "LOCATION_SPOT"
-        Me.GridColumn5.MinWidth = 40
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.OptionsColumn.AllowEdit = False
         Me.GridColumn5.OptionsColumn.AllowFocus = False
@@ -1439,18 +1356,16 @@ Partial Class frmMaterials
         Me.GridColumn5.OptionsColumn.ShowInCustomizationForm = False
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 0
-        Me.GridColumn5.Width = 200
+        Me.GridColumn5.Width = 100
         '
         'GridColumn_Min
         '
         Me.GridColumn_Min.Caption = "Inv.Min"
         Me.GridColumn_Min.ColumnEdit = Me.txtMinQty
         Me.GridColumn_Min.FieldName = "MIN_QUANTITY"
-        Me.GridColumn_Min.MinWidth = 40
         Me.GridColumn_Min.Name = "GridColumn_Min"
         Me.GridColumn_Min.Visible = True
         Me.GridColumn_Min.VisibleIndex = 1
-        Me.GridColumn_Min.Width = 150
         '
         'txtMinQty
         '
@@ -1464,11 +1379,9 @@ Partial Class frmMaterials
         Me.GridColumn_Max.Caption = "Inv.Max"
         Me.GridColumn_Max.ColumnEdit = Me.txtMaxQty
         Me.GridColumn_Max.FieldName = "MAX_QUANTITY"
-        Me.GridColumn_Max.MinWidth = 40
         Me.GridColumn_Max.Name = "GridColumn_Max"
         Me.GridColumn_Max.Visible = True
         Me.GridColumn_Max.VisibleIndex = 2
-        Me.GridColumn_Max.Width = 150
         '
         'txtMaxQty
         '
@@ -1481,10 +1394,9 @@ Partial Class frmMaterials
         '
         Me.BarDockControl15.CausesValidation = False
         Me.BarDockControl15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl15.Location = New System.Drawing.Point(0, 38)
+        Me.BarDockControl15.Location = New System.Drawing.Point(0, 20)
         Me.BarDockControl15.Manager = Me.BarManager3
-        Me.BarDockControl15.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl15.Size = New System.Drawing.Size(0, 965)
+        Me.BarDockControl15.Size = New System.Drawing.Size(0, 344)
         '
         'BarManager3
         '
@@ -1548,26 +1460,23 @@ Partial Class frmMaterials
         Me.BarDockControl13.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl13.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl13.Manager = Me.BarManager3
-        Me.BarDockControl13.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl13.Size = New System.Drawing.Size(876, 38)
+        Me.BarDockControl13.Size = New System.Drawing.Size(331, 20)
         '
         'BarDockControl14
         '
         Me.BarDockControl14.CausesValidation = False
         Me.BarDockControl14.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl14.Location = New System.Drawing.Point(0, 1003)
+        Me.BarDockControl14.Location = New System.Drawing.Point(0, 364)
         Me.BarDockControl14.Manager = Me.BarManager3
-        Me.BarDockControl14.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl14.Size = New System.Drawing.Size(876, 0)
+        Me.BarDockControl14.Size = New System.Drawing.Size(331, 0)
         '
         'BarDockControl16
         '
         Me.BarDockControl16.CausesValidation = False
         Me.BarDockControl16.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl16.Location = New System.Drawing.Point(876, 38)
+        Me.BarDockControl16.Location = New System.Drawing.Point(331, 20)
         Me.BarDockControl16.Manager = Me.BarManager3
-        Me.BarDockControl16.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl16.Size = New System.Drawing.Size(0, 965)
+        Me.BarDockControl16.Size = New System.Drawing.Size(0, 344)
         '
         'UiTabEmpaque
         '
@@ -1576,24 +1485,19 @@ Partial Class frmMaterials
         Me.UiTabEmpaque.Controls.Add(Me.barDockControlRight)
         Me.UiTabEmpaque.Controls.Add(Me.barDockControlBottom)
         Me.UiTabEmpaque.Controls.Add(Me.barDockControlTop)
-        Me.UiTabEmpaque.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiTabEmpaque.Name = "UiTabEmpaque"
-        Me.UiTabEmpaque.Size = New System.Drawing.Size(876, 1003)
+        Me.UiTabEmpaque.Size = New System.Drawing.Size(331, 364)
         Me.UiTabEmpaque.Text = "Unidad de Medida"
         '
         'UiPropiedadDeEmpaque
         '
-        Me.UiPropiedadDeEmpaque.BandsInterval = 4
         Me.UiPropiedadDeEmpaque.Cursor = System.Windows.Forms.Cursors.SizeNS
         Me.UiPropiedadDeEmpaque.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UiPropiedadDeEmpaque.Location = New System.Drawing.Point(0, 142)
-        Me.UiPropiedadDeEmpaque.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UiPropiedadDeEmpaque.Location = New System.Drawing.Point(0, 40)
         Me.UiPropiedadDeEmpaque.Name = "UiPropiedadDeEmpaque"
-        Me.UiPropiedadDeEmpaque.OptionsView.FixedLineWidth = 4
-        Me.UiPropiedadDeEmpaque.OptionsView.MinRowAutoHeight = 19
         Me.UiPropiedadDeEmpaque.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.UiStoragePackaging})
         Me.UiPropiedadDeEmpaque.Rows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.MaterialCategoria, Me.EmpaqueCategoria})
-        Me.UiPropiedadDeEmpaque.Size = New System.Drawing.Size(876, 861)
+        Me.UiPropiedadDeEmpaque.Size = New System.Drawing.Size(331, 324)
         Me.UiPropiedadDeEmpaque.TabIndex = 5
         '
         'UiStoragePackaging
@@ -1634,7 +1538,7 @@ Partial Class frmMaterials
         'MaterialCategoria
         '
         Me.MaterialCategoria.ChildRows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.codigoDeClientePropiedad, Me.codigoDeMaterialPropiedad})
-        Me.MaterialCategoria.Height = 33
+        Me.MaterialCategoria.Height = 17
         Me.MaterialCategoria.Name = "MaterialCategoria"
         Me.MaterialCategoria.Properties.Caption = "Material"
         '
@@ -1659,7 +1563,7 @@ Partial Class frmMaterials
         'EmpaqueCategoria
         '
         Me.EmpaqueCategoria.ChildRows.AddRange(New DevExpress.XtraVerticalGrid.Rows.BaseRow() {Me.empaquePropiedad, Me.cantidadPropiedad, Me.codigoPropiedad, Me.codigoDeBarrasPropiedad, Me.codigoDeBarrasAlternativoPropiedad})
-        Me.EmpaqueCategoria.Height = 33
+        Me.EmpaqueCategoria.Height = 17
         Me.EmpaqueCategoria.Name = "EmpaqueCategoria"
         Me.EmpaqueCategoria.Properties.Caption = "Unidad de Medida"
         '
@@ -1710,10 +1614,9 @@ Partial Class frmMaterials
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 142)
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 40)
         Me.barDockControlLeft.Manager = Me.BarManager1
-        Me.barDockControlLeft.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 861)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 324)
         '
         'BarManager1
         '
@@ -1795,26 +1698,23 @@ Partial Class frmMaterials
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlTop.Manager = Me.BarManager1
-        Me.barDockControlTop.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.barDockControlTop.Size = New System.Drawing.Size(876, 142)
+        Me.barDockControlTop.Size = New System.Drawing.Size(331, 40)
         '
         'barDockControlBottom
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 1003)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 364)
         Me.barDockControlBottom.Manager = Me.BarManager1
-        Me.barDockControlBottom.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.barDockControlBottom.Size = New System.Drawing.Size(876, 0)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(331, 0)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.barDockControlRight.Location = New System.Drawing.Point(876, 142)
+        Me.barDockControlRight.Location = New System.Drawing.Point(331, 40)
         Me.barDockControlRight.Manager = Me.BarManager1
-        Me.barDockControlRight.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 861)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 324)
         '
         'BarButtonItem1
         '
@@ -1842,32 +1742,27 @@ Partial Class frmMaterials
         Me.UiTabMasterPack.Controls.Add(Me.BarDockControl4)
         Me.UiTabMasterPack.Controls.Add(Me.BarDockControl2)
         Me.UiTabMasterPack.Controls.Add(Me.BarDockControl1)
-        Me.UiTabMasterPack.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiTabMasterPack.Name = "UiTabMasterPack"
         Me.UiTabMasterPack.PageVisible = False
-        Me.UiTabMasterPack.Size = New System.Drawing.Size(876, 1003)
+        Me.UiTabMasterPack.Size = New System.Drawing.Size(331, 364)
         Me.UiTabMasterPack.Text = "Master Pack"
         Me.UiTabMasterPack.Tooltip = "Master Pack"
         '
         'UiContenedorDeVistasComponentes
         '
         Me.UiContenedorDeVistasComponentes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UiContenedorDeVistasComponentes.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.UiContenedorDeVistasComponentes.Location = New System.Drawing.Point(0, 242)
+        Me.UiContenedorDeVistasComponentes.Location = New System.Drawing.Point(0, 126)
         Me.UiContenedorDeVistasComponentes.MainView = Me.UiVistaComponentesAsociados
-        Me.UiContenedorDeVistasComponentes.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiContenedorDeVistasComponentes.MenuManager = Me.BarManager1
         Me.UiContenedorDeVistasComponentes.Name = "UiContenedorDeVistasComponentes"
         Me.UiContenedorDeVistasComponentes.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.UiBotonEliminarComponente})
-        Me.UiContenedorDeVistasComponentes.Size = New System.Drawing.Size(876, 761)
+        Me.UiContenedorDeVistasComponentes.Size = New System.Drawing.Size(331, 238)
         Me.UiContenedorDeVistasComponentes.TabIndex = 20
         Me.UiContenedorDeVistasComponentes.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.UiVistaComponentesAsociados})
         '
         'UiVistaComponentesAsociados
         '
         Me.UiVistaComponentesAsociados.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colEnEliminar, Me.colComponenteAsociadoCodigo, Me.colComponenteAsociadoMaterial, Me.colComponenteAsociadoDescripcionMaterial, Me.colComponenteAsociadoCodigoBarra, Me.colComponenteAsociadoCantidad, Me.colComponenteAsociadoEsMasterPack})
-        Me.UiVistaComponentesAsociados.DetailHeight = 673
-        Me.UiVistaComponentesAsociados.FixedLineWidth = 4
         Me.UiVistaComponentesAsociados.GridControl = Me.UiContenedorDeVistasComponentes
         Me.UiVistaComponentesAsociados.LevelIndent = 0
         Me.UiVistaComponentesAsociados.Name = "UiVistaComponentesAsociados"
@@ -1878,11 +1773,10 @@ Partial Class frmMaterials
         '
         Me.colEnEliminar.Caption = "Eliminar"
         Me.colEnEliminar.ColumnEdit = Me.UiBotonEliminarComponente
-        Me.colEnEliminar.MinWidth = 40
         Me.colEnEliminar.Name = "colEnEliminar"
         Me.colEnEliminar.Visible = True
         Me.colEnEliminar.VisibleIndex = 0
-        Me.colEnEliminar.Width = 100
+        Me.colEnEliminar.Width = 50
         '
         'UiBotonEliminarComponente
         '
@@ -1896,72 +1790,63 @@ Partial Class frmMaterials
         Me.colComponenteAsociadoCodigo.Caption = "Código"
         Me.colComponenteAsociadoCodigo.ColumnEdit = Me.UiBotonEliminarComponente
         Me.colComponenteAsociadoCodigo.FieldName = "MASTER_PACK_COMPONENT_ID"
-        Me.colComponenteAsociadoCodigo.MinWidth = 40
         Me.colComponenteAsociadoCodigo.Name = "colComponenteAsociadoCodigo"
         Me.colComponenteAsociadoCodigo.OptionsColumn.AllowEdit = False
-        Me.colComponenteAsociadoCodigo.Width = 150
         '
         'colComponenteAsociadoMaterial
         '
         Me.colComponenteAsociadoMaterial.Caption = "Código Material"
         Me.colComponenteAsociadoMaterial.FieldName = "COMPONENT_MATERIAL"
-        Me.colComponenteAsociadoMaterial.MinWidth = 40
         Me.colComponenteAsociadoMaterial.Name = "colComponenteAsociadoMaterial"
         Me.colComponenteAsociadoMaterial.OptionsColumn.AllowEdit = False
         Me.colComponenteAsociadoMaterial.Visible = True
         Me.colComponenteAsociadoMaterial.VisibleIndex = 1
-        Me.colComponenteAsociadoMaterial.Width = 204
+        Me.colComponenteAsociadoMaterial.Width = 102
         '
         'colComponenteAsociadoDescripcionMaterial
         '
         Me.colComponenteAsociadoDescripcionMaterial.Caption = "Descripción Material"
         Me.colComponenteAsociadoDescripcionMaterial.FieldName = "COMPONENT_NAME"
-        Me.colComponenteAsociadoDescripcionMaterial.MinWidth = 40
         Me.colComponenteAsociadoDescripcionMaterial.Name = "colComponenteAsociadoDescripcionMaterial"
         Me.colComponenteAsociadoDescripcionMaterial.OptionsColumn.AllowEdit = False
         Me.colComponenteAsociadoDescripcionMaterial.Visible = True
         Me.colComponenteAsociadoDescripcionMaterial.VisibleIndex = 2
-        Me.colComponenteAsociadoDescripcionMaterial.Width = 204
+        Me.colComponenteAsociadoDescripcionMaterial.Width = 102
         '
         'colComponenteAsociadoCodigoBarra
         '
         Me.colComponenteAsociadoCodigoBarra.Caption = "Código Barra"
         Me.colComponenteAsociadoCodigoBarra.FieldName = "COMPONENT_BARCODE"
-        Me.colComponenteAsociadoCodigoBarra.MinWidth = 40
         Me.colComponenteAsociadoCodigoBarra.Name = "colComponenteAsociadoCodigoBarra"
         Me.colComponenteAsociadoCodigoBarra.OptionsColumn.AllowEdit = False
-        Me.colComponenteAsociadoCodigoBarra.Width = 150
         '
         'colComponenteAsociadoCantidad
         '
         Me.colComponenteAsociadoCantidad.Caption = "Cantidad"
         Me.colComponenteAsociadoCantidad.FieldName = "QTY"
-        Me.colComponenteAsociadoCantidad.MinWidth = 40
         Me.colComponenteAsociadoCantidad.Name = "colComponenteAsociadoCantidad"
         Me.colComponenteAsociadoCantidad.OptionsColumn.AllowEdit = False
         Me.colComponenteAsociadoCantidad.Visible = True
         Me.colComponenteAsociadoCantidad.VisibleIndex = 3
-        Me.colComponenteAsociadoCantidad.Width = 214
+        Me.colComponenteAsociadoCantidad.Width = 107
         '
         'colComponenteAsociadoEsMasterPack
         '
         Me.colComponenteAsociadoEsMasterPack.Caption = "Es Master Pack"
         Me.colComponenteAsociadoEsMasterPack.FieldName = "IS_MASTER_PACK"
-        Me.colComponenteAsociadoEsMasterPack.MinWidth = 40
         Me.colComponenteAsociadoEsMasterPack.Name = "colComponenteAsociadoEsMasterPack"
         Me.colComponenteAsociadoEsMasterPack.Visible = True
         Me.colComponenteAsociadoEsMasterPack.VisibleIndex = 4
-        Me.colComponenteAsociadoEsMasterPack.Width = 150
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.FlowLayoutPanel2)
         Me.Panel1.Controls.Add(Me.FlowLayoutPanel1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 38)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 20)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(876, 204)
+        Me.Panel1.Size = New System.Drawing.Size(331, 106)
         Me.Panel1.TabIndex = 25
         '
         'FlowLayoutPanel2
@@ -1969,19 +1854,18 @@ Partial Class frmMaterials
         Me.FlowLayoutPanel2.Controls.Add(Me.UiEtiquetaComponenteCantidad)
         Me.FlowLayoutPanel2.Controls.Add(Me.UiSpinComponenteCantidad)
         Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 100)
-        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 52)
+        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(2)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Padding = New System.Windows.Forms.Padding(24, 25, 24, 25)
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(876, 100)
+        Me.FlowLayoutPanel2.Padding = New System.Windows.Forms.Padding(12, 13, 12, 13)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(331, 52)
         Me.FlowLayoutPanel2.TabIndex = 1
         '
         'UiEtiquetaComponenteCantidad
         '
-        Me.UiEtiquetaComponenteCantidad.Location = New System.Drawing.Point(30, 31)
-        Me.UiEtiquetaComponenteCantidad.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UiEtiquetaComponenteCantidad.Location = New System.Drawing.Point(15, 16)
         Me.UiEtiquetaComponenteCantidad.Name = "UiEtiquetaComponenteCantidad"
-        Me.UiEtiquetaComponenteCantidad.Size = New System.Drawing.Size(90, 25)
+        Me.UiEtiquetaComponenteCantidad.Size = New System.Drawing.Size(47, 13)
         Me.UiEtiquetaComponenteCantidad.TabIndex = 18
         Me.UiEtiquetaComponenteCantidad.Text = "Cantidad:"
         '
@@ -1990,12 +1874,12 @@ Partial Class frmMaterials
         Me.UiSpinComponenteCantidad.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UiSpinComponenteCantidad.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.UiSpinComponenteCantidad.Location = New System.Drawing.Point(142, 25)
-        Me.UiSpinComponenteCantidad.Margin = New System.Windows.Forms.Padding(16, 0, 6, 6)
+        Me.UiSpinComponenteCantidad.Location = New System.Drawing.Point(20, 32)
+        Me.UiSpinComponenteCantidad.Margin = New System.Windows.Forms.Padding(8, 0, 3, 3)
         Me.UiSpinComponenteCantidad.MenuManager = Me.BarManager1
         Me.UiSpinComponenteCantidad.Name = "UiSpinComponenteCantidad"
         Me.UiSpinComponenteCantidad.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.UiSpinComponenteCantidad.Size = New System.Drawing.Size(536, 40)
+        Me.UiSpinComponenteCantidad.Size = New System.Drawing.Size(268, 20)
         Me.UiSpinComponenteCantidad.TabIndex = 19
         '
         'FlowLayoutPanel1
@@ -2004,18 +1888,17 @@ Partial Class frmMaterials
         Me.FlowLayoutPanel1.Controls.Add(Me.UiListaComponenteMaterial)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(24, 25, 24, 25)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(876, 100)
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(12, 13, 12, 13)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(331, 52)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'UiEtiquetaComponenteMaterial
         '
-        Me.UiEtiquetaComponenteMaterial.Location = New System.Drawing.Point(30, 31)
-        Me.UiEtiquetaComponenteMaterial.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UiEtiquetaComponenteMaterial.Location = New System.Drawing.Point(15, 16)
         Me.UiEtiquetaComponenteMaterial.Name = "UiEtiquetaComponenteMaterial"
-        Me.UiEtiquetaComponenteMaterial.Size = New System.Drawing.Size(81, 25)
+        Me.UiEtiquetaComponenteMaterial.Size = New System.Drawing.Size(42, 13)
         Me.UiEtiquetaComponenteMaterial.TabIndex = 15
         Me.UiEtiquetaComponenteMaterial.Text = "Material:"
         '
@@ -2023,14 +1906,14 @@ Partial Class frmMaterials
         '
         Me.UiListaComponenteMaterial.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UiListaComponenteMaterial.Location = New System.Drawing.Point(141, 25)
-        Me.UiListaComponenteMaterial.Margin = New System.Windows.Forms.Padding(24, 0, 6, 6)
+        Me.UiListaComponenteMaterial.Location = New System.Drawing.Point(24, 32)
+        Me.UiListaComponenteMaterial.Margin = New System.Windows.Forms.Padding(12, 0, 3, 3)
         Me.UiListaComponenteMaterial.MenuManager = Me.BarManager1
         Me.UiListaComponenteMaterial.Name = "UiListaComponenteMaterial"
         Me.UiListaComponenteMaterial.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Refrescar", -1, True, True, True, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", "UiComponenteRefrescar", Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.UiListaComponenteMaterial.Properties.PopupView = Me.UiListaVistaComponenteMaterial
         Me.UiListaComponenteMaterial.Properties.ValueMember = "MATERIAL_ID"
-        Me.UiListaComponenteMaterial.Size = New System.Drawing.Size(536, 42)
+        Me.UiListaComponenteMaterial.Size = New System.Drawing.Size(268, 22)
         Me.UiListaComponenteMaterial.TabIndex = 14
         '
         'UiListaVistaComponenteMaterial
@@ -2078,10 +1961,9 @@ Partial Class frmMaterials
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 38)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 20)
         Me.BarDockControl3.Manager = Me.UiBarraMangMaterPack
-        Me.BarDockControl3.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 965)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 344)
         '
         'UiBarraMangMaterPack
         '
@@ -2130,26 +2012,23 @@ Partial Class frmMaterials
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.UiBarraMangMaterPack
-        Me.BarDockControl1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl1.Size = New System.Drawing.Size(876, 38)
+        Me.BarDockControl1.Size = New System.Drawing.Size(331, 20)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 1003)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 364)
         Me.BarDockControl2.Manager = Me.UiBarraMangMaterPack
-        Me.BarDockControl2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl2.Size = New System.Drawing.Size(876, 0)
+        Me.BarDockControl2.Size = New System.Drawing.Size(331, 0)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(876, 38)
+        Me.BarDockControl4.Location = New System.Drawing.Point(331, 20)
         Me.BarDockControl4.Manager = Me.UiBarraMangMaterPack
-        Me.BarDockControl4.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 965)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 344)
         '
         'UiTabExcepcionesPorBodega
         '
@@ -2158,30 +2037,25 @@ Partial Class frmMaterials
         Me.UiTabExcepcionesPorBodega.Controls.Add(Me.BarDockControl8)
         Me.UiTabExcepcionesPorBodega.Controls.Add(Me.BarDockControl6)
         Me.UiTabExcepcionesPorBodega.Controls.Add(Me.BarDockControl5)
-        Me.UiTabExcepcionesPorBodega.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiTabExcepcionesPorBodega.Name = "UiTabExcepcionesPorBodega"
-        Me.UiTabExcepcionesPorBodega.Size = New System.Drawing.Size(876, 1003)
+        Me.UiTabExcepcionesPorBodega.Size = New System.Drawing.Size(331, 364)
         Me.UiTabExcepcionesPorBodega.Text = "Excepciones por Bodega"
         '
         'UiContenedorExcepcionesPorBodega
         '
         Me.UiContenedorExcepcionesPorBodega.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UiContenedorExcepcionesPorBodega.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.UiContenedorExcepcionesPorBodega.Location = New System.Drawing.Point(0, 142)
+        Me.UiContenedorExcepcionesPorBodega.Location = New System.Drawing.Point(0, 40)
         Me.UiContenedorExcepcionesPorBodega.MainView = Me.UiVistaExcepcionPorBodega
-        Me.UiContenedorExcepcionesPorBodega.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UiContenedorExcepcionesPorBodega.MenuManager = Me.BarManager1
         Me.UiContenedorExcepcionesPorBodega.Name = "UiContenedorExcepcionesPorBodega"
         Me.UiContenedorExcepcionesPorBodega.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.UiComboBodega, Me.UiComboPropiedad, Me.UiComboValor})
-        Me.UiContenedorExcepcionesPorBodega.Size = New System.Drawing.Size(876, 861)
+        Me.UiContenedorExcepcionesPorBodega.Size = New System.Drawing.Size(331, 324)
         Me.UiContenedorExcepcionesPorBodega.TabIndex = 14
         Me.UiContenedorExcepcionesPorBodega.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.UiVistaExcepcionPorBodega})
         '
         'UiVistaExcepcionPorBodega
         '
         Me.UiVistaExcepcionPorBodega.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.UiColBodega, Me.UiColPropiedad, Me.UiColValor, Me.UiColModifico, Me.UiColMaterialPropiedad})
-        Me.UiVistaExcepcionPorBodega.DetailHeight = 673
-        Me.UiVistaExcepcionPorBodega.FixedLineWidth = 4
         GridFormatRule1.ApplyToRow = True
         GridFormatRule1.Name = "Format0"
         FormatConditionRuleExpression1.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -2210,12 +2084,10 @@ Partial Class frmMaterials
         Me.UiColBodega.Caption = "Bodega"
         Me.UiColBodega.ColumnEdit = Me.UiComboBodega
         Me.UiColBodega.FieldName = "WAREHOUSE_ID"
-        Me.UiColBodega.MinWidth = 40
         Me.UiColBodega.Name = "UiColBodega"
         Me.UiColBodega.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList
         Me.UiColBodega.Visible = True
         Me.UiColBodega.VisibleIndex = 1
-        Me.UiColBodega.Width = 150
         '
         'UiComboBodega
         '
@@ -2232,12 +2104,10 @@ Partial Class frmMaterials
         Me.UiColPropiedad.Caption = "Propiedad"
         Me.UiColPropiedad.ColumnEdit = Me.UiComboPropiedad
         Me.UiColPropiedad.FieldName = "MATERIAL_PROPERTY_ID"
-        Me.UiColPropiedad.MinWidth = 40
         Me.UiColPropiedad.Name = "UiColPropiedad"
         Me.UiColPropiedad.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList
         Me.UiColPropiedad.Visible = True
         Me.UiColPropiedad.VisibleIndex = 2
-        Me.UiColPropiedad.Width = 150
         '
         'UiComboPropiedad
         '
@@ -2254,11 +2124,9 @@ Partial Class frmMaterials
         Me.UiColValor.Caption = "Valor"
         Me.UiColValor.ColumnEdit = Me.UiComboValor
         Me.UiColValor.FieldName = "VALUE"
-        Me.UiColValor.MinWidth = 40
         Me.UiColValor.Name = "UiColValor"
         Me.UiColValor.Visible = True
         Me.UiColValor.VisibleIndex = 3
-        Me.UiColValor.Width = 150
         '
         'UiComboValor
         '
@@ -2274,27 +2142,22 @@ Partial Class frmMaterials
         '
         Me.UiColModifico.Caption = "Modificado"
         Me.UiColModifico.FieldName = "MODIFIED"
-        Me.UiColModifico.MinWidth = 40
         Me.UiColModifico.Name = "UiColModifico"
-        Me.UiColModifico.Width = 150
         '
         'UiColMaterialPropiedad
         '
         Me.UiColMaterialPropiedad.Caption = "Material"
         Me.UiColMaterialPropiedad.FieldName = "MATERIAL_ID"
-        Me.UiColMaterialPropiedad.MinWidth = 40
         Me.UiColMaterialPropiedad.Name = "UiColMaterialPropiedad"
         Me.UiColMaterialPropiedad.OptionsColumn.ShowInCustomizationForm = False
-        Me.UiColMaterialPropiedad.Width = 150
         '
         'BarDockControl7
         '
         Me.BarDockControl7.CausesValidation = False
         Me.BarDockControl7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl7.Location = New System.Drawing.Point(0, 142)
+        Me.BarDockControl7.Location = New System.Drawing.Point(0, 40)
         Me.BarDockControl7.Manager = Me.BarManager4
-        Me.BarDockControl7.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl7.Size = New System.Drawing.Size(0, 861)
+        Me.BarDockControl7.Size = New System.Drawing.Size(0, 324)
         '
         'BarManager4
         '
@@ -2360,26 +2223,23 @@ Partial Class frmMaterials
         Me.BarDockControl5.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl5.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl5.Manager = Me.BarManager4
-        Me.BarDockControl5.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl5.Size = New System.Drawing.Size(876, 142)
+        Me.BarDockControl5.Size = New System.Drawing.Size(331, 40)
         '
         'BarDockControl6
         '
         Me.BarDockControl6.CausesValidation = False
         Me.BarDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl6.Location = New System.Drawing.Point(0, 1003)
+        Me.BarDockControl6.Location = New System.Drawing.Point(0, 364)
         Me.BarDockControl6.Manager = Me.BarManager4
-        Me.BarDockControl6.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl6.Size = New System.Drawing.Size(876, 0)
+        Me.BarDockControl6.Size = New System.Drawing.Size(331, 0)
         '
         'BarDockControl8
         '
         Me.BarDockControl8.CausesValidation = False
         Me.BarDockControl8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl8.Location = New System.Drawing.Point(876, 142)
+        Me.BarDockControl8.Location = New System.Drawing.Point(331, 40)
         Me.BarDockControl8.Manager = Me.BarManager4
-        Me.BarDockControl8.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.BarDockControl8.Size = New System.Drawing.Size(0, 861)
+        Me.BarDockControl8.Size = New System.Drawing.Size(0, 324)
         '
         'BarButtonItem3
         '
@@ -2427,12 +2287,11 @@ Partial Class frmMaterials
         '
         'frmMaterials
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1924, 1052)
+        Me.ClientSize = New System.Drawing.Size(728, 389)
         Me.Controls.Add(Me.SplitContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "frmMaterials"
         Me.Text = "Catalogos: Productos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -2644,7 +2503,7 @@ Partial Class frmMaterials
     Friend WithEvents PropiedadDeDatosGenerales_ActualizadoEl As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow
     Friend WithEvents PropiedadDeDatosGenerales_ActualizadoPor As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow
     Friend WithEvents DatosGenerales As DevExpress.XtraVerticalGrid.Rows.CategoryRow
-    Friend WithEvents PropiedadDeDatosGenerales_CantidadMaxPorBin As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow
+    Friend WithEvents PropiedadDeDatosGenerales_CantidadMaxPorBinbin As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow
     Friend WithEvents PropiedadDeDatosGenerales_Clase As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow
     Friend WithEvents PropiedadDeDatosGenerales_SubClase As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow
     Friend WithEvents PropiedadDeDatosGenerales_Cliente As DevExpress.XtraVerticalGrid.Rows.PGridEditorRow

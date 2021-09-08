@@ -6133,6 +6133,9 @@
     <None Include="Resources\file_extension_pdf2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\exportfile.svg" />
+    <None Include="Resources\exportfile1.svg" />
+    <None Include="Resources\export.svg" />
     <Content Include="Resources\human127.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -6238,6 +6241,8 @@
     <None Include="Resources\linespacing2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\icons8-export-excel-48.png" />
+    <None Include="Resources\icons8-export-excel-35.png" />
     <Content Include="Resources\Men.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
