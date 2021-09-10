@@ -6243,6 +6243,8 @@
     </None>
     <None Include="Resources\icons8-export-excel-48.png" />
     <None Include="Resources\icons8-export-excel-35.png" />
+    <None Include="Resources\icons8-descargar-escritorio-35.png" />
+    <None Include="Resources\icons8-cargar-documento-de-enlace-35.png" />
     <Content Include="Resources\Men.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

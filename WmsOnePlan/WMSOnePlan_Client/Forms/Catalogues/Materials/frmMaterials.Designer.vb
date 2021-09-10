@@ -23,7 +23,6 @@ Partial Class frmMaterials
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMaterials))
         Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
@@ -31,6 +30,7 @@ Partial Class frmMaterials
         Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim GridFormatRule1 As DevExpress.XtraGrid.GridFormatRule = New DevExpress.XtraGrid.GridFormatRule()
         Dim FormatConditionRuleExpression1 As DevExpress.XtraEditors.FormatConditionRuleExpression = New DevExpress.XtraEditors.FormatConditionRuleExpression()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMaterials))
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn_Grp = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -1253,14 +1253,14 @@ Partial Class frmMaterials
         '
         Me.UiBotonDescargarPlantillaEnDatosGenerales.Caption = "Descargar Plantilla"
         Me.UiBotonDescargarPlantillaEnDatosGenerales.Id = 6
-        Me.UiBotonDescargarPlantillaEnDatosGenerales.ImageOptions.SvgImage = Global.WMSOnePlan_Client.My.Resources.Resources.export
+        Me.UiBotonDescargarPlantillaEnDatosGenerales.ImageOptions.Image = Global.WMSOnePlan_Client.My.Resources.Resources.icons8_descargar_escritorio_35
         Me.UiBotonDescargarPlantillaEnDatosGenerales.Name = "UiBotonDescargarPlantillaEnDatosGenerales"
         '
         'UiBotonCargarPlantillaEnDatosGenerales
         '
         Me.UiBotonCargarPlantillaEnDatosGenerales.Caption = "Cargar Plantilla"
         Me.UiBotonCargarPlantillaEnDatosGenerales.Id = 7
-        Me.UiBotonCargarPlantillaEnDatosGenerales.ImageOptions.SvgImage = CType(resources.GetObject("UiBotonCargarPlantillaEnDatosGenerales.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.UiBotonCargarPlantillaEnDatosGenerales.ImageOptions.Image = Global.WMSOnePlan_Client.My.Resources.Resources.icons8_cargar_documento_de_enlace_35
         Me.UiBotonCargarPlantillaEnDatosGenerales.Name = "UiBotonCargarPlantillaEnDatosGenerales"
         '
         'BarDockControl9
