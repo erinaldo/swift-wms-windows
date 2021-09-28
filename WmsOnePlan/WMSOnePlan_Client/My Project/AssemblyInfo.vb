@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Backoffice WMS")>
 <Assembly: AssemblyCompany("Procesos Eficientes")>
 <Assembly: AssemblyProduct("WMSOnePlan_Client")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyCopyright("Copyright ©  2021")>
 <Assembly: AssemblyTrademark("Procesos Eficientes©")>
 
 <Assembly: ComVisible(False)>
@@ -34,8 +34,8 @@ Imports System.Runtime.InteropServices
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
 
-<Assembly: AssemblyVersion("2021.02.12.0")>
-<Assembly: AssemblyFileVersion("2021.02.12.0")>
+<Assembly: AssemblyVersion("2021.09.27.0")>
+<Assembly: AssemblyFileVersion("2021.09.27.0")>
 
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 

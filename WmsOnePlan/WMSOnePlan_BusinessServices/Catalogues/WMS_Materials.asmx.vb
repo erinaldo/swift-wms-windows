@@ -2054,7 +2054,7 @@ Public Class WMS_Materials
     End Function
 
     <WebMethod(Description:="InsertMasterPackComponent")>
-    Public Function InsertMasterPackComponent(ByVal pMasterPackCode As String, ByVal pComponentMaterialId As String, ByVal pQTY As Integer, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean
+    Public Function InsertMasterPackComponent(ByVal pMasterPackCode As String, ByVal pComponentMaterialId As String, ByVal pQTY As Decimal, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean
 
         Dim sqldb_conexion As SqlConnection = New SqlConnection(AppSettings(pEnvironmentName).ToString)
         sqldb_conexion.Open()
@@ -2070,7 +2070,7 @@ Public Class WMS_Materials
             cmd.Parameters("@COMPONENT_MATERIAL").Direction = ParameterDirection.Input
             cmd.Parameters("@COMPONENT_MATERIAL").Value = pComponentMaterialId
 
-            cmd.Parameters.Add("@QTY", SqlDbType.Int)
+            cmd.Parameters.Add("@QTY", SqlDbType.Decimal)
             cmd.Parameters("@QTY").Direction = ParameterDirection.Input
             cmd.Parameters("@QTY").Value = pQTY
 

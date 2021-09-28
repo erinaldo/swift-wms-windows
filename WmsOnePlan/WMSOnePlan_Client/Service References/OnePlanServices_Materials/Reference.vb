@@ -262,10 +262,10 @@ Namespace OnePlanServices_Materials
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function GetMaterialsComponentsMasterPack(ByVal pMaterialId As String, ByRef pResult As String, ByVal pEnvironmentName As String) As System.Data.DataTable
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/InsertMasterPackComponent", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
-        Function InsertMasterPackComponent(ByVal pMasterPackCode As String, ByVal pComponentMaterialId As String, ByVal pQTY As Integer, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean
-        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/InsertMasterPackComponent", ReplyAction:="*"),
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=True)>
+        Function InsertMasterPackComponent(ByVal pMasterPackCode As String, ByVal pComponentMaterialId As String, ByVal pQTY As Decimal, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean
+
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/DeleteMasterPackComponent", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function DeleteMasterPackComponent(ByVal pMasterPackComponentId As String, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean
@@ -649,11 +649,11 @@ Namespace OnePlanServices_Materials
         Public Function GetMaterialsComponentsMasterPack(ByVal pMaterialId As String, ByRef pResult As String, ByVal pEnvironmentName As String) As System.Data.DataTable Implements OnePlanServices_Materials.WMS_MaterialsSoap.GetMaterialsComponentsMasterPack
             Return MyBase.Channel.GetMaterialsComponentsMasterPack(pMaterialId, pResult, pEnvironmentName)
         End Function
-        
-        Public Function InsertMasterPackComponent(ByVal pMasterPackCode As String, ByVal pComponentMaterialId As String, ByVal pQTY As Integer, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean Implements OnePlanServices_Materials.WMS_MaterialsSoap.InsertMasterPackComponent
+
+        Public Function InsertMasterPackComponent(ByVal pMasterPackCode As String, ByVal pComponentMaterialId As String, ByVal pQTY As Decimal, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean Implements OnePlanServices_Materials.WMS_MaterialsSoap.InsertMasterPackComponent
             Return MyBase.Channel.InsertMasterPackComponent(pMasterPackCode, pComponentMaterialId, pQTY, pResult, pEnvironmentName)
         End Function
-        
+
         Public Function DeleteMasterPackComponent(ByVal pMasterPackComponentId As String, ByRef pResult As String, ByVal pEnvironmentName As String) As Boolean Implements OnePlanServices_Materials.WMS_MaterialsSoap.DeleteMasterPackComponent
             Return MyBase.Channel.DeleteMasterPackComponent(pMasterPackComponentId, pResult, pEnvironmentName)
         End Function
