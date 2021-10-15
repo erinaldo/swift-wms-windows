@@ -152,7 +152,7 @@ Public Class WMS_Locations
                 cmd.Parameters.Add("@SPOT_AISLE", SqlDbType.VarChar, 25)
                 cmd.Parameters.Add("@SPOT_COLUMN", SqlDbType.VarChar, 25)
                 cmd.Parameters.Add("@SPOT_LEVEL", SqlDbType.VarChar, 25)
-                cmd.Parameters.Add("@SPOT_PARTITION", SqlDbType.Int)
+                cmd.Parameters.Add("@SPOT_PARTITION", SqlDbType.VarChar)
                 cmd.Parameters.Add("@SPOT_LABEL", SqlDbType.VarChar, 25)
                 cmd.Parameters.Add("@ALLOW_PICKING", SqlDbType.Int)
                 cmd.Parameters.Add("@ALLOW_STORAGE", SqlDbType.Int)

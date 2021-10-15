@@ -233,7 +233,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://localhost:50005//")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.101.233.4:8099//")>  _
         Public ReadOnly Property WSHOST() As String
             Get
                 Return CType(Me("WSHOST"),String)
@@ -243,7 +243,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://localhost:50005//")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.101.233.4:8099//")>  _
         Public ReadOnly Property WMSOnePlan_Client_OnePlanServices_Security_WMS_Security() As String
             Get
                 Return CType(Me("WMSOnePlan_Client_OnePlanServices_Security_WMS_Security"),String)

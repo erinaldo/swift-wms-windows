@@ -87,10 +87,10 @@
       <Value Profile="(Default)">10.101.233.3</Value>
     </Setting>
     <Setting Name="WSHOST" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:50005//</Value>
+      <Value Profile="(Default)">http://10.101.233.4:8099//</Value>
     </Setting>
     <Setting Name="WMSOnePlan_Client_OnePlanServices_Security_WMS_Security" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:50005//</Value>
+      <Value Profile="(Default)">http://10.101.233.4:8099//</Value>
     </Setting>
   </Settings>
 </SettingsFile>
