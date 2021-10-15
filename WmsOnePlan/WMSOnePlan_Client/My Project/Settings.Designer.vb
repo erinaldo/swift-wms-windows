@@ -206,15 +206,6 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("ferco")>  _
-        Public ReadOnly Property Schema() As String
-            Get
-                Return CType(Me("Schema"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("http://10.240.29.104:8090")>  _
         Public ReadOnly Property WSHOST() As String
             Get
@@ -229,6 +220,15 @@ Namespace My
         Public ReadOnly Property WMSOnePlan_Client_OnePlanServices_Security_WMS_Security() As String
             Get
                 Return CType(Me("WMSOnePlan_Client_OnePlanServices_Security_WMS_Security"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("ferco")>  _
+        Public ReadOnly Property Schema() As String
+            Get
+                Return CType(Me("Schema"),String)
             End Get
         End Property
         

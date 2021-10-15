@@ -3794,6 +3794,7 @@
             // UIBotonLiberarTransaccion
             // 
             this.UIBotonLiberarTransaccion.Caption = "Liberar Transacción";
+            this.UIBotonLiberarTransaccion.Enabled = false;
             this.UIBotonLiberarTransaccion.Id = 1;
             this.UIBotonLiberarTransaccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UIBotonLiberarTransaccion.ImageOptions.Image")));
             this.UIBotonLiberarTransaccion.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UIBotonLiberarTransaccion.ImageOptions.LargeImage")));
