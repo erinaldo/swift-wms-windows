@@ -2093,12 +2093,12 @@ Public Class frmMaterials
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().IgnoreBlanks = False
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().InCellDropdown = False
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().AllowedValues = XLAllowedValues.WholeNumber
-            hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().Decimal.EqualOrGreaterThan(1)
+            hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().Decimal.EqualOrGreaterThan(0.0001)
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().InputTitle = "Obligatorio"
-            hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().InputMessage = "Debe ingresar un valor numerico mayor o igual a uno. De no tener este campo se ignorara el registro."
+            hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().InputMessage = "Debe ingresar un valor numerico mayor o igual a 0.0001. De no tener este campo se ignorara el registro."
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().ShowInputMessage = True
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().ErrorTitle = "Obligatorio"
-            hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().ErrorMessage = "Debe ingresar un valor numerico mayor o igual a uno. De no tener este campo se ignorara el registro."
+            hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().ErrorMessage = "Debe ingresar un valor numerico mayor o igual a 0.0001. De no tener este campo se ignorara el registro."
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().ErrorStyle = XLErrorStyle.Stop
             hojaDeMasterPack.Range("D2:D" + numeroDeFilas.ToString()).SetDataValidation().ShowErrorMessage = True
 
