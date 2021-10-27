@@ -206,6 +206,25 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.101.233.4:8099//")>  _
+        Public ReadOnly Property WSHOST() As String
+            Get
+                Return CType(Me("WSHOST"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.101.233.4:8099//")>  _
+        Public ReadOnly Property WMSOnePlan_Client_OnePlanServices_Security_WMS_Security() As String
+            Get
+                Return CType(Me("WMSOnePlan_Client_OnePlanServices_Security_WMS_Security"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("wms")>  _
         Public ReadOnly Property Schema() As String
             Get
@@ -228,25 +247,6 @@ Namespace My
         Public ReadOnly Property SERVER_IP() As String
             Get
                 Return CType(Me("SERVER_IP"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.101.233.4:8099//")>  _
-        Public ReadOnly Property WSHOST() As String
-            Get
-                Return CType(Me("WSHOST"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.101.233.4:8099//")>  _
-        Public ReadOnly Property WMSOnePlan_Client_OnePlanServices_Security_WMS_Security() As String
-            Get
-                Return CType(Me("WMSOnePlan_Client_OnePlanServices_Security_WMS_Security"),String)
             End Get
         End Property
     End Class
