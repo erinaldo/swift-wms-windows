@@ -2196,6 +2196,7 @@ Public Class WMS_Trans
     Public Function UpdateDeliveryNoteERP(passId As Integer, status As String, login As String, environmentName As String, ByRef result As String) As DataTable
         Dim rst As String = ""
         Dim DocEntryTable = GetDraftDocEntry(passId, environmentName, rst)
+        Dim DocEntryEcommerceTable = GetSODocEntry(passId, environmentName, rst)
         Dim DocNum = 0
         Dim CompletedWhitErrors = 0
         Dim PostedWhitError = New DataTable
@@ -2218,6 +2219,27 @@ Public Class WMS_Trans
                     End If
                 End If
             Next
+        End If
+
+        If (DocEntryEcommerceTable.Rows.Count > 0) Then
+
+            For i As Integer = 0 To DocEntryEcommerceTable.Rows.Count - 1
+                Dim DocEntry As String = DocEntryEcommerceTable.Rows(i)(0)
+
+                If Not String.IsNullOrEmpty(DocEntry) Then
+                    Dim webClient As New System.Net.WebClient
+                    Dim response As String = webClient.DownloadString(AppSettings("SAPBOAPI") + "/ChangeStatusEcomm1/" + DocEntry + "/2")
+
+                    If response.Contains("Error") Then
+                        result = "ERRROR, (" + AppSettings("SAPBOAPI") + "/ChangeStatusEcomm1/" + DocEntry + "/2) ; " + response
+                        CompletedWhitErrors = -1
+                        PostedWhitError = MarkWavePickingAsFailed(DocEntry, environmentName, login, response, rst)
+                    Else
+                        DocNum = response
+                    End If
+                End If
+            Next
+
         End If
 
         Dim sqldbConexion = New SqlConnection(AppSettings(environmentName).ToString)
@@ -2275,6 +2297,43 @@ Public Class WMS_Trans
 
             Dim miscDa = New SqlDataAdapter(cmd)
             Dim miscDs = New DataTable("DraftDocEntry")
+
+            Try
+                miscDa.Fill(miscDs)
+            Catch ex As Exception
+                result = "ERROR," + ex.Message
+                Return Nothing
+            End Try
+
+            result = ""
+            Return miscDs
+
+        Catch ex As Exception
+            result = ex.Message
+            Return Nothing
+        Finally
+            sqldbConexion.Close()
+            sqldbConexion.Dispose()
+            sqldbConexion = Nothing
+        End Try
+    End Function
+
+    <WebMethod(Description:="Get SO DocEntry by pass id for ecommerce")>
+    Public Function GetSODocEntry(passId As Integer, environmentName As String, ByRef result As String) As DataTable
+        Dim sqldbConexion = New SqlConnection(AppSettings(environmentName).ToString)
+        sqldbConexion.Open()
+
+        Try
+            Dim cmd As New SqlCommand
+
+            cmd.Parameters.Add("@PASS_ID", SqlDbType.Int).Value = passId
+
+            cmd.CommandText = DefaultSchema + "[GETSODOCENTRY_BY_PASS_ID_ECOMMERCE]"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = sqldbConexion
+
+            Dim miscDa = New SqlDataAdapter(cmd)
+            Dim miscDs = New DataTable("SalesOrderDocEntry")
 
             Try
                 miscDa.Fill(miscDs)
