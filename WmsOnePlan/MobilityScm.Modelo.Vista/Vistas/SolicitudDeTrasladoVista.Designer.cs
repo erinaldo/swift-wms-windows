@@ -89,6 +89,7 @@
             this.UiTextoIdSolicitud = new DevExpress.XtraBars.BarEditItem();
             this.UiControlTextoIdSolicitud = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.UiBotonBuscar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -283,7 +284,7 @@
             gridLevelNode1.RelationName = "Level1";
             this.UiContenedorVistaSolicitudDeTraslado.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.UiContenedorVistaSolicitudDeTraslado.Location = new System.Drawing.Point(0, 167);
+            this.UiContenedorVistaSolicitudDeTraslado.Location = new System.Drawing.Point(0, 162);
             this.UiContenedorVistaSolicitudDeTraslado.MainView = this.UiVistaSolicitudTraslado;
             this.UiContenedorVistaSolicitudDeTraslado.MenuManager = this.UiBarraContenedorPrincipal;
             this.UiContenedorVistaSolicitudDeTraslado.Name = "UiContenedorVistaSolicitudDeTraslado";
@@ -294,6 +295,7 @@
             this.UiContenedorVistaSolicitudDeTraslado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaSolicitudTraslado,
             this.UiVistaSolicitudDeTrasladoDetalle});
+            this.UiContenedorVistaSolicitudDeTraslado.Click += new System.EventHandler(this.UiContenedorVistaSolicitudDeTraslado_Click);
             // 
             // UiVistaSolicitudTraslado
             // 
@@ -322,7 +324,7 @@
             // 
             // colMATERIAL_ID
             // 
-            this.colMATERIAL_ID.Caption = "Código Material";
+            this.colMATERIAL_ID.Caption = "Código Materia";
             this.colMATERIAL_ID.FieldName = "MATERIAL_ID";
             this.colMATERIAL_ID.Name = "colMATERIAL_ID";
             this.colMATERIAL_ID.OptionsColumn.AllowEdit = false;
@@ -407,9 +409,10 @@
             this.barStaticItem1,
             this.UiTextoIdSolicitud,
             this.UiBotonBuscar,
-            this.UiBotonReporte});
+            this.UiBotonReporte,
+            this.barButtonItem3});
             this.UiBarraContenedorPrincipal.MainMenu = this.UiBarraPricipalOpciones;
-            this.UiBarraContenedorPrincipal.MaxItemId = 24;
+            this.UiBarraContenedorPrincipal.MaxItemId = 25;
             this.UiBarraContenedorPrincipal.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
@@ -429,7 +432,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.UiBotonExportar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.UiBotonReporte),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.UiTextoIdSolicitud, "", false, true, true, 70),
-            new DevExpress.XtraBars.LinkPersistInfo(this.UiBotonBuscar)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.UiBotonBuscar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
             this.UiBarraPricipalOpciones.OptionsBar.AllowQuickCustomization = false;
             this.UiBarraPricipalOpciones.OptionsBar.DrawDragBorder = false;
             this.UiBarraPricipalOpciones.OptionsBar.UseWholeRow = true;
@@ -473,7 +477,6 @@
             // UiBotonExportar
             // 
             this.UiBotonExportar.Caption = "Exportar";
-            this.UiBotonExportar.Enabled = false;
             this.UiBotonExportar.Id = 7;
             this.UiBotonExportar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiBotonExportar.ImageOptions.Image")));
             this.UiBotonExportar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UiBotonExportar.ImageOptions.LargeImage")));
@@ -516,6 +519,13 @@
             this.UiBotonBuscar.Name = "UiBotonBuscar";
             this.UiBotonBuscar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.UiBotonBuscar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UiBotonBuscar_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "ImportarExcel";
+            this.barButtonItem3.Id = 24;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -1313,7 +1323,6 @@
         private DevExpress.XtraBars.BarManager UiBarraContenedorPrincipal;
         private DevExpress.XtraBars.Bar UiBarraPricipalOpciones;
         private DevExpress.XtraBars.BarButtonItem UiBotonRefrescar;
-        private DevExpress.XtraBars.BarButtonItem UiBotonExportar;
         private DevExpress.XtraBars.BarButtonItem UiBotonNuevo;
         private DevExpress.XtraBars.BarButtonItem UiBotonGrabar;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -1402,5 +1411,7 @@
         private DevExpress.XtraEditors.MemoEdit UiTextoComentario;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.CheckEdit UiCheckEnviarErp;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        public DevExpress.XtraBars.BarButtonItem UiBotonExportar;
     }
 }

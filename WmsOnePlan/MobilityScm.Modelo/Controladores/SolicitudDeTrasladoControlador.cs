@@ -12,10 +12,19 @@ using MobilityScm.Utilerias;
 using MobilityScm.Vertical.Servicios;
 using MobilityScm.Modelo.Estados;
 
+using DevExpress.XtraGrid;
+using System.Windows.Forms;
+using System.Data;
+using System.Data.OleDb;
+
 namespace MobilityScm.Modelo.Controladores
 {
     public class SolicitudDeTrasladoControlador : ISolicitudDeTrasladoControlador
     {
+
+      
+
+
         private readonly ISolicitudDeTrasladoVista _vista;
 
         public ISolicitudDeTrasladoServicio SolicitudDeTrasladoServicio { get; set; }
@@ -209,5 +218,50 @@ namespace MobilityScm.Modelo.Controladores
                 InteraccionConUsuarioServicio.Mensaje(ex.Message);
             }
         }
+
+        public void importarExcel(GridControl gv, String nameSheet){
+            
+            OleDbConnection connect;
+            OleDbDataAdapter dataAdapter;
+            DataTable dTable = new DataTable();
+
+            string path = ""; //almacena la ruta del archivo
+
+            try{
+                //CONFIGURACION PARA LA VENTANA DE BUSQUEDA
+                OpenFileDialog oFileDialog = new OpenFileDialog();
+                oFileDialog.Filter = "Excel Files |*.xlsx"; 
+                oFileDialog.Title = "Cargar Archivo";
+
+                //VALIDA SI PRESIONA EL BOTON ABRIR Y SI LA RUTA DEL ARCHIVO NO ES NULA
+                if (oFileDialog.ShowDialog() == DialogResult.OK){
+                    if (oFileDialog.FileName.Equals("") == false){
+                        path = oFileDialog.FileName;
+                    }
+                }
+
+                //CREACION DE LA CONEXION
+                connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" + path + "Extended Properties= 'Excel 12.0 Xml;HDR=yes'");
+                dataAdapter = new OleDbDataAdapter("select * from[" + nameSheet + "$]", connect);  
+                                                                                                   // selecciona toda la informacion de la hoja de trabajo del archivo
+                                                                                                   //var source = new ExcelDataSource();
+                                                                                                   //source.FileName = path;
+                                                                                                   //var wSheetSettings = new ExcelWorksheetSettings(nameSheet);
+                                                                                                   //source.SourceOptions = new ExcelSourceOptions(wSheetSettings);
+
+                dataAdapter.Fill(dTable); //ingresa los datos al datatable
+                gv.DataSource = dTable; // ingresa la informacion del data table al grid view
+            }
+            catch (Exception ex){
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+
+
+
     }
+    
 }

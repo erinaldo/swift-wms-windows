@@ -23,10 +23,20 @@ using MobilityScm.Utilerias;
 using MobilityScm.Vertical.Servicios;
 using MobilityScm.Modelo.Tipos;
 
+using DevExpress.XtraGrid;
+using System.Windows.Forms;
+using System.Data;
+using System.Data.OleDb;
+
 namespace MobilityScm.Modelo.Vistas
 {
     public partial class SolicitudDeTrasladoVista : VistaBase, ISolicitudDeTrasladoVista
     {
+
+        OleDbConnection connect;
+        OleDbDataAdapter dataAdapter;
+        DataTable dTable = new DataTable();
+
         #region Eventos 
         public event EventHandler<SolicitudDeTrasladoArgumento> UsuarioDeseaBuscarSolicitudDeTraslado;
         public event EventHandler<SolicitudDeTrasladoArgumento> UsuarioDeseaGuardarSolicitudDeTraslado;
@@ -704,5 +714,70 @@ namespace MobilityScm.Modelo.Vistas
             }
         }
         #endregion
+
+        public void importarExcel(GridControl gv, String nameSheet)
+        {
+
+            string path = ""; //almacena la ruta del archivo
+
+            try
+            {
+                //CONFIGURACION PARA LA VENTANA DE BUSQUEDA
+                //OpenFileDialog oFileDialog = new OpenFileDialog();
+                //oFileDialog.Filter = "Excel Files |*.xlsx";
+                //oFileDialog.Title = "Cargar Archivo";
+
+                //VALIDA SI PRESIONA EL BOTON ABRIR Y SI LA RUTA DEL ARCHIVO NO ES NULA
+                //if (oFileDialog.ShowDialog() == DialogResult.OK)
+                //{
+                  //  if (oFileDialog.FileName.Equals("") == false)
+                    //{
+                      //  path = oFileDialog.FileName;
+                    //}
+                //}
+
+                //CREACION DE LA CONEXION
+                connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; data source=" + path + ";Extended Properties='Excel 12.0 Xml;HDR=Yes;IMEX=1'");
+                dataAdapter = new OleDbDataAdapter("select * from [" + nameSheet + "$]", connect);  // selecciona toda la informacion de la hoja de trabajo del archivo
+
+                //ingresa los datos al datatable    
+                //dataAdapter.Fill(dTable);
+                // ingresa la informacion del data table al grid control
+                //gv.DataSource = dTable;
+                //Console.WriteLine(dTable.Rows);
+
+                //System.Diagnostics.Debug.WriteLine("se selecciono"+seleccionado);
+
+                for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
+                {
+                    //var recorrido = UiVistaSolicitudTraslado.GetRow(i);
+                    //System.Diagnostics.Debug.WriteLine(recorrido);
+                    var bs = new BindingSource();
+                   
+
+                    var txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(i, colMATERIAL_ID);
+
+                    System.Diagnostics.Debug.WriteLine(txtIdMaterial);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            importarExcel(UiContenedorVistaSolicitudDeTraslado, "Hoja1");
+        }
+
+        private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
