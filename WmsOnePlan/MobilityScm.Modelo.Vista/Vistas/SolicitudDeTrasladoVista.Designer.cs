@@ -305,6 +305,7 @@
             this.colIS_MASTER_PACK,
             this.colQTY,
             this.colINVENTORY});
+            this.UiVistaSolicitudTraslado.CustomizationFormBounds = new System.Drawing.Rectangle(881, 359, 252, 266);
             this.UiVistaSolicitudTraslado.GridControl = this.UiContenedorVistaSolicitudDeTraslado;
             this.UiVistaSolicitudTraslado.Name = "UiVistaSolicitudTraslado";
             this.UiVistaSolicitudTraslado.OptionsDetail.AllowZoomDetail = false;

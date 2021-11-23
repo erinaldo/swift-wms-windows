@@ -717,50 +717,72 @@ namespace MobilityScm.Modelo.Vistas
 
         public void importarExcel(GridControl gv, String nameSheet)
         {
-
             string path = ""; //almacena la ruta del archivo
 
             try
             {
                 //CONFIGURACION PARA LA VENTANA DE BUSQUEDA
-                //OpenFileDialog oFileDialog = new OpenFileDialog();
-                //oFileDialog.Filter = "Excel Files |*.xlsx";
-                //oFileDialog.Title = "Cargar Archivo";
+                OpenFileDialog oFileDialog = new OpenFileDialog();
+                oFileDialog.Filter = "Excel Files |*.xlsx";
+                oFileDialog.Title = "Cargar Archivo";
 
                 //VALIDA SI PRESIONA EL BOTON ABRIR Y SI LA RUTA DEL ARCHIVO NO ES NULA
-                //if (oFileDialog.ShowDialog() == DialogResult.OK)
-                //{
-                  //  if (oFileDialog.FileName.Equals("") == false)
-                    //{
-                      //  path = oFileDialog.FileName;
-                    //}
-                //}
+                if (oFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (oFileDialog.FileName.Equals("") == false)
+                    {
+                        path = oFileDialog.FileName;
+                    }
+                }
 
                 //CREACION DE LA CONEXION
-                connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; data source=" + path + ";Extended Properties='Excel 12.0 Xml;HDR=Yes;IMEX=1'");
+                connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; data source=" + path + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
                 dataAdapter = new OleDbDataAdapter("select * from [" + nameSheet + "$]", connect);  // selecciona toda la informacion de la hoja de trabajo del archivo
 
                 //ingresa los datos al datatable    
-                //dataAdapter.Fill(dTable);
+                dataAdapter.Fill(dTable);
+
                 // ingresa la informacion del data table al grid control
-                //gv.DataSource = dTable;
-                //Console.WriteLine(dTable.Rows);
+                //--------------------------------------PRUEBAS
+                var cont = UiVistaSolicitudTraslado.Columns.Count;
+                UiVistaSolicitudTraslado.SetRowCellValue(0, colMATERIAL_NAME, "PAPA FRITA SEVEN 9x9MM 10 KG GRADO B 1X4");
+                var prueba = UiVistaSolicitudTraslado.GetRowCellValue(0, colMATERIAL_NAME);
+                System.Diagnostics.Debug.WriteLine(prueba);
+                System.Diagnostics.Debug.WriteLine("////////////////////////////////////////////////////////");
+                //--------------------------------------------------------------------------------------------
 
-                //System.Diagnostics.Debug.WriteLine("se selecciono"+seleccionado);
-
-                for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
+                foreach (DataRow row in dTable.Rows)
                 {
-                    //var recorrido = UiVistaSolicitudTraslado.GetRow(i);
-                    //System.Diagnostics.Debug.WriteLine(recorrido);
-                    var bs = new BindingSource();
+                    string select = row[0].ToString();
+                    string codM = row[1].ToString();
+                    string cant = row[2].ToString();
+
+                        System.Diagnostics.Debug.WriteLine("///////////////////////////////////DATOS DE DataTable////////////////////////////");
+                        System.Diagnostics.Debug.WriteLine(select + "||" + codM + "||" + cant + "||");
                    
 
-                    var txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(i, colMATERIAL_ID);
+                    for (int j = 0; j < UiVistaSolicitudTraslado.RowCount; j++)
+                    {
 
-                    System.Diagnostics.Debug.WriteLine(txtIdMaterial);
+                        var txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_ID).ToString();
+                        var txtNombreMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_NAME).ToString();
+                        var txtEsMasterPack = UiVistaSolicitudTraslado.GetRowCellValue(j, colIS_MASTER_PACK).ToString();
+                        var txtCantidad = UiVistaSolicitudTraslado.GetRowCellValue(j, colQTY).ToString();
+                        var txtInventario = UiVistaSolicitudTraslado.GetRowCellValue(j, colINVENTORY).ToString();
+
+//                            if (codM==txtIdMaterial)
+//                          {
+//                                UiVistaSolicitudTraslado.SelectRow(i);
+//
+//                            }else {
+//                                MessageBox.Show("Los datos en el archivo excel no estan ordenados de manera correcta, favor revisar para poder realizar la carga de datos correctamente","Error al cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//                            }
+//
+//                            System.Diagnostics.Debug.WriteLine("{ ID: " + txtIdMaterial + " || Material: " + txtNombreMaterial + " ||Es Master Pack: " + txtEsMasterPack + " Cantidad: " + txtCantidad + " Inventario Disponible: " + txtInventario + " }");
+//
+                    }
+
                 }
-
-
 
             }
             catch (Exception ex)
