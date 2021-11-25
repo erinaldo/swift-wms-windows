@@ -715,8 +715,7 @@ namespace MobilityScm.Modelo.Vistas
         }
         #endregion
 
-        public void importarExcel(GridControl gv, String nameSheet)
-        {
+        public void importarExcel( String nameSheet){
             string path = ""; //almacena la ruta del archivo
 
             try
@@ -733,53 +732,50 @@ namespace MobilityScm.Modelo.Vistas
                     {
                         path = oFileDialog.FileName;
                     }
-                }
+                    else MessageBox.Show("Debe seleccionar un archivo .xlsx para continuar con la operacion", "Error al cargar el excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else { }
+                
 
                 //CREACION DE LA CONEXION
                 connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; data source=" + path + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
                 dataAdapter = new OleDbDataAdapter("select * from [" + nameSheet + "$]", connect);  // selecciona toda la informacion de la hoja de trabajo del archivo
 
-                //ingresa los datos al datatable    
+                //INGRESA DATOS AL DATA TABLE    
                 dataAdapter.Fill(dTable);
 
-                // ingresa la informacion del data table al grid control
-                //--------------------------------------PRUEBAS
-                var cont = UiVistaSolicitudTraslado.Columns.Count;
-                UiVistaSolicitudTraslado.SetRowCellValue(0, colMATERIAL_NAME, "PAPA FRITA SEVEN 9x9MM 10 KG GRADO B 1X4");
-                var prueba = UiVistaSolicitudTraslado.GetRowCellValue(0, colMATERIAL_NAME);
-                System.Diagnostics.Debug.WriteLine(prueba);
-                System.Diagnostics.Debug.WriteLine("////////////////////////////////////////////////////////");
-                //--------------------------------------------------------------------------------------------
-
+                // INGRESA LA INFORMACION DEL DATA TABLE AL GRIDVIEW
                 foreach (DataRow row in dTable.Rows)
                 {
-                    string select = row[0].ToString();
-                    string codM = row[1].ToString();
-                    string cant = row[2].ToString();
+                    string codM = row[1].ToString(); // id producto para validacion en if
+                    string  cant = row[2].ToString();
+                    bool existe = false;
 
-                        System.Diagnostics.Debug.WriteLine("///////////////////////////////////DATOS DE DataTable////////////////////////////");
-                        System.Diagnostics.Debug.WriteLine(select + "||" + codM + "||" + cant + "||");
-                   
+                    //System.Diagnostics.Debug.WriteLine(select + "||" + codM + "||" + cant + "||");
 
                     for (int j = 0; j < UiVistaSolicitudTraslado.RowCount; j++)
                     {
 
-                        var txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_ID).ToString();
-                        var txtNombreMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_NAME).ToString();
-                        var txtEsMasterPack = UiVistaSolicitudTraslado.GetRowCellValue(j, colIS_MASTER_PACK).ToString();
-                        var txtCantidad = UiVistaSolicitudTraslado.GetRowCellValue(j, colQTY).ToString();
-                        var txtInventario = UiVistaSolicitudTraslado.GetRowCellValue(j, colINVENTORY).ToString();
+                        string txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_ID).ToString(); // id producto para validacion en if 
+                        string txtNombreMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_NAME).ToString();
+                        string txtCantidad = UiVistaSolicitudTraslado.GetRowCellValue(j, colQTY).ToString();
+                        string txtInventario = UiVistaSolicitudTraslado.GetRowCellValue(j, colINVENTORY).ToString();
 
-//                            if (codM==txtIdMaterial)
-//                          {
-//                                UiVistaSolicitudTraslado.SelectRow(i);
-//
-//                            }else {
-//                                MessageBox.Show("Los datos en el archivo excel no estan ordenados de manera correcta, favor revisar para poder realizar la carga de datos correctamente","Error al cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//                            }
-//
-//                            System.Diagnostics.Debug.WriteLine("{ ID: " + txtIdMaterial + " || Material: " + txtNombreMaterial + " ||Es Master Pack: " + txtEsMasterPack + " Cantidad: " + txtCantidad + " Inventario Disponible: " + txtInventario + " }");
-//
+                        if (txtIdMaterial == codM) {
+                            existe = true;
+                            int disponible = int.Parse(txtInventario);
+                            int solicitado = int.Parse(cant);
+
+                            if (solicitado <= disponible){
+                                UiVistaSolicitudTraslado.SelectRow(j);
+                                UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
+
+                            }else MessageBox.Show("La cantidad que solicita del producto: " +txtIdMaterial+"no esta disponible", "Error al modificar la tabla",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        }
+                        else existe = false;
+                     
+                        System.Diagnostics.Debug.WriteLine(existe);
+                        //System.Diagnostics.Debug.WriteLine("{ ID: " + txtIdMaterial + " || Material: " + txtNombreMaterial + " ||Es Master Pack: " + txtEsMasterPack + " Cantidad: " + txtCantidad + " Inventario Disponible: " + txtInventario + " }");
+
                     }
 
                 }
@@ -791,10 +787,9 @@ namespace MobilityScm.Modelo.Vistas
             }
         }
 
-
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            importarExcel(UiContenedorVistaSolicitudDeTraslado, "Hoja1");
+            importarExcel("Hoja1");
         }
 
         private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)
