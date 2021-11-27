@@ -160,6 +160,7 @@
             this.colDELIVERY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCOMMENT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSolicitudDeTrasladoDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiContenedorVistaSolicitudDeTraslado)).BeginInit();
@@ -411,9 +412,10 @@
             this.UiTextoIdSolicitud,
             this.UiBotonBuscar,
             this.UiBotonReporte,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.barButtonItem4});
             this.UiBarraContenedorPrincipal.MainMenu = this.UiBarraPricipalOpciones;
-            this.UiBarraContenedorPrincipal.MaxItemId = 25;
+            this.UiBarraContenedorPrincipal.MaxItemId = 26;
             this.UiBarraContenedorPrincipal.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
@@ -430,11 +432,12 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.UiBotonGrabar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.UiBotonRefrescar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.UiBotonExportar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.UiBotonExportar, "", false, true, false, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.UiBotonReporte),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.UiTextoIdSolicitud, "", false, true, true, 70),
             new DevExpress.XtraBars.LinkPersistInfo(this.UiBotonBuscar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
             this.UiBarraPricipalOpciones.OptionsBar.AllowQuickCustomization = false;
             this.UiBarraPricipalOpciones.OptionsBar.DrawDragBorder = false;
             this.UiBarraPricipalOpciones.OptionsBar.UseWholeRow = true;
@@ -478,6 +481,7 @@
             // UiBotonExportar
             // 
             this.UiBotonExportar.Caption = "Exportar";
+            this.UiBotonExportar.Enabled = false;
             this.UiBotonExportar.Id = 7;
             this.UiBotonExportar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiBotonExportar.ImageOptions.Image")));
             this.UiBotonExportar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UiBotonExportar.ImageOptions.LargeImage")));
@@ -1256,6 +1260,13 @@
             this.repositoryItemCheckEdit5.ValueChecked = 1;
             this.repositoryItemCheckEdit5.ValueUnchecked = 0;
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Guardar Excel";
+            this.barButtonItem4.Id = 25;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
             // SolicitudDeTrasladoVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1416,5 +1427,6 @@
         private DevExpress.XtraEditors.CheckEdit UiCheckEnviarErp;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         public DevExpress.XtraBars.BarButtonItem UiBotonExportar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

@@ -33,9 +33,7 @@ namespace MobilityScm.Modelo.Vistas
     public partial class SolicitudDeTrasladoVista : VistaBase, ISolicitudDeTrasladoVista
     {
 
-        OleDbConnection connect;
-        OleDbDataAdapter dataAdapter;
-        DataTable dTable = new DataTable();
+        
 
         #region Eventos 
         public event EventHandler<SolicitudDeTrasladoArgumento> UsuarioDeseaBuscarSolicitudDeTraslado;
@@ -716,7 +714,24 @@ namespace MobilityScm.Modelo.Vistas
         #endregion
 
         public void importarExcel( String nameSheet){
+            OleDbConnection connect;
+            OleDbDataAdapter dataAdapter;
+            DataTable dTable = new DataTable();
+
             string path = ""; //almacena la ruta del archivo
+            var idCDOrigen = UiListaCentroDistribucionOrigen.EditValue;
+            var idBodegaOrigen = UiListaBodegaOrigen.EditValue;
+            var idCDDestino = UiListaCentroDistribucionDestino.EditValue;
+            var idBodegaDestino = UiListaBodegaDestino.EditValue;
+            var idCliente = UiListaCliente.Text;
+            var idTipo = UiListaTipo.EditValue;
+            var fechaEntrega = UiFechaEntrega.EditValue;
+
+            if (idCDOrigen == null || idBodegaOrigen == null || idCDDestino == null || idBodegaDestino == null || idCliente == "" || idTipo == null || fechaEntrega == null)
+            {
+                MessageBox.Show("Debe ingresar todos los datos del encabezado", "Error al cargar archivo excel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             try
             {
@@ -733,8 +748,9 @@ namespace MobilityScm.Modelo.Vistas
                         path = oFileDialog.FileName;
                     }
                     else MessageBox.Show("Debe seleccionar un archivo .xlsx para continuar con la operacion", "Error al cargar el excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }else { }
-                
+                }
+                else return;
+
 
                 //CREACION DE LA CONEXION
                 connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; data source=" + path + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
@@ -747,7 +763,7 @@ namespace MobilityScm.Modelo.Vistas
                 foreach (DataRow row in dTable.Rows)
                 {
                     string codM = row[1].ToString(); // id producto para validacion en if
-                    string  cant = row[2].ToString();
+                    string cant = row[2].ToString();
                     bool existe = false;
 
                     //System.Diagnostics.Debug.WriteLine(select + "||" + codM + "||" + cant + "||");
@@ -760,32 +776,40 @@ namespace MobilityScm.Modelo.Vistas
                         string txtCantidad = UiVistaSolicitudTraslado.GetRowCellValue(j, colQTY).ToString();
                         string txtInventario = UiVistaSolicitudTraslado.GetRowCellValue(j, colINVENTORY).ToString();
 
-                        if (txtIdMaterial == codM) {
+                        if (txtIdMaterial == codM)
+                        {
                             existe = true;
                             int disponible = int.Parse(txtInventario);
                             int solicitado = int.Parse(cant);
 
-                            if (solicitado <= disponible){
+                            if (solicitado <= disponible)
+                            {
                                 UiVistaSolicitudTraslado.SelectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
 
-                            }else MessageBox.Show("La cantidad que solicita del producto: " +txtIdMaterial+"no esta disponible", "Error al modificar la tabla",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            }
+                            else MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + "no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else existe = false;
-                     
+
                         System.Diagnostics.Debug.WriteLine(existe);
                         //System.Diagnostics.Debug.WriteLine("{ ID: " + txtIdMaterial + " || Material: " + txtNombreMaterial + " ||Es Master Pack: " + txtEsMasterPack + " Cantidad: " + txtCantidad + " Inventario Disponible: " + txtInventario + " }");
 
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            dTable.Rows.Clear();
+            dTable.AcceptChanges();
+
+            //System.Diagnostics.Debug.WriteLine("{origen: "+idCDOrigen+" bodegaOrigen: "+idBodegaOrigen+" ");
         }
+
+        public void guardarExcel() { }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -795,6 +819,11 @@ namespace MobilityScm.Modelo.Vistas
         private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            guardarExcel();
         }
     }
 }
