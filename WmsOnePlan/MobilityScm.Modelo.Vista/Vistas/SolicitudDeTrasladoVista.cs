@@ -815,7 +815,6 @@ namespace MobilityScm.Modelo.Vistas
             SaveFileDialog saveF = new SaveFileDialog();
             saveF.Filter = "Excel Files |*.xlsx";
 
-
             sheet.Cell("A1").Value = "Descripcion";
             sheet.Cell("B1").Value = "Codigo Material";
             sheet.Cell("C1").Value = "Cantidad";
