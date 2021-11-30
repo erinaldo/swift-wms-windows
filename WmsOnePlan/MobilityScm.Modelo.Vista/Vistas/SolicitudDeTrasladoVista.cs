@@ -23,10 +23,11 @@ using MobilityScm.Utilerias;
 using MobilityScm.Vertical.Servicios;
 using MobilityScm.Modelo.Tipos;
 
-using DevExpress.XtraGrid;
-using System.Windows.Forms;
+
 using System.Data;
 using System.Data.OleDb;
+using Microsoft.Office.Interop;
+using ClosedXML.Excel;
 
 namespace MobilityScm.Modelo.Vistas
 {
@@ -767,7 +768,7 @@ namespace MobilityScm.Modelo.Vistas
                     bool existe = false;
 
                     //System.Diagnostics.Debug.WriteLine(select + "||" + codM + "||" + cant + "||");
-
+                    
                     for (int j = 0; j < UiVistaSolicitudTraslado.RowCount; j++)
                     {
 
@@ -786,7 +787,6 @@ namespace MobilityScm.Modelo.Vistas
                             {
                                 UiVistaSolicitudTraslado.SelectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
-
                             }
                             else MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + "no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -809,11 +809,25 @@ namespace MobilityScm.Modelo.Vistas
             //System.Diagnostics.Debug.WriteLine("{origen: "+idCDOrigen+" bodegaOrigen: "+idBodegaOrigen+" ");
         }
 
-        public void guardarExcel() { }
+        public void guardarExcel() {
+            XLWorkbook book = new XLWorkbook();
+            var sheet = book.Worksheets.Add("Hoja 1");
+            SaveFileDialog saveF = new SaveFileDialog();
+            saveF.Filter = "Excel Files |*.xlsx";
+
+
+            sheet.Cell("A1").Value = "Descripcion";
+            sheet.Cell("B1").Value = "Codigo Material";
+            sheet.Cell("C1").Value = "Cantidad";
+            sheet.Columns().AdjustToContents();
+
+            if (saveF.ShowDialog() == System.Windows.Forms.DialogResult.OK) book.SaveAs(saveF.FileName);
+            
+        }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            importarExcel("Hoja1");
+            importarExcel("Hoja 1");
         }
 
         private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)

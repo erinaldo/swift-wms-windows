@@ -90,6 +90,7 @@
             this.UiControlTextoIdSolicitud = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.UiBotonBuscar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -160,7 +161,6 @@
             this.colDELIVERY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCOMMENT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSolicitudDeTrasladoDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiContenedorVistaSolicitudDeTraslado)).BeginInit();
@@ -533,6 +533,15 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Descargar plantilla de ejemplo";
+            this.barButtonItem4.Id = 25;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -1259,13 +1268,6 @@
             this.repositoryItemCheckEdit5.Name = "repositoryItemCheckEdit5";
             this.repositoryItemCheckEdit5.ValueChecked = 1;
             this.repositoryItemCheckEdit5.ValueUnchecked = 0;
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Guardar Excel";
-            this.barButtonItem4.Id = 25;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // SolicitudDeTrasladoVista
             // 
