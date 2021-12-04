@@ -26,7 +26,6 @@ using MobilityScm.Modelo.Tipos;
 
 using System.Data;
 using System.Data.OleDb;
-using Microsoft.Office.Interop;
 using ClosedXML.Excel;
 
 namespace MobilityScm.Modelo.Vistas
@@ -718,8 +717,7 @@ namespace MobilityScm.Modelo.Vistas
             OleDbConnection connect;
             OleDbDataAdapter dataAdapter;
             DataTable dTable = new DataTable();
-
-            string path = ""; //almacena la ruta del archivo
+            string path = ""; 
             var idCDOrigen = UiListaCentroDistribucionOrigen.EditValue;
             var idBodegaOrigen = UiListaBodegaOrigen.EditValue;
             var idCDDestino = UiListaCentroDistribucionDestino.EditValue;
@@ -733,6 +731,14 @@ namespace MobilityScm.Modelo.Vistas
                 MessageBox.Show("Debe ingresar todos los datos del encabezado", "Error al cargar archivo excel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // limpiar los skus seleccionados previamente
+            
+            for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++){
+                string qty = UiVistaSolicitudTraslado.GetRowCellValue( i, colINVENTORY).ToString();
+                int qTY = int.Parse(qty);
+                UiVistaSolicitudTraslado.UnselectRow(i);
+                UiVistaSolicitudTraslado.SetRowCellValue(i, colQTY, qTY);
+            }
 
             try
             {
@@ -744,14 +750,10 @@ namespace MobilityScm.Modelo.Vistas
                 //VALIDA SI PRESIONA EL BOTON ABRIR Y SI LA RUTA DEL ARCHIVO NO ES NULA
                 if (oFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (oFileDialog.FileName.Equals("") == false)
-                    {
-                        path = oFileDialog.FileName;
-                    }
+                    if (oFileDialog.FileName.Equals("") == false) path = oFileDialog.FileName;
                     else MessageBox.Show("Debe seleccionar un archivo .xlsx para continuar con la operacion", "Error al cargar el excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else return;
-
 
                 //CREACION DE LA CONEXION
                 connect = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; data source=" + path + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
@@ -763,23 +765,18 @@ namespace MobilityScm.Modelo.Vistas
                 // INGRESA LA INFORMACION DEL DATA TABLE AL GRIDVIEW
                 foreach (DataRow row in dTable.Rows)
                 {
-                    string codM = row[1].ToString(); // id producto para validacion en if
+                    string codM = row[0].ToString(); // id producto para validacion en if
                     string cant = row[2].ToString();
                     bool existe = false;
-
-                    //System.Diagnostics.Debug.WriteLine(select + "||" + codM + "||" + cant + "||");
                     
                     for (int j = 0; j < UiVistaSolicitudTraslado.RowCount; j++)
                     {
 
-                        string txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_ID).ToString(); // id producto para validacion en if 
-                        string txtNombreMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_NAME).ToString();
-                        string txtCantidad = UiVistaSolicitudTraslado.GetRowCellValue(j, colQTY).ToString();
+                        string txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_ID).ToString(); 
                         string txtInventario = UiVistaSolicitudTraslado.GetRowCellValue(j, colINVENTORY).ToString();
 
                         if (txtIdMaterial == codM)
                         {
-                            existe = true;
                             int disponible = int.Parse(txtInventario);
                             int solicitado = int.Parse(cant);
 
@@ -788,13 +785,11 @@ namespace MobilityScm.Modelo.Vistas
                                 UiVistaSolicitudTraslado.SelectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
                             }
-                            else MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + "no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else existe = false;
-
+                       
                         System.Diagnostics.Debug.WriteLine(existe);
                         //System.Diagnostics.Debug.WriteLine("{ ID: " + txtIdMaterial + " || Material: " + txtNombreMaterial + " ||Es Master Pack: " + txtEsMasterPack + " Cantidad: " + txtCantidad + " Inventario Disponible: " + txtInventario + " }");
-
                     }
                 }
             }
@@ -805,22 +800,57 @@ namespace MobilityScm.Modelo.Vistas
 
             dTable.Rows.Clear();
             dTable.AcceptChanges();
-
-            //System.Diagnostics.Debug.WriteLine("{origen: "+idCDOrigen+" bodegaOrigen: "+idBodegaOrigen+" ");
         }
 
         public void guardarExcel() {
+
             XLWorkbook book = new XLWorkbook();
-            var sheet = book.Worksheets.Add("Hoja 1");
-            SaveFileDialog saveF = new SaveFileDialog();
+            var sheet = book.Worksheets.Add("Hoja 1");  //se crea una nueva hoja
+            var rango = sheet.Range("A1:C1");
+            SaveFileDialog saveF = new SaveFileDialog(); //instancia para cuadro de dialogo
             saveF.Filter = "Excel Files |*.xlsx";
+            var ra = sheet.Range(2, 1, 500, 3);
+            var c1 = sheet.Column(1);
+            var c2 = sheet.Column(2);
+            var c3 = sheet.Column(3);
 
-            sheet.Cell("A1").Value = "Descripcion";
-            sheet.Cell("B1").Value = "Codigo Material";
+            //agregando valores de encabezado
+            sheet.Cell("A1").Value = "Código de material";
+            sheet.Cell("B1").Value = "Descripción";
             sheet.Cell("C1").Value = "Cantidad";
-            sheet.Columns().AdjustToContents();
 
-            if (saveF.ShowDialog() == System.Windows.Forms.DialogResult.OK) book.SaveAs(saveF.FileName);
+            //agregando validaciones a las columnas
+            c1.Width = 23;
+            c2.Width = 45;
+            c3.Width = 24;
+
+            c1.SetDataValidation().TextLength.EqualOrLessThan(25);
+            c1.SetDataValidation().ErrorStyle = ClosedXML.Excel.XLErrorStyle.Stop;
+            c1.SetDataValidation().ErrorTitle = "El texto supera el limite";
+            c1.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 25 caracteres";
+
+            c2.SetDataValidation().TextLength.EqualOrLessThan(50);
+            c2.SetDataValidation().ErrorStyle = ClosedXML.Excel.XLErrorStyle.Stop;
+            c2.SetDataValidation().ErrorTitle = "El texto supera el limite";
+            c2.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 50 caracteres";
+
+            c3.SetDataValidation().TextLength.EqualOrLessThan(25);
+            c3.SetDataValidation().ErrorStyle = ClosedXML.Excel.XLErrorStyle.Stop;
+            c3.SetDataValidation().ErrorTitle = "El texto supera el limite";
+            c3.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 25 caracteres";
+
+            //configuracion y formato de la tabla
+            rango.Style.Fill.BackgroundColor = XLColor.LightCornflowerBlue;
+            rango.Style.Font.FontColor = XLColor.White;
+            rango.Style.Font.SetBold();
+            rango.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            rango.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+            ra.Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin).Border.SetOutsideBorderColor(XLColor.BlueBell);
+            ra.Style.Border.SetBottomBorder(XLBorderStyleValues.Thin).Border.SetBottomBorderColor(XLColor.BlueBell);
+            
+
+            if (saveF.ShowDialog() == DialogResult.OK) book.SaveAs(saveF.FileName);
+            else return;
             
         }
 
