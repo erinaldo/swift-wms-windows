@@ -91,6 +91,7 @@
             this.UiBotonBuscar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -298,7 +299,6 @@
             this.UiContenedorVistaSolicitudDeTraslado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaSolicitudTraslado,
             this.UiVistaSolicitudDeTrasladoDetalle});
-            this.UiContenedorVistaSolicitudDeTraslado.Click += new System.EventHandler(this.UiContenedorVistaSolicitudDeTraslado_Click);
             // 
             // UiVistaSolicitudTraslado
             // 
@@ -423,9 +423,10 @@
             this.UiBotonBuscar,
             this.UiBotonReporte,
             this.barButtonItem3,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.UiBarraContenedorPrincipal.MainMenu = this.UiBarraPricipalOpciones;
-            this.UiBarraContenedorPrincipal.MaxItemId = 26;
+            this.UiBarraContenedorPrincipal.MaxItemId = 27;
             this.UiBarraContenedorPrincipal.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
@@ -447,7 +448,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.UiTextoIdSolicitud, "", false, true, true, 70),
             new DevExpress.XtraBars.LinkPersistInfo(this.UiBotonBuscar),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
             this.UiBarraPricipalOpciones.OptionsBar.AllowQuickCustomization = false;
             this.UiBarraPricipalOpciones.OptionsBar.DrawDragBorder = false;
             this.UiBarraPricipalOpciones.OptionsBar.UseWholeRow = true;
@@ -552,6 +554,15 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Borrar Fila Seleccionada";
+            this.barButtonItem5.Id = 26;
+            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -1442,5 +1453,6 @@
         public DevExpress.XtraBars.BarButtonItem UiBotonExportar;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.Data.Linq.LinqServerModeSource linqServerModeSource1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }

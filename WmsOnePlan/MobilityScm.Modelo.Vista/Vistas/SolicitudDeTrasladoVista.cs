@@ -774,13 +774,10 @@ namespace MobilityScm.Modelo.Vistas
                         {
                             int disponible = int.Parse(txtInventario);
                             int solicitado = int.Parse(cant);
-                           
-
                             if (solicitado <= disponible)
                             {
                                 UiVistaSolicitudTraslado.UnselectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
-                                
                             }
                             else
                             {
@@ -788,13 +785,8 @@ namespace MobilityScm.Modelo.Vistas
                                 UiVistaSolicitudTraslado.UnselectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
                             } 
-                                
                         }
-                       
-                        //System.Diagnostics.Debug.WriteLine(existe);
-                       
                     }
-                   
                 }
             }
             catch (Exception ex)
@@ -802,14 +794,12 @@ namespace MobilityScm.Modelo.Vistas
                 MessageBox.Show(ex.ToString());
             }
 
-            
             for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
             {
                 if (!UiVistaSolicitudTraslado.IsRowSelected(i))
                 {
                     UiVistaSolicitudTraslado.DeleteSelectedRows();
                 }
-               
             }
             dTable.Rows.Clear();
             dTable.AcceptChanges();
@@ -870,13 +860,6 @@ namespace MobilityScm.Modelo.Vistas
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             importarExcel("Hoja 1");
-            
-            
-        }
-
-        private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -897,6 +880,15 @@ namespace MobilityScm.Modelo.Vistas
             {
                 e.Appearance.BackColor = Color.Crimson;
                 e.Appearance.ForeColor = Color.White;
+            }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult resp = MessageBox.Show("¿Esta seguro de eliminar el sku de la lista?","Borrar Fila",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            if (resp == DialogResult.Yes)
+            {
+                UiVistaSolicitudTraslado.DeleteSelectedRows();
             }
         }
     }
