@@ -161,6 +161,7 @@
             this.colDELIVERY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCOMMENT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.linqServerModeSource1 = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSolicitudDeTrasladoDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiContenedorVistaSolicitudDeTraslado)).BeginInit();
@@ -200,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaExportar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linqServerModeSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // UiVistaSolicitudDeTrasladoDetalle
@@ -300,6 +302,8 @@
             // 
             // UiVistaSolicitudTraslado
             // 
+            this.UiVistaSolicitudTraslado.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.UiVistaSolicitudTraslado.Appearance.FocusedRow.Options.UseBackColor = true;
             this.UiVistaSolicitudTraslado.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMATERIAL_ID,
             this.colMATERIAL_NAME,
@@ -319,6 +323,7 @@
             this.UiVistaSolicitudTraslado.OptionsView.ShowDetailButtons = false;
             this.UiVistaSolicitudTraslado.OptionsView.ShowFooter = true;
             this.UiVistaSolicitudTraslado.SynchronizeClones = false;
+            this.UiVistaSolicitudTraslado.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.UiVistaSolicitudTraslado_RowStyle);
             this.UiVistaSolicitudTraslado.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.UiVistaSolicitudTraslado_SelectionChanged);
             this.UiVistaSolicitudTraslado.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.UiVistaSolicitudTraslado_CellValueChanging);
             this.UiVistaSolicitudTraslado.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UiVistaSolicitudTraslado_MouseUp);
@@ -335,6 +340,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "MATERIAL_ID", "Total: {0:#,###,##0.00}")});
             this.colMATERIAL_ID.Visible = true;
             this.colMATERIAL_ID.VisibleIndex = 1;
+            this.colMATERIAL_ID.Width = 207;
             // 
             // colMATERIAL_NAME
             // 
@@ -345,6 +351,7 @@
             this.colMATERIAL_NAME.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
             this.colMATERIAL_NAME.Visible = true;
             this.colMATERIAL_NAME.VisibleIndex = 2;
+            this.colMATERIAL_NAME.Width = 207;
             // 
             // colIS_MASTER_PACK
             // 
@@ -355,6 +362,7 @@
             this.colIS_MASTER_PACK.OptionsColumn.AllowEdit = false;
             this.colIS_MASTER_PACK.Visible = true;
             this.colIS_MASTER_PACK.VisibleIndex = 3;
+            this.colIS_MASTER_PACK.Width = 207;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -374,6 +382,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QTY", "Total: {0:#,###,##0.00}")});
             this.colQTY.Visible = true;
             this.colQTY.VisibleIndex = 4;
+            this.colQTY.Width = 202;
             // 
             // colINVENTORY
             // 
@@ -387,6 +396,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QTY", "Total: {0:#,###,##0.00}")});
             this.colINVENTORY.Visible = true;
             this.colINVENTORY.VisibleIndex = 5;
+            this.colINVENTORY.Width = 213;
             // 
             // UiBarraContenedorPrincipal
             // 
@@ -1326,6 +1336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaExportar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linqServerModeSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1430,5 +1441,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         public DevExpress.XtraBars.BarButtonItem UiBotonExportar;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.Data.Linq.LinqServerModeSource linqServerModeSource1;
     }
 }

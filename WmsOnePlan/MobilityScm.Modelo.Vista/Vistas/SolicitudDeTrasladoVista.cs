@@ -33,8 +33,6 @@ namespace MobilityScm.Modelo.Vistas
     public partial class SolicitudDeTrasladoVista : VistaBase, ISolicitudDeTrasladoVista
     {
 
-        
-
         #region Eventos 
         public event EventHandler<SolicitudDeTrasladoArgumento> UsuarioDeseaBuscarSolicitudDeTraslado;
         public event EventHandler<SolicitudDeTrasladoArgumento> UsuarioDeseaGuardarSolicitudDeTraslado;
@@ -711,7 +709,10 @@ namespace MobilityScm.Modelo.Vistas
                 Cursor.Current = Cursors.Default;
             }
         }
+
         #endregion
+
+
 
         public void importarExcel( String nameSheet){
             OleDbConnection connect;
@@ -731,15 +732,11 @@ namespace MobilityScm.Modelo.Vistas
                 MessageBox.Show("Debe ingresar todos los datos del encabezado", "Error al cargar archivo excel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // limpiar los skus seleccionados previamente
             
             for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++){
-                string qty = UiVistaSolicitudTraslado.GetRowCellValue( i, colINVENTORY).ToString();
-                int qTY = int.Parse(qty);
-                UiVistaSolicitudTraslado.UnselectRow(i);
-                UiVistaSolicitudTraslado.SetRowCellValue(i, colQTY, qTY);
+                UiVistaSolicitudTraslado.SelectRow(i);
             }
-
+          
             try
             {
                 //CONFIGURACION PARA LA VENTANA DE BUSQUEDA
@@ -767,11 +764,9 @@ namespace MobilityScm.Modelo.Vistas
                 {
                     string codM = row[0].ToString(); // id producto para validacion en if
                     string cant = row[2].ToString();
-                    bool existe = false;
-                    
+
                     for (int j = 0; j < UiVistaSolicitudTraslado.RowCount; j++)
                     {
-
                         string txtIdMaterial = UiVistaSolicitudTraslado.GetRowCellValue(j, colMATERIAL_ID).ToString(); 
                         string txtInventario = UiVistaSolicitudTraslado.GetRowCellValue(j, colINVENTORY).ToString();
 
@@ -779,18 +774,27 @@ namespace MobilityScm.Modelo.Vistas
                         {
                             int disponible = int.Parse(txtInventario);
                             int solicitado = int.Parse(cant);
+                           
 
                             if (solicitado <= disponible)
                             {
-                                UiVistaSolicitudTraslado.SelectRow(j);
+                                UiVistaSolicitudTraslado.UnselectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
+                                
                             }
-                            else MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                            {
+                                MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                UiVistaSolicitudTraslado.UnselectRow(j);
+                                UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
+                            } 
+                                
                         }
                        
-                        System.Diagnostics.Debug.WriteLine(existe);
-                        //System.Diagnostics.Debug.WriteLine("{ ID: " + txtIdMaterial + " || Material: " + txtNombreMaterial + " ||Es Master Pack: " + txtEsMasterPack + " Cantidad: " + txtCantidad + " Inventario Disponible: " + txtInventario + " }");
+                        //System.Diagnostics.Debug.WriteLine(existe);
+                       
                     }
+                   
                 }
             }
             catch (Exception ex)
@@ -798,6 +802,15 @@ namespace MobilityScm.Modelo.Vistas
                 MessageBox.Show(ex.ToString());
             }
 
+            
+            for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
+            {
+                if (!UiVistaSolicitudTraslado.IsRowSelected(i))
+                {
+                    UiVistaSolicitudTraslado.DeleteSelectedRows();
+                }
+               
+            }
             dTable.Rows.Clear();
             dTable.AcceptChanges();
         }
@@ -857,6 +870,8 @@ namespace MobilityScm.Modelo.Vistas
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             importarExcel("Hoja 1");
+            
+            
         }
 
         private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)
@@ -867,6 +882,22 @@ namespace MobilityScm.Modelo.Vistas
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             guardarExcel();
+        }
+
+        private void UiVistaSolicitudTraslado_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            int cant = Convert.ToInt32(UiVistaSolicitudTraslado.GetRowCellValue(e.RowHandle, colQTY));
+            int inventario = Convert.ToInt32(UiVistaSolicitudTraslado.GetRowCellValue(e.RowHandle, colINVENTORY));
+            if (cant <= inventario)
+            {
+                e.Appearance.BackColor = Color.LightGreen;
+                e.Appearance.ForeColor = Color.Black;
+            }
+            else
+            {
+                e.Appearance.BackColor = Color.Crimson;
+                e.Appearance.ForeColor = Color.White;
+            }
         }
     }
 }
