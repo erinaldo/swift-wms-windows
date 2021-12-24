@@ -206,25 +206,6 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.240.29.104:8090")>  _
-        Public ReadOnly Property WSHOST() As String
-            Get
-                Return CType(Me("WSHOST"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.240.29.104:8090")>  _
-        Public ReadOnly Property WMSOnePlan_Client_OnePlanServices_Security_WMS_Security() As String
-            Get
-                Return CType(Me("WMSOnePlan_Client_OnePlanServices_Security_WMS_Security"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("ferco")>  _
         Public ReadOnly Property Schema() As String
             Get
@@ -234,7 +215,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=10.240.29.104;Database=OP_WMS_FERCO_GTP;User=sa;Pwd=F3rc0")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=10.240.29.99;Database=OP_WMS_FERCO_GTP;User=sa;Pwd=F3rc0")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)
@@ -243,10 +224,29 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("10.240.29.104")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("10.240.29.99")>  _
         Public ReadOnly Property SERVER_IP() As String
             Get
                 Return CType(Me("SERVER_IP"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.240.29.99:93")>  _
+        Public ReadOnly Property WSHOST() As String
+            Get
+                Return CType(Me("WSHOST"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.240.29.99:93")>  _
+        Public ReadOnly Property WMSOnePlan_Client_OnePlanServices_Security_WMS_Security() As String
+            Get
+                Return CType(Me("WMSOnePlan_Client_OnePlanServices_Security_WMS_Security"),String)
             End Get
         End Property
     End Class

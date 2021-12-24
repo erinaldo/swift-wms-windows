@@ -895,7 +895,7 @@ namespace MobilityScm.Modelo.Vistas
 
         private void UiBtnVerTonosYCalibres_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            MostrarInventarioPorTonoOCalibre();
+            MostrarInventarioPorTonoOCalibre(); //activar desde el principuo de la carga de la vista
         }
 
 
@@ -1112,6 +1112,8 @@ namespace MobilityScm.Modelo.Vistas
                                     ,
                                     DocNum = UiSpinNumeroDocumentoControl.EditValue.ToString()
                                 });
+
+                                ValidarSkusConInventario(null);
                                 UsuarioDeseaObtenerProyectos?.Invoke(null, new ClaseArgumento());
                                 break;
                             case TipoFuenteDemandaDespacho.SolicitudTrasladoErp:
@@ -2075,8 +2077,8 @@ namespace MobilityScm.Modelo.Vistas
 
                     if (permisoTonoYCalibre != null && permisoTonoYCalibre.NUMERIC_VALUE == (int)SiNo.Si)
                     {
-                        UiSwiftTonosYCalibres.Checked = false;
-                        UiSwiftTonosYCalibres.Visibility = BarItemVisibility.Never;
+                        //UiSwiftTonosYCalibres.Checked = false;
+                        //UiSwiftTonosYCalibres.Visibility = BarItemVisibility.Never;
                         UiPaginaTonoCalibre.PageVisible = UiSwiftTonosYCalibres.Checked;
                     }
                     break;

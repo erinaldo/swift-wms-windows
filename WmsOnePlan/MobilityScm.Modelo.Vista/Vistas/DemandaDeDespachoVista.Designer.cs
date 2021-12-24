@@ -1921,7 +1921,9 @@
             // 
             // UiSwiftTonosYCalibres
             // 
+            this.UiSwiftTonosYCalibres.BindableChecked = true;
             this.UiSwiftTonosYCalibres.Caption = "Tonos y Calibres";
+            this.UiSwiftTonosYCalibres.Checked = true;
             this.UiSwiftTonosYCalibres.Id = 20;
             this.UiSwiftTonosYCalibres.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("UiSwiftTonosYCalibres.ImageOptions.Image")));
             this.UiSwiftTonosYCalibres.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("UiSwiftTonosYCalibres.ImageOptions.LargeImage")));
