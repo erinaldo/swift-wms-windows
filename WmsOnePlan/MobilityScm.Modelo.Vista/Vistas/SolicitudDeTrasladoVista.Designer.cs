@@ -163,6 +163,7 @@
             this.colCOMMENT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.linqServerModeSource1 = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.colSTATUS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSolicitudDeTrasladoDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiContenedorVistaSolicitudDeTraslado)).BeginInit();
@@ -309,7 +310,8 @@
             this.colMATERIAL_NAME,
             this.colIS_MASTER_PACK,
             this.colQTY,
-            this.colINVENTORY});
+            this.colINVENTORY,
+            this.colSTATUS_CODE});
             this.UiVistaSolicitudTraslado.CustomizationFormBounds = new System.Drawing.Rectangle(881, 359, 252, 266);
             this.UiVistaSolicitudTraslado.GridControl = this.UiContenedorVistaSolicitudDeTraslado;
             this.UiVistaSolicitudTraslado.Name = "UiVistaSolicitudTraslado";
@@ -395,7 +397,7 @@
             this.colINVENTORY.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QTY", "Total: {0:#,###,##0.00}")});
             this.colINVENTORY.Visible = true;
-            this.colINVENTORY.VisibleIndex = 5;
+            this.colINVENTORY.VisibleIndex = 6;
             this.colINVENTORY.Width = 213;
             // 
             // UiBarraContenedorPrincipal
@@ -1290,6 +1292,16 @@
             this.repositoryItemCheckEdit5.ValueChecked = 1;
             this.repositoryItemCheckEdit5.ValueUnchecked = 0;
             // 
+            // colSTATUS_CODE
+            // 
+            this.colSTATUS_CODE.Caption = "Estado de material";
+            this.colSTATUS_CODE.FieldName = "STATUS_CODE";
+            this.colSTATUS_CODE.Name = "colSTATUS_CODE";
+            this.colSTATUS_CODE.OptionsColumn.AllowEdit = false;
+            this.colSTATUS_CODE.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
+            this.colSTATUS_CODE.Visible = true;
+            this.colSTATUS_CODE.VisibleIndex = 5;
+            // 
             // SolicitudDeTrasladoVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1454,5 +1466,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.Data.Linq.LinqServerModeSource linqServerModeSource1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS_CODE;
     }
 }
