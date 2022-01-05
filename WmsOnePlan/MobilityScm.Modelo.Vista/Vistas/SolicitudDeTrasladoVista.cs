@@ -520,7 +520,7 @@ namespace MobilityScm.Modelo.Vistas
             {
                 var qty = double.Parse(e.Value.ToString());
                 registro.QTY = qty;
-                Materiales.Where(mt => mt.MATERIAL_ID == registro.MATERIAL_ID).ToList().ForEach(mt => mt.QTY = qty);
+                Materiales.Where(mt => mt.MATERIAL_ID == registro.MATERIAL_ID && mt.STATUS_CODE == registro.STATUS_CODE).ToList().ForEach(mt => mt.QTY = qty);
                 if (!(qty <= 0)) return;
                 e.Valid = false;
                 e.ErrorText = "La cantidad debe de ser mayor a 0";
