@@ -125,7 +125,8 @@ namespace MobilityScm.Modelo.Controladores
                         MATERIAL_NAME = mt.MATERIAL_NAME,
                         IS_MASTERPACK = mt.IS_MASTER_PACK,
                         QTY = (decimal)mt.QTY,
-                        STATUS = EstadoSolicitudDeTraslado.OPEN.ToString()
+                        STATUS = EstadoSolicitudDeTraslado.OPEN.ToString(),
+                        STATUS_CODE = mt.STATUS_CODE
                     }).ToList();
 
                     op = SolicitudDeTrasladoServicio.AgregarSolicitudDeTrasladoDetalle(new SolicitudDeTrasladoArgumento {

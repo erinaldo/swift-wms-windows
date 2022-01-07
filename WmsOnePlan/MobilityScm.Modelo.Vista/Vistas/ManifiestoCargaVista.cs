@@ -877,7 +877,8 @@ namespace MobilityScm.Modelo.Vistas
                 PRICE = manifiestoDetalle.PRICE,
                 LINE_DISCOUNT = manifiestoDetalle.LINE_DISCOUNT,
                 LINE_DISCOUNT_TYPE = manifiestoDetalle.LINE_DISCOUNT_TYPE,
-                HEADER_DISCOUNT = manifiestoDetalle.HEADER_DISCOUNT
+                HEADER_DISCOUNT = manifiestoDetalle.HEADER_DISCOUNT,
+                STATUS_CODE = manifiestoDetalle.STATUS_CODE
             }).ToList();
 
             PickingDetalle = detallePicking;

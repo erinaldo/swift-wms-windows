@@ -5426,6 +5426,7 @@
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 33);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.toolboxControl1);
+            this.splitContainerControl1.Panel1.MinSize = 57;
             this.splitContainerControl1.Panel1.ShowCaption = true;
             this.splitContainerControl1.Panel1.Text = "SKU Sin Inventario";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
@@ -6763,6 +6764,7 @@
             this.splitContainerControl3.Location = new System.Drawing.Point(0, 33);
             this.splitContainerControl3.Name = "splitContainerControl3";
             this.splitContainerControl3.Panel1.Controls.Add(this.toolboxControl2);
+            this.splitContainerControl3.Panel1.MinSize = 57;
             this.splitContainerControl3.Panel1.ShowCaption = true;
             this.splitContainerControl3.Panel1.Text = "SKU Sin Inventario";
             this.splitContainerControl3.Panel2.Controls.Add(this.splitContainerControl4);

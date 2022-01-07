@@ -206,6 +206,10 @@ namespace MobilityScm.Modelo.Servicios
                     {
                         ParameterName = "@STATUS",
                         Value = detalle.STATUS
+                    }, new OAParameter
+                    {
+                        ParameterName = "@STATUS_CODE",
+                        Value = detalle.STATUS_CODE
                     }
                 };
                 operacion = BaseDeDatosServicio.ExecuteQuery<Operacion>(BaseDeDatosServicio.Esquema + ".OP_WMS_SP_ADD_TRANSFER_REQUEST_DETAIL", CommandType.StoredProcedure, false, parameters)[0];

@@ -30,5 +30,7 @@ namespace MobilityScm.Modelo.Entidades
         public string REQUEST_TYPE { get; set; }
 
         public string COMMENT { get; set; }
+
+        public string STATUS_CODE { get; set; }
     }
 }
