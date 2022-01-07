@@ -72,9 +72,6 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.UiBarraContenedorPrincipal = new DevExpress.XtraBars.BarManager(this.components);
             this.UiBarraPricipalOpciones = new DevExpress.XtraBars.Bar();
             this.UiBotonExpandir = new DevExpress.XtraBars.BarButtonItem();
@@ -92,6 +89,9 @@
             this.UiTextoManifiestoDeCargaId = new DevExpress.XtraBars.BarEditItem();
             this.UiTextoManifiestoId = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.UiBtnEliminarDetallesDeManifiesto = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.UiBotonBuscar = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.UiGrupoManifiesto = new DevExpress.XtraEditors.GroupControl();
@@ -115,6 +115,8 @@
             this.colSTATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiColListaCodigoTipoDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiColListaNombreTipoDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UiColNumeroReferencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UiColUbicacionSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiListaRuta = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.UiVistaRuta = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCODE_ROUTE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -156,8 +158,7 @@
             this.repositoryItemTimeEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.repositoryItemTimeEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.UiColEliminarRegistro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.UiColNumeroReferencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.UiColUbicacionSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UiColMaterialStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiBarraContenedorPrincipal)).BeginInit();
@@ -207,30 +208,6 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.UiBarraContenedorPrincipal;
             this.barDockControlTop.Size = new System.Drawing.Size(1634, 24);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 691);
-            this.barDockControlBottom.Manager = this.UiBarraContenedorPrincipal;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1634, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Manager = this.UiBarraContenedorPrincipal;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 667);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1634, 24);
-            this.barDockControlRight.Manager = this.UiBarraContenedorPrincipal;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 667);
             // 
             // UiBarraContenedorPrincipal
             // 
@@ -431,6 +408,30 @@
             this.UiBtnEliminarDetallesDeManifiesto.Name = "UiBtnEliminarDetallesDeManifiesto";
             this.UiBtnEliminarDetallesDeManifiesto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.UiBtnEliminarDetallesDeManifiesto_ItemClick);
             // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 691);
+            this.barDockControlBottom.Manager = this.UiBarraContenedorPrincipal;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1634, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Manager = this.UiBarraContenedorPrincipal;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 667);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1634, 24);
+            this.barDockControlRight.Manager = this.UiBarraContenedorPrincipal;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 667);
+            // 
             // UiBotonBuscar
             // 
             this.UiBotonBuscar.Caption = "Buscar";
@@ -503,7 +504,7 @@
             this.UiListaBodega.Properties.PopupView = this.UiVistaBodega;
             this.UiListaBodega.Properties.ValueMember = "WAREHOUSE_ID";
             this.UiListaBodega.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.UiLista_Properties_ButtonClick);
-            this.UiListaBodega.Size = new System.Drawing.Size(978, 22);
+            this.UiListaBodega.Size = new System.Drawing.Size(978, 24);
             this.UiListaBodega.TabIndex = 4;
             this.UiListaBodega.EditValueChanged += new System.EventHandler(this.UiListaBodega_EditValueChanged);
             this.UiListaBodega.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.UiListaBodega_CustomDisplayText);
@@ -556,7 +557,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, true, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", "AGREGAR-PICKING", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.UiListaPickingHeader.Properties.PopupView = this.UiVistaPickingHeader;
             this.UiListaPickingHeader.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.UiLista_Properties_ButtonClick);
-            this.UiListaPickingHeader.Size = new System.Drawing.Size(978, 22);
+            this.UiListaPickingHeader.Size = new System.Drawing.Size(978, 24);
             this.UiListaPickingHeader.TabIndex = 8;
             this.UiListaPickingHeader.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.UiListaPickingHeader_CustomDisplayText);
             // 
@@ -683,6 +684,24 @@
             this.UiColListaNombreTipoDespacho.Visible = true;
             this.UiColListaNombreTipoDespacho.VisibleIndex = 10;
             // 
+            // UiColNumeroReferencia
+            // 
+            this.UiColNumeroReferencia.Caption = "Código referencia";
+            this.UiColNumeroReferencia.FieldName = "ORDER_NUMBER";
+            this.UiColNumeroReferencia.Name = "UiColNumeroReferencia";
+            this.UiColNumeroReferencia.OptionsColumn.AllowEdit = false;
+            this.UiColNumeroReferencia.Visible = true;
+            this.UiColNumeroReferencia.VisibleIndex = 11;
+            // 
+            // UiColUbicacionSalida
+            // 
+            this.UiColUbicacionSalida.Caption = "Ubicación salida";
+            this.UiColUbicacionSalida.FieldName = "LOCATION_SPOT_TARGET";
+            this.UiColUbicacionSalida.Name = "UiColUbicacionSalida";
+            this.UiColUbicacionSalida.OptionsColumn.AllowEdit = false;
+            this.UiColUbicacionSalida.Visible = true;
+            this.UiColUbicacionSalida.VisibleIndex = 12;
+            // 
             // UiListaRuta
             // 
             this.UiListaRuta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -696,7 +715,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, true, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", "REFRESCAR-RUTA", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.UiListaRuta.Properties.PopupView = this.UiVistaRuta;
             this.UiListaRuta.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.UiLista_Properties_ButtonClick);
-            this.UiListaRuta.Size = new System.Drawing.Size(978, 22);
+            this.UiListaRuta.Size = new System.Drawing.Size(978, 24);
             this.UiListaRuta.TabIndex = 6;
             this.UiListaRuta.EditValueChanged += new System.EventHandler(this.UiListaRuta_EditValueChanged);
             this.UiListaRuta.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.UiListaRuta_CustomDisplayText);
@@ -790,7 +809,7 @@
             this.UiListaVehiculo.Properties.PopupView = this.UiListaVistaVehiculos;
             this.UiListaVehiculo.Properties.ValueMember = "VEHICLE_CODE";
             this.UiListaVehiculo.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.UiLista_Properties_ButtonClick);
-            this.UiListaVehiculo.Size = new System.Drawing.Size(475, 22);
+            this.UiListaVehiculo.Size = new System.Drawing.Size(475, 24);
             this.UiListaVehiculo.TabIndex = 2;
             this.UiListaVehiculo.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.UiListaVehiculo_CustomDisplayText);
             // 
@@ -932,7 +951,8 @@
             this.colADDRESS_CUSTOMER,
             this.colVistaERP_REFERENCE_DOC_NUM,
             this.UiColVistaCodigoTipoDespacho,
-            this.UiColVistaNombreTipoDespacho});
+            this.UiColVistaNombreTipoDespacho,
+            this.UiColMaterialStatus});
             gridFormatRule1.ApplyToRow = true;
             gridFormatRule1.Name = "Format0";
             formatConditionRuleExpression1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -1123,23 +1143,13 @@
             this.UiColEliminarRegistro.Name = "UiColEliminarRegistro";
             this.UiColEliminarRegistro.OptionsColumn.ShowInCustomizationForm = false;
             // 
-            // UiColNumeroReferencia
+            // UiColMaterialStatus
             // 
-            this.UiColNumeroReferencia.Caption = "Código referencia";
-            this.UiColNumeroReferencia.FieldName = "ORDER_NUMBER";
-            this.UiColNumeroReferencia.Name = "UiColNumeroReferencia";
-            this.UiColNumeroReferencia.OptionsColumn.AllowEdit = false;
-            this.UiColNumeroReferencia.Visible = true;
-            this.UiColNumeroReferencia.VisibleIndex = 11;
-            // 
-            // UiColUbicacionSalida
-            // 
-            this.UiColUbicacionSalida.Caption = "Ubicación salida";
-            this.UiColUbicacionSalida.FieldName = "LOCATION_SPOT_TARGET";
-            this.UiColUbicacionSalida.Name = "UiColUbicacionSalida";
-            this.UiColUbicacionSalida.OptionsColumn.AllowEdit = false;
-            this.UiColUbicacionSalida.Visible = true;
-            this.UiColUbicacionSalida.VisibleIndex = 12;
+            this.UiColMaterialStatus.Caption = "Estado";
+            this.UiColMaterialStatus.FieldName = "STATUS_CODE";
+            this.UiColMaterialStatus.Name = "UiColMaterialStatus";
+            this.UiColMaterialStatus.Visible = true;
+            this.UiColMaterialStatus.VisibleIndex = 14;
             // 
             // ManifiestoCargaVista
             // 
@@ -1282,5 +1292,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFINAL_PRICE;
         private DevExpress.XtraGrid.Columns.GridColumn UiColNumeroReferencia;
         private DevExpress.XtraGrid.Columns.GridColumn UiColUbicacionSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn UiColMaterialStatus;
     }
 }

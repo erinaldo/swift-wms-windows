@@ -92,5 +92,7 @@ namespace MobilityScm.Modelo.Entidades
                 return finalPrice;
             }
         }
+
+        public string STATUS_CODE { get; set; }
     }
 }
