@@ -78,6 +78,7 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colQTY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colINVENTORY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTATUS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiBarraContenedorPrincipal = new DevExpress.XtraBars.BarManager(this.components);
             this.UiBarraPricipalOpciones = new DevExpress.XtraBars.Bar();
             this.UiBotonNuevo = new DevExpress.XtraBars.BarButtonItem();
@@ -163,7 +164,6 @@
             this.colCOMMENT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.linqServerModeSource1 = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.colSTATUS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UiVistaSolicitudDeTrasladoDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiContenedorVistaSolicitudDeTraslado)).BeginInit();
@@ -300,6 +300,7 @@
             this.UiContenedorVistaSolicitudDeTraslado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaSolicitudTraslado,
             this.UiVistaSolicitudDeTrasladoDetalle});
+            this.UiContenedorVistaSolicitudDeTraslado.Click += new System.EventHandler(this.UiContenedorVistaSolicitudDeTraslado_Click);
             // 
             // UiVistaSolicitudTraslado
             // 
@@ -399,6 +400,16 @@
             this.colINVENTORY.Visible = true;
             this.colINVENTORY.VisibleIndex = 6;
             this.colINVENTORY.Width = 213;
+            // 
+            // colSTATUS_CODE
+            // 
+            this.colSTATUS_CODE.Caption = "Estado de material";
+            this.colSTATUS_CODE.FieldName = "STATUS_CODE";
+            this.colSTATUS_CODE.Name = "colSTATUS_CODE";
+            this.colSTATUS_CODE.OptionsColumn.AllowEdit = false;
+            this.colSTATUS_CODE.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
+            this.colSTATUS_CODE.Visible = true;
+            this.colSTATUS_CODE.VisibleIndex = 5;
             // 
             // UiBarraContenedorPrincipal
             // 
@@ -1291,16 +1302,6 @@
             this.repositoryItemCheckEdit5.Name = "repositoryItemCheckEdit5";
             this.repositoryItemCheckEdit5.ValueChecked = 1;
             this.repositoryItemCheckEdit5.ValueUnchecked = 0;
-            // 
-            // colSTATUS_CODE
-            // 
-            this.colSTATUS_CODE.Caption = "Estado de material";
-            this.colSTATUS_CODE.FieldName = "STATUS_CODE";
-            this.colSTATUS_CODE.Name = "colSTATUS_CODE";
-            this.colSTATUS_CODE.OptionsColumn.AllowEdit = false;
-            this.colSTATUS_CODE.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
-            this.colSTATUS_CODE.Visible = true;
-            this.colSTATUS_CODE.VisibleIndex = 5;
             // 
             // SolicitudDeTrasladoVista
             // 
