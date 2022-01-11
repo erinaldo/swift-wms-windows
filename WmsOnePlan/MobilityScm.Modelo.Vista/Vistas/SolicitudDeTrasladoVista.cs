@@ -578,6 +578,19 @@ namespace MobilityScm.Modelo.Vistas
                 InteraccionConUsuarioServicio.Mensaje("Debe de seleccionar al menos un material para la solicitud de traslado.");
                 return;
             }
+
+            for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
+            {
+                string inventarioDisp = UiVistaSolicitudTraslado.GetRowCellValue(i, colINVENTORY).ToString();
+                string cantidad = UiVistaSolicitudTraslado.GetRowCellValue(i, colQTY).ToString();
+
+                if (int.Parse(cantidad) > int.Parse(inventarioDisp))
+                {
+                    InteraccionConUsuarioServicio.Mensaje("La cantidad que solicita es mayor al inventario disponible, favor verificar");
+                    return;
+                }
+            }
+
             UsuarioDeseaGuardarSolicitudDeTraslado?.Invoke(sender, new SolicitudDeTrasladoArgumento
             {
                 SolicitudDeTrasladoEncabezado = new SolicitudDeTrasladoEncabezado
