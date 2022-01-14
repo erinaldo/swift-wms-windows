@@ -300,6 +300,7 @@
             this.UiContenedorVistaSolicitudDeTraslado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.UiVistaSolicitudTraslado,
             this.UiVistaSolicitudDeTrasladoDetalle});
+            this.UiContenedorVistaSolicitudDeTraslado.Click += new System.EventHandler(this.UiContenedorVistaSolicitudDeTraslado_Click);
             // 
             // UiVistaSolicitudTraslado
             // 

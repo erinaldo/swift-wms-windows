@@ -578,6 +578,19 @@ namespace MobilityScm.Modelo.Vistas
                 InteraccionConUsuarioServicio.Mensaje("Debe de seleccionar al menos un material para la solicitud de traslado.");
                 return;
             }
+
+            for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
+            {
+                string inventarioDisp = UiVistaSolicitudTraslado.GetRowCellValue(i, colINVENTORY).ToString();
+                string cantidad = UiVistaSolicitudTraslado.GetRowCellValue(i, colQTY).ToString();
+
+                if (int.Parse(cantidad) > int.Parse(inventarioDisp))
+                {
+                    InteraccionConUsuarioServicio.Mensaje("La cantidad que solicita es mayor al inventario disponible, favor verificar");
+                    return;
+                }
+            }
+
             UsuarioDeseaGuardarSolicitudDeTraslado?.Invoke(sender, new SolicitudDeTrasladoArgumento
             {
                 SolicitudDeTrasladoEncabezado = new SolicitudDeTrasladoEncabezado
@@ -823,7 +836,7 @@ namespace MobilityScm.Modelo.Vistas
             sheet.Cell("C1").Value = "Cantidad";
 
             //agregando validaciones a las columnas
-            c1.Width = 23;
+            c1.Width = 23; 
             c2.Width = 45;
             c3.Width = 24;
 
@@ -832,10 +845,10 @@ namespace MobilityScm.Modelo.Vistas
             c1.SetDataValidation().ErrorTitle = "El texto supera el limite";
             c1.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 25 caracteres";
 
-            c2.SetDataValidation().TextLength.EqualOrLessThan(50);
+            c2.SetDataValidation().TextLength.EqualOrLessThan(200);
             c2.SetDataValidation().ErrorStyle = ClosedXML.Excel.XLErrorStyle.Stop;
             c2.SetDataValidation().ErrorTitle = "El texto supera el limite";
-            c2.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 50 caracteres";
+            c2.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 200 caracteres";
 
             c3.SetDataValidation().TextLength.EqualOrLessThan(25);
             c3.SetDataValidation().ErrorStyle = ClosedXML.Excel.XLErrorStyle.Stop;
@@ -890,6 +903,11 @@ namespace MobilityScm.Modelo.Vistas
             {
                 UiVistaSolicitudTraslado.DeleteSelectedRows();
             }
+        }
+
+        private void UiContenedorVistaSolicitudDeTraslado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
