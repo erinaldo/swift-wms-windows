@@ -114,6 +114,7 @@ Partial Class frmInfo_Inventory
         Me.OP_WMS_VIEW_DETAIL_WAVEPICKINGTableAdapter1 = New WMSOnePlan_Client.DS_WaveReportTableAdapters.OP_WMS_VIEW_DETAIL_WAVEPICKINGTableAdapter()
         Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
         Me.loadLayoutTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.UiColAllowPicking = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.lookupEstados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,7 +149,7 @@ Partial Class frmInfo_Inventory
         'GridView1
         '
         Me.GridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn_CurrentWH, Me.GridColumn_Linea, Me.GridColumn_Ubicacion, Me.GridColumn_Prod, Me.GridColumn_Descripcion, Me.GridColumn_Unidades, Me.GridColumnClientOwner, Me.GridColumnClientName, Me.GridColumnTermOfTrade, Me.GridColumnLastUpdatedBy, Me.GridColumnFechaLlegada, Me.GridColumnDUA, Me.GridColumnNumeroOrden, Me.GridColumnPoliza, Me.GridColumnRegimen, Me.colFECHA_DOCUMENTO, Me.colALTERNATE_BARCODE, Me.colCOMMITED_QTY, Me.GridColumn_Serial, Me.GridColumn_FVOL, Me.colDATE_EXPIRATION, Me.GridColumn_CLASS, Me.colBATCH, Me.colDOC_ID, Me.colUSED_MT2, Me.GridColumn_VIN, Me.colPENDIENTE_RECTIFICACION, Me.colGRUPO_REGIMEN, Me.colREGIMEN_DOCUMENTO, Me.colCodigoProveedor, Me.colNombreProveedor, Me.colMATERIAL_ID, Me.colZONE, Me.colAVAILABLE_QTY, Me.UiColValorUnitario, Me.UiColValorTotal, Me.UiColIntentarioExterno, Me.UiGridColSkuSerie, Me.UiColDiasRegimen, Me.UiColDiasVencimiento, Me.UiColFechaVencimientoRegimen, Me.UiColEstadoRegimen, Me.UiColNombreEstado, Me.UiColBloqueoInventario, Me.UiColColorEstado, Me.UiColTono, Me.UiColCalibre, Me.UiColOrdenDeVenta, Me.UiColProyecto, Me.UiColNombreCliente, Me.UiColBloqueoInterfaces, Me.UiColPeso, Me.UiColUnidadPeso, Me.UiColOlaPicking, Me.GridColumn_PK_LINE, Me.GridColumn_BATCH_REQUESTED, Me.GridColumn_STATUS_ID, Me.GridColumn_TONE_CALIBER_ID, Me.GridColumn_HANDLE_TONE, Me.GridColumn_HANDLE_CALIBER, Me.UiColCodigoProyecto, Me.UiColNombreProyecto, Me.colTOTAL_POSITION})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn_CurrentWH, Me.GridColumn_Linea, Me.GridColumn_Ubicacion, Me.GridColumn_Prod, Me.GridColumn_Descripcion, Me.GridColumn_Unidades, Me.GridColumnClientOwner, Me.GridColumnClientName, Me.GridColumnTermOfTrade, Me.GridColumnLastUpdatedBy, Me.GridColumnFechaLlegada, Me.GridColumnDUA, Me.GridColumnNumeroOrden, Me.GridColumnPoliza, Me.GridColumnRegimen, Me.colFECHA_DOCUMENTO, Me.colALTERNATE_BARCODE, Me.colCOMMITED_QTY, Me.GridColumn_Serial, Me.GridColumn_FVOL, Me.colDATE_EXPIRATION, Me.GridColumn_CLASS, Me.colBATCH, Me.colDOC_ID, Me.colUSED_MT2, Me.GridColumn_VIN, Me.colPENDIENTE_RECTIFICACION, Me.colGRUPO_REGIMEN, Me.colREGIMEN_DOCUMENTO, Me.colCodigoProveedor, Me.colNombreProveedor, Me.colMATERIAL_ID, Me.colZONE, Me.UiColAllowPicking, Me.colAVAILABLE_QTY, Me.UiColValorUnitario, Me.UiColValorTotal, Me.UiColIntentarioExterno, Me.UiGridColSkuSerie, Me.UiColDiasRegimen, Me.UiColDiasVencimiento, Me.UiColFechaVencimientoRegimen, Me.UiColEstadoRegimen, Me.UiColNombreEstado, Me.UiColBloqueoInventario, Me.UiColColorEstado, Me.UiColTono, Me.UiColCalibre, Me.UiColOrdenDeVenta, Me.UiColProyecto, Me.UiColNombreCliente, Me.UiColBloqueoInterfaces, Me.UiColPeso, Me.UiColUnidadPeso, Me.UiColOlaPicking, Me.GridColumn_PK_LINE, Me.GridColumn_BATCH_REQUESTED, Me.GridColumn_STATUS_ID, Me.GridColumn_TONE_CALIBER_ID, Me.GridColumn_HANDLE_TONE, Me.GridColumn_HANDLE_CALIBER, Me.UiColCodigoProyecto, Me.UiColNombreProyecto, Me.colTOTAL_POSITION})
         Me.GridView1.DetailHeight = 284
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.GroupPanelText = "Organizar por columna"
@@ -1013,6 +1014,14 @@ Partial Class frmInfo_Inventory
         '
         Me.loadLayoutTimer.Interval = 1000
         '
+        'UiColAllowPicking
+        '
+        Me.UiColAllowPicking.Caption = "Permite Picking"
+        Me.UiColAllowPicking.FieldName = "ALLOW_PICKING"
+        Me.UiColAllowPicking.Name = "UiColAllowPicking"
+        Me.UiColAllowPicking.Visible = True
+        Me.UiColAllowPicking.VisibleIndex = 30
+        '
         'frmInfo_Inventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1128,4 +1137,5 @@ Partial Class frmInfo_Inventory
     Friend WithEvents colTOTAL_POSITION As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents BehaviorManager1 As DevExpress.Utils.Behaviors.BehaviorManager
     Friend WithEvents loadLayoutTimer As Timer
+    Friend WithEvents UiColAllowPicking As DevExpress.XtraGrid.Columns.GridColumn
 End Class
