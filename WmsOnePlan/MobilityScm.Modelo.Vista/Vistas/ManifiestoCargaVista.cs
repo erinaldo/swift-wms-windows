@@ -408,7 +408,7 @@ namespace MobilityScm.Modelo.Vistas
                 }
 
                 var manifiestosReporte = ManifiestoCarga
-                    .GroupBy(m => new { m.ERP_REFERENCE_DOC_NUM, m.MATERIAL_ID, m.MATERIAL_NAME, m.Olas })
+                    .GroupBy(m => new { m.ERP_REFERENCE_DOC_NUM, m.MATERIAL_ID, m.MATERIAL_NAME, m.Olas, m.STATUS_CODE })
                     .Select(mc => new ManifiestoCarga
                     {
                         MATERIAL_ID = mc.Key.MATERIAL_ID,
@@ -433,7 +433,8 @@ namespace MobilityScm.Modelo.Vistas
                         LINE_DISCOUNT = mc.First().LINE_DISCOUNT,
                         LINE_DISCOUNT_TYPE = mc.First().LINE_DISCOUNT_TYPE,
                         DOCUMENT_TOTAL = mc.Sum(m => m.FINAL_PRICE),
-                        Olas = mc.Key.Olas
+                        Olas = mc.Key.Olas,
+                        STATUS_CODE = mc.First().STATUS_CODE
                     });
                 var configuracionMontos = ObtenerConfiguracion(Enums.GetStringValue(NombreParametroGeneral.MostrarMontos));
                 bool mostrarMontos = configuracionMontos != null && configuracionMontos.TEXT_VALUE.ToUpper() == SiNo.Si.ToString().ToUpper();

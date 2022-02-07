@@ -579,12 +579,12 @@ namespace MobilityScm.Modelo.Vistas
                 return;
             }
 
-            for (int i = 0; i < UiVistaSolicitudTraslado.RowCount; i++)
+            for (int i = 0; i < listadoMateriales.Count; i++)
             {
-                string inventarioDisp = UiVistaSolicitudTraslado.GetRowCellValue(i, colINVENTORY).ToString();
-                string cantidad = UiVistaSolicitudTraslado.GetRowCellValue(i, colQTY).ToString();
+                var inventarioDisp = listadoMateriales[i].CURRENTLY_AVAILABLE;
+                var cantidad = listadoMateriales[i].QTY;
 
-                if (int.Parse(cantidad) > int.Parse(inventarioDisp))
+                if (cantidad > inventarioDisp)
                 {
                     InteraccionConUsuarioServicio.Mensaje("La cantidad que solicita es mayor al inventario disponible, favor verificar");
                     return;

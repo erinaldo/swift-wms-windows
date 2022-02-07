@@ -86,5 +86,7 @@ namespace MobilityScm.Modelo.Entidades
         public string PILOT_NAME { get; set; }
         public string WAREHOUSE_FROM { get; set; }
         public string WAREHOUSE_TO { get; set; }
+
+        public string STATUS_CODE { get; set; }
     }
 }

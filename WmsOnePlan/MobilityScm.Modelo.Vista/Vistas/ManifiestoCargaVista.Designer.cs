@@ -154,11 +154,11 @@
             this.colVistaERP_REFERENCE_DOC_NUM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiColVistaCodigoTipoDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiColVistaNombreTipoDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UiColMaterialStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UiError = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.repositoryItemTimeEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.repositoryItemTimeEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.UiColEliminarRegistro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.UiColMaterialStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UiBarraContenedorPrincipal)).BeginInit();
@@ -1120,6 +1120,14 @@
             this.UiColVistaNombreTipoDespacho.Visible = true;
             this.UiColVistaNombreTipoDespacho.VisibleIndex = 13;
             // 
+            // UiColMaterialStatus
+            // 
+            this.UiColMaterialStatus.Caption = "Estado";
+            this.UiColMaterialStatus.FieldName = "STATUS_CODE";
+            this.UiColMaterialStatus.Name = "UiColMaterialStatus";
+            this.UiColMaterialStatus.Visible = true;
+            this.UiColMaterialStatus.VisibleIndex = 14;
+            // 
             // UiError
             // 
             this.UiError.ContainerControl = this;
@@ -1142,14 +1150,6 @@
             this.UiColEliminarRegistro.ColumnEdit = this.repositoryItemCheckEdit1;
             this.UiColEliminarRegistro.Name = "UiColEliminarRegistro";
             this.UiColEliminarRegistro.OptionsColumn.ShowInCustomizationForm = false;
-            // 
-            // UiColMaterialStatus
-            // 
-            this.UiColMaterialStatus.Caption = "Estado";
-            this.UiColMaterialStatus.FieldName = "STATUS_CODE";
-            this.UiColMaterialStatus.Name = "UiColMaterialStatus";
-            this.UiColMaterialStatus.Visible = true;
-            this.UiColMaterialStatus.VisibleIndex = 14;
             // 
             // ManifiestoCargaVista
             // 
