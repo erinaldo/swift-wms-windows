@@ -785,9 +785,10 @@ namespace MobilityScm.Modelo.Vistas
 
                         if (txtIdMaterial == codM)
                         {
-                            int disponible = int.Parse(txtInventario);
-                            int solicitado = int.Parse(cant);
-                            if (solicitado <= disponible)
+                            decimal disponible = Convert.ToDecimal(txtInventario);
+                            decimal solicitado = Convert.ToDecimal(cant);
+
+                            if (solicitado<= disponible)
                             {
                                 UiVistaSolicitudTraslado.UnselectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
@@ -822,10 +823,10 @@ namespace MobilityScm.Modelo.Vistas
 
             XLWorkbook book = new XLWorkbook();
             var sheet = book.Worksheets.Add("Hoja 1");  //se crea una nueva hoja
-            var rango = sheet.Range("A1:C1");
+            var rango_encabezado = sheet.Range("A1:C1");
             SaveFileDialog saveF = new SaveFileDialog(); //instancia para cuadro de dialogo
             saveF.Filter = "Excel Files |*.xlsx";
-            var ra = sheet.Range(2, 1, 500, 3);
+            var rango_Columnas = sheet.Range(2, 1, 500, 3);
             var c1 = sheet.Column(1);
             var c2 = sheet.Column(2);
             var c3 = sheet.Column(3);
@@ -854,15 +855,16 @@ namespace MobilityScm.Modelo.Vistas
             c3.SetDataValidation().ErrorStyle = ClosedXML.Excel.XLErrorStyle.Stop;
             c3.SetDataValidation().ErrorTitle = "El texto supera el limite";
             c3.SetDataValidation().ErrorMessage = "solo puede ingresar un maximo de 25 caracteres";
+            var columna_cantidad = sheet.Range("C2:C48");
 
             //configuracion y formato de la tabla
-            rango.Style.Fill.BackgroundColor = XLColor.LightCornflowerBlue;
-            rango.Style.Font.FontColor = XLColor.White;
-            rango.Style.Font.SetBold();
-            rango.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-            rango.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
-            ra.Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin).Border.SetOutsideBorderColor(XLColor.BlueBell);
-            ra.Style.Border.SetBottomBorder(XLBorderStyleValues.Thin).Border.SetBottomBorderColor(XLColor.BlueBell);
+            rango_encabezado.Style.Fill.BackgroundColor = XLColor.LightCornflowerBlue;
+            rango_encabezado.Style.Font.FontColor = XLColor.White;
+            rango_encabezado.Style.Font.SetBold();
+            rango_encabezado.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            rango_encabezado.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+            rango_Columnas.Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin).Border.SetOutsideBorderColor(XLColor.BlueBell);
+            rango_Columnas.Style.Border.SetBottomBorder(XLBorderStyleValues.Thin).Border.SetBottomBorderColor(XLColor.BlueBell);
             
 
             if (saveF.ShowDialog() == DialogResult.OK) book.SaveAs(saveF.FileName);
