@@ -34,7 +34,7 @@ namespace MobilityScm.Modelo.Entidades
 
         public string MATERIAL_NAME { get; set; }
 
-        public int QTY { get; set; }
+        public decimal QTY { get; set; }
 
         public string CLIENT_CODE { get; set; }
 
