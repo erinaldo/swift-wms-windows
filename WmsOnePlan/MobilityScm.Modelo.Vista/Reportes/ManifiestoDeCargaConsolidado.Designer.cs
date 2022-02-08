@@ -52,9 +52,10 @@
             this.ReportPageInfoFecha = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportPanelDatosManifiesto = new DevExpress.XtraReports.UI.XRPanel();
             this.TextoBodegaDestino = new DevExpress.XtraReports.UI.XRLabel();
-            this.SolicitudDeTraslado = new DevExpress.XtraReports.Parameters.Parameter();
+            this.ParametroBodegaDestino = new DevExpress.XtraReports.Parameters.Parameter();
             this.EtiquetaBodegaDestino = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SolicitudDeTraslado = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportLabelVehiculo = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportLabelParametroVehiculo = new DevExpress.XtraReports.UI.XRLabel();
@@ -96,7 +97,6 @@
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
-            this.ParametroBodegaDestino = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manifiestoDeCarga1)).BeginInit();
@@ -174,10 +174,10 @@
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "MANIFIEST_REPORT.calculatedField1")});
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
-            xrSummary2.FormatString = "{0:#,###,###.00}";
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.xrTableCell5.Summary = xrSummary2;
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell5.TextFormatString = "{0:#.0000}";
             this.xrTableCell5.Weight = 0.64581594894593519D;
             // 
             // UiTextoSumaMonto
@@ -298,12 +298,11 @@
             this.TextoBodegaDestino.StylePriority.UseBackColor = false;
             this.TextoBodegaDestino.StylePriority.UseBorderColor = false;
             // 
-            // SolicitudDeTraslado
+            // ParametroBodegaDestino
             // 
-            this.SolicitudDeTraslado.Description = "Solicitud de Traslado";
-            this.SolicitudDeTraslado.Name = "SolicitudDeTraslado";
-            this.SolicitudDeTraslado.ValueInfo = "N/A";
-            this.SolicitudDeTraslado.Visible = false;
+            this.ParametroBodegaDestino.Description = "Bodega Destino";
+            this.ParametroBodegaDestino.Name = "ParametroBodegaDestino";
+            this.ParametroBodegaDestino.Visible = false;
             // 
             // EtiquetaBodegaDestino
             // 
@@ -327,6 +326,13 @@
             this.xrLabel3.SizeF = new System.Drawing.SizeF(216.5832F, 23F);
             this.xrLabel3.StylePriority.UseBackColor = false;
             this.xrLabel3.StylePriority.UseBorderColor = false;
+            // 
+            // SolicitudDeTraslado
+            // 
+            this.SolicitudDeTraslado.Description = "Solicitud de Traslado";
+            this.SolicitudDeTraslado.Name = "SolicitudDeTraslado";
+            this.SolicitudDeTraslado.ValueInfo = "N/A";
+            this.SolicitudDeTraslado.Visible = false;
             // 
             // xrLabel2
             // 
@@ -550,13 +556,13 @@
             // xrPageInfo2
             // 
             this.xrPageInfo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrPageInfo2.Format = "Página {0} de {1}";
             this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(435.0001F, 0F);
             this.xrPageInfo2.Name = "xrPageInfo2";
             this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo2.SizeF = new System.Drawing.SizeF(313F, 23F);
             this.xrPageInfo2.StylePriority.UseFont = false;
             this.xrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.xrPageInfo2.TextFormatString = "Página {0} de {1}";
             // 
             // manifiestoDeCarga1
             // 
@@ -642,10 +648,10 @@
             this.xrLabel20.SizeF = new System.Drawing.SizeF(86.45831F, 18F);
             this.xrLabel20.StylePriority.UseFont = false;
             this.xrLabel20.StylePriority.UseTextAlignment = false;
-            xrSummary6.FormatString = "{0:#,###,###.00}";
             xrSummary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrLabel20.Summary = xrSummary6;
             this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel20.TextFormatString = "{0:#.0000}";
             // 
             // xrLabel15
             // 
@@ -721,12 +727,6 @@
             this.calculatedField2.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.calculatedField2.Name = "calculatedField2";
             // 
-            // ParametroBodegaDestino
-            // 
-            this.ParametroBodegaDestino.Description = "Bodega Destino";
-            this.ParametroBodegaDestino.Name = "ParametroBodegaDestino";
-            this.ParametroBodegaDestino.Visible = false;
-            // 
             // ManifiestoDeCargaConsolidado
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -755,7 +755,7 @@
             this.ParametroVehiculo,
             this.SolicitudDeTraslado,
             this.ParametroBodegaDestino});
-            this.Version = "15.2";
+            this.Version = "19.2";
             this.DataSourceDemanded += new System.EventHandler<System.EventArgs>(this.ManifiestoDeCargaConsolidado_DataSourceDemanded);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();

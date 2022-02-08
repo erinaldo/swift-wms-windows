@@ -261,7 +261,7 @@
             // colQTY2
             // 
             this.colQTY2.Caption = "Cantidad";
-            this.colQTY2.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colQTY2.DisplayFormat.FormatString = "{0:#,###,##0.0000}";
             this.colQTY2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colQTY2.FieldName = "QTY";
             this.colQTY2.Name = "colQTY2";
@@ -377,7 +377,7 @@
             // colQTY
             // 
             this.colQTY.Caption = "Cantidad";
-            this.colQTY.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colQTY.DisplayFormat.FormatString = "{0:#,###,##0.0000}";
             this.colQTY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colQTY.FieldName = "QTY";
             this.colQTY.Name = "colQTY";

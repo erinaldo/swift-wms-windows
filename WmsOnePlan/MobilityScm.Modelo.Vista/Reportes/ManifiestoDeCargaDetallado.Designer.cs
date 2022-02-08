@@ -234,7 +234,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "QTY", "{0:#,###,###.00}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "QTY")});
             this.xrLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(461.338F, 0F);
             this.xrLabel12.Name = "xrLabel12";
@@ -245,6 +245,7 @@
             this.xrLabel12.StylePriority.UseTextAlignment = false;
             this.xrLabel12.Text = "xrLabel12";
             this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel12.TextFormatString = "{0:#.0000}";
             // 
             // TopMargin
             // 
@@ -1017,11 +1018,11 @@
             this.xrLabel18.StyleName = "FieldCaption";
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            xrSummary4.FormatString = "{0:#,###,###.00}";
             xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.xrLabel18.Summary = xrSummary4;
             this.xrLabel18.Text = "xrLabel18";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel18.TextFormatString = "{0:#.0000}";
             // 
             // ReportFooter
             // 
@@ -1082,10 +1083,10 @@
             this.xrLabel7.StyleName = "FieldCaption";
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.StylePriority.UseTextAlignment = false;
-            xrSummary7.FormatString = "{0:#,###,###.00}";
             xrSummary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrLabel7.Summary = xrSummary7;
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel7.TextFormatString = "{0:#.0000}";
             // 
             // xrLabel8
             // 
