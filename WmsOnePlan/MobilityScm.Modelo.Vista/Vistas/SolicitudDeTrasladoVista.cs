@@ -809,7 +809,11 @@ namespace MobilityScm.Modelo.Vistas
                 {
                     res += item + Environment.NewLine;
                 }
-                MessageBox.Show("La cantidad que solicita de los productos: \n\n " + res + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (SKU_no_disp.Count > 0)
+                {
+                    MessageBox.Show("La cantidad que solicita de los productos: \n " + res + "\n no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             catch (Exception ex)
             {
