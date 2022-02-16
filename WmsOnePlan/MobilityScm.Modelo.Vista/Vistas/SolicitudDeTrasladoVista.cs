@@ -731,6 +731,7 @@ namespace MobilityScm.Modelo.Vistas
             OleDbConnection connect;
             OleDbDataAdapter dataAdapter;
             DataTable dTable = new DataTable();
+            List <string> SKU_no_disp = new List<string> () ;
             string path = ""; 
             var idCDOrigen = UiListaCentroDistribucionOrigen.EditValue;
             var idBodegaOrigen = UiListaBodegaOrigen.EditValue;
@@ -795,13 +796,20 @@ namespace MobilityScm.Modelo.Vistas
                             }
                             else
                             {
-                                MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                SKU_no_disp.Add(txtIdMaterial);
+                                //MessageBox.Show("La cantidad que solicita del producto: " + txtIdMaterial + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 UiVistaSolicitudTraslado.UnselectRow(j);
                                 UiVistaSolicitudTraslado.SetRowCellValue(j, colQTY, cant);
                             } 
                         }
                     }
                 }
+                string res = " ";
+                foreach (string  item in SKU_no_disp)
+                {
+                    res += item + Environment.NewLine;
+                }
+                MessageBox.Show("La cantidad que solicita de los productos: \n\n " + res + " no esta disponible", "Error al modificar la tabla", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
